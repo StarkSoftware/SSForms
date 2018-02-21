@@ -5,6 +5,11 @@
 SSForms is Android library to create dynamic Recyclerview forms.
 The goal of the library is to get the same power of hand-made forms but spending 1/10 of the time.
 
+# Screenshot
+
+![Screenshot](http://url/to/img.png)
+
+
 # Features
 FormElementBasic - Simple text input form
 
