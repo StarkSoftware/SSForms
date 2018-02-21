@@ -7,8 +7,8 @@ The goal of the library is to get the same power of hand-made forms but spending
 
 # Screenshot
 
-![Screenshot](https://github.com/StarkSoftware/SSForms/blob/master/image_8.png)
-![Screenshot](https://github.com/StarkSoftware/SSForms/blob/master/image_5.png)
+<img src="https://github.com/StarkSoftware/SSForms/blob/master/image_8.png" width="324" height="576"/>
+<img src="https://github.com/StarkSoftware/SSForms/blob/master/image_5.png" width="324" height="576"/>
 
 
 # Features
