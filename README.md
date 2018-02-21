@@ -37,3 +37,7 @@ FormElementSwitch - Switch
 FormElementCheckBox - Checkbox field
 
 FormElementPlaceDialog - Dialog for get location (Google Place API required)
+
+
+# License
+The library is available as open source under the terms of the GNU General Public License v3.0
