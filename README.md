@@ -1,5 +1,7 @@
 # SSForms
 
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/AAlessandroni)
+
 SSForms is Android library to create dynamic Recyclerview forms.
 The goal of the library is to get the same power of hand-made forms but spending 1/10 of the time.
 
@@ -37,6 +39,8 @@ FormElementSwitch - Switch
 FormElementCheckBox - Checkbox field
 
 FormElementPlaceDialog - Dialog for get location (Google Place API required)
+
+
 
 
 # License
