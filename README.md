@@ -7,8 +7,13 @@ The goal of the library is to get the same power of hand-made forms but spending
 
 # Screenshot
 
-<img src="https://github.com/StarkSoftware/SSForms/blob/master/image_8.png" width="324" height="576"/>
-<img src="https://github.com/StarkSoftware/SSForms/blob/master/image_5.png" width="324" height="576"/>
+|    Main Form     |    Main Form |   DateTime Picker |
+| ------------- |:-------------:|:-------------:|
+| <img src="https://github.com/StarkSoftware/SSForms/blob/master/image_8.png" width="324" height="576"/>|<img src="https://github.com/StarkSoftware/SSForms/blob/master/image_5.png" width="324" height="576"/> | <img src="https://github.com/StarkSoftware/SSForms/blob/master/image_1.png" width="324" height="576"/> |
+
+|    Gallery Picker    |    Signature Pad|   Search Listview |
+| ------------- |:-------------:|:-------------:|
+|<img src="https://github.com/StarkSoftware/SSForms/blob/master/image_2.png" width="324" height="576"/> | <img src="https://github.com/StarkSoftware/SSForms/blob/master/image_7.png" width="324" height="576"/>|<img src="https://github.com/StarkSoftware/SSForms/blob/master/image_4.png" width="324" height="576"/> | 
 
 
 # Features
