@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="ef_font_small">15sp</dimen>
+    <dimen name="ef_font_medium">20sp</dimen>
+</resources>

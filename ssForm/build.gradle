@@ -1,0 +1,62 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 2
+        versionName "1.0.0"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.google.android.gms:play-services-places:11.8.0'
+    implementation 'com.codemybrainsout.placesearchdialog:placesearch:1.0.1'
+    implementation 'com.github.Kunzisoft:Android-SwitchDateTimePicker:1.8'
+    implementation 'com.github.MdFarhanRaja:SearchableSpinner:1.9'
+    implementation 'io.reactivex:rxjava:1.3.2'
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'cn.pedant.sweetalert:library:1.3'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.jcmore2.collage:collage:1.0.0'
+}
+
+
+task clearJar(type: Delete) {
+    delete 'build/libs/ssforms-master.jar'
+}
+
+task makeJar(type: Copy) {
+    from('build/bundles/release/')
+    into('release/')
+    include('classes.jar')
+    rename('classes.jar', 'ssforms-master.jar')
+}
+
+makeJar.dependsOn(clearJar, build)

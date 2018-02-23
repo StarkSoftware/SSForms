@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">SS FORMS</string>
+
+    <!--Request Permission-->
+    <string name="permission_info">App requires permission to Storage to view images.</string>
+    <string name="permission_force">App requires permission to Storage to view images. Tap Settings and go to Permissions to grant permission.</string>
+    <string name="permission_ok">OK</string>
+    <string name="permission_settings">Settings</string>
+    <string name="permission_package">package</string>
+
+    <string name="album_view">Seleziona l\'album delle foto</string>
+    <string name="image_view">Seleziona l\'immagine</string>
+
+    <string name="selected">selezionata</string>
+    <string name="limit_exceeded">Puoi selezionare un massimo di %d immagini</string>
+    <string name="error_null_cursor">Oops, qualcosa è andato storto !</string>
+    <string name="add">Aggiungi</string>
+    <string name="capture_photo">Cattura foto</string>
+
+    <string name="ef_ok">OK</string>
+    <string name="ef_done">FATTO</string>
+    <string name="ef_camera">CAMERA</string>
+
+    <string name="ef_title_folder">Galleria</string>
+    <string name="ef_title_select_image">Seleziona un immagine</string>
+    <string name="ef_ltitle_permission_denied">Permesso Negato</string>
+
+    <string name="ef_selected">%d selected</string>
+    <string name="ef_selected_with_limit">%1$d/%2$d selezionate</string>
+
+    <string name="ef_error_create_image_file">Impossibile creare il file</string>
+    <string name="ef_error_no_camera">Videocamera non trovata</string>
+    <string name="ef_error_null_cursor">Oops, qualcosa è andato storto !</string>
+
+    <string name="ef_msg_empty_images">Nessuna immagine trovata</string>
+    <string name="ef_msg_no_write_external_permission">Dai i permessi di scattare immagini</string>
+    <string name="ef_msg_no_camera_permission">Please grant camera permission to capture image</string>
+    <string name="ef_msg_limit_images">Limite di immagini raggiunto</string>
+
+    <!--Config-->
+    <string name="ef_image_directory" translatable="false">Camera</string>
+
+    <string name="agreement">I agree the terms and conditions.</string>
+    <string name="clear_pad">Clear Pad</string>
+    <string name="save_signature">Save Signature</string>
+
+</resources>

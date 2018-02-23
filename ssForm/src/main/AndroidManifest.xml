@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="it.starksoftware.ssform">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="it.starksoftware.ssform.features.ImagePickerActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ef_AppTheme" />
+
+        <activity
+            android:name="it.starksoftware.ssform.attach.AttachPickerActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ef_AppTheme" />
+
+        <activity
+            android:name="it.starksoftware.ssform.signaturepad.SignaturePickerActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ef_AppTheme" />
+
+        <activity
+            android:name="it.starksoftware.ssform.activities.ShadowActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name="it.starksoftware.ssform.activities.ShadowMultipleActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name="it.starksoftware.ssform.activities.ShadowAttachActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name="it.starksoftware.ssform.activities.ShadowSignatureActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name="it.starksoftware.ssform.file_explorer.FileExplorerActivity"
+            android:parentActivityName="it.starksoftware.ssform.attach.AttachPickerActivity"
+            android:theme="@style/ef_AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.starksoftware.ssform.attach.AttachPickerActivity" />
+        </activity>
+
+        <provider
+            android:name="it.starksoftware.ssform.helper.ImagePickerFileProvider"
+            android:authorities="it.starksoftware.ssform.imagepicker.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/image_picker_provider_paths" />
+        </provider>
+
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAbqdGU6mysgmT2kR6oo0Js_ZLKRrASXEM" />
+
+    </application>
+
+</manifest>
