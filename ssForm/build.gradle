@@ -1,8 +1,30 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
 
-group = 'it.starksoftware' // cambiatelo con un valore appropriato
-version = '1.1.0' // qui mettete la versione che state rilasciando
+group = 'it.starksoftware'
+version = '1.1.0'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'ssForm'
+
+    publishedGroupId = 'it.starksoftware'
+    libraryName = 'ssForm'
+    artifact = 'ssForm'
+
+    libraryDescription = 'SSForms is Android library to create dynamic Recyclerview forms'
+
+    siteUrl = 'https://github.com/StarkSoftware/SSForms'
+    gitUrl = 'https://github.com/StarkSoftware/SSForms.git'
+
+    libraryVersion = '1.1.0'
+
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 
 android {
     compileSdkVersion 26

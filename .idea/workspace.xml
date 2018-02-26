@@ -10,46 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c21073e1-1c93-45d6-bd7a-c728cafa54df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/Validator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/it/starksoftware/ssForm/1.1.0/ssForm-1.1.0.aar" afterPath="$PROJECT_DIR$/it/starksoftware/ssForm/1.1.0/ssForm-1.1.0.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SSForms.iml" afterPath="$PROJECT_DIR$/SSForms.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/it/starksoftware/ssformsdemo/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/it/starksoftware/ssformsdemo/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/it/starksoftware/ssForm/1.1.0/ssForm-1.1.0.aar.md5" afterPath="$PROJECT_DIR$/it/starksoftware/ssForm/1.1.0/ssForm-1.1.0.aar.md5" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/it/starksoftware/ssForm/1.1.0/ssForm-1.1.0.aar.sha1" afterPath="$PROJECT_DIR$/it/starksoftware/ssForm/1.1.0/ssForm-1.1.0.aar.sha1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/it/starksoftware/ssForm/maven-metadata.xml" afterPath="$PROJECT_DIR$/it/starksoftware/ssForm/maven-metadata.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/it/starksoftware/ssForm/maven-metadata.xml.md5" afterPath="$PROJECT_DIR$/it/starksoftware/ssForm/maven-metadata.xml.md5" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/it/starksoftware/ssForm/maven-metadata.xml.sha1" afterPath="$PROJECT_DIR$/it/starksoftware/ssForm/maven-metadata.xml.sha1" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/build.gradle" afterPath="$PROJECT_DIR$/ssForm/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAdapter.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/FormBuildHelper.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/FormBuildHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormDivider.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormDivider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElement.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementAttach.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementAttach.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementButton.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementCheckBox.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementCheckBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementCustomKeyboard.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementCustomKeyboard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementDateTime.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementDateTime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementImageMultipleView.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementImageMultipleView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementImageView.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementImageView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementMemo.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementMemo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementPlaceDialog.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementPlaceDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementRating.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementRating.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSearchableSpinner.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSearchableSpinner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSegment.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSegment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSignature.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSignature.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSpinner.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSpinner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSwitch.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSwitch.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementToken.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementToken.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormHeader.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormHeader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormObject.java" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ssForm/ssForm.iml" afterPath="$PROJECT_DIR$/ssForm/ssForm.iml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,6 +41,9 @@
     <system id="GRADLE">
       <state>
         <task path="$PROJECT_DIR$/ssForm">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
           <activation />
         </task>
         <projects_view>
@@ -158,6 +134,60 @@
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
               </PATH_ELEMENT>
             </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="SSForms" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="SSForms" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="SSForms" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="SSForms" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="SSForms" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="SSForms" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="upload" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
+              </PATH_ELEMENT>
+            </PATH>
           </tree_state>
         </projects_view>
       </state>
@@ -165,26 +195,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FormElementSearchableSpinner.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSearchableSpinner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="32" column="52" lean-forward="false" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FormElementSegment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSegment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="30" column="52" lean-forward="false" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FormElementSignature.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSignature.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -228,8 +238,28 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ssForm/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="92" lean-forward="false" selection-start-line="36" selection-start-column="92" selection-end-line="36" selection-end-column="92" />
+            <state relative-caret-position="150">
+              <caret line="10" column="40" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -3035,38 +3065,6 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SSForms" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SSForms" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssformsdemo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="ProjectPane" />
@@ -3103,11 +3101,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.SSForms:ssForm [uploadArchives]">
+  <component name="RunManager" selected="Gradle.SSForms [uploadArchives]">
     <configuration default="false" name="SSForms:ssForm [uploadArchives]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/ssForm" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="uploadArchives" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="SSForms [uploadArchives]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -3192,7 +3208,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519651975989" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519653287043" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -3240,7 +3256,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519651975989" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519653287043" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -3423,16 +3439,18 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519651975991" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519653287044" />
       </method>
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Android App.app" />
       <item index="1" class="java.lang.String" itemvalue="Gradle.SSForms:ssForm [uploadArchives]" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.SSForms [uploadArchives]" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.SSForms:ssForm [uploadArchives]" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Gradle.SSForms [uploadArchives]" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.SSForms:ssForm [uploadArchives]" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
@@ -3472,6 +3490,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="78" y="36" width="2286" height="1286" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3482,7 +3501,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299748" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12426532" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299748" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3491,7 +3510,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24978128" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32983378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32983378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27036104" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -3554,22 +3573,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormTokenObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="52" lean-forward="false" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/activities/RxAttachPicker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/signaturepad/SignaturePickerConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -3999,10 +4002,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ssForm/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="92" lean-forward="false" selection-start-line="36" selection-start-column="92" selection-end-line="36" selection-end-column="92" />
+        <state relative-caret-position="150">
+          <caret line="10" column="40" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="40" />
           <folding />
         </state>
       </provider>
