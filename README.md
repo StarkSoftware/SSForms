@@ -19,7 +19,7 @@ repositories {
 ```
 dependencies {
 // ...
-    compile 'it.starksoftware:ssForms:1.1.0'
+    compile 'it.starksoftware:ssForm:1.1.0'
 // ...
 }
 ```
