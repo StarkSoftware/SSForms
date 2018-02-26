@@ -11,6 +11,10 @@ The goal of the library is to get the same power of hand-made forms but spending
 | ------------- |:-------------:|:-------------:|
 | <img src="https://github.com/StarkSoftware/SSForms/blob/master/screenshot/image_8.png" width="324" height="576"/>|<img src="https://github.com/StarkSoftware/SSForms/blob/master/screenshot/image_5.png" width="324" height="576"/> | <img src="https://github.com/StarkSoftware/SSForms/blob/master/screenshot/image_1.png" width="324" height="576"/> |
 
+|    Place Dialog     |    TokenBox |   Token Items |
+| ------------- |:-------------:|:-------------:|
+| <img src="https://github.com/StarkSoftware/SSForms/blob/master/screenshot/image_6.png" width="324" height="576"/>|<img src="https://github.com/StarkSoftware/SSForms/blob/master/screenshot/token_main.png" width="324" height="576"/> | <img src="https://github.com/StarkSoftware/SSForms/blob/master/screenshot/token_items.png" width="324" height="576"/> |
+
 |    Gallery Picker    |    Signature Pad|   Search Listview |
 | ------------- |:-------------:|:-------------:|
 |<img src="https://github.com/StarkSoftware/SSForms/blob/master/screenshot/image_2.png" width="324" height="576"/> | <img src="https://github.com/StarkSoftware/SSForms/blob/master/screenshot/image_7.png" width="324" height="576"/>|<img src="https://github.com/StarkSoftware/SSForms/blob/master/screenshot/image_4.png" width="324" height="576"/> | 
@@ -50,6 +54,8 @@ FormElementSwitch - Switch
 FormElementCheckBox - Checkbox field
 
 FormElementPlaceDialog - Dialog for get location (Google Place API required)
+
+FormElementToken - Token Box
 
 
 
