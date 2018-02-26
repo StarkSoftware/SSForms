@@ -11,6 +11,17 @@ public class FormElementMemo implements FormObject {
     private boolean visibility = true;
     private String mTitle;
     private Context mCtx;
+    private boolean required = false;
+    private String requiredResponseMessage = mTitle;
+
+    public String getRequiredResponseMessage() {
+        return requiredResponseMessage;
+    }
+
+    public FormElementMemo setRequiredResponseMessage(String requiredResponseMessage) {
+        this.requiredResponseMessage = requiredResponseMessage;
+        return this;
+    }
 
     public FormElementMemo() {
     }
@@ -22,6 +33,16 @@ public class FormElementMemo implements FormObject {
 
     public FormElementMemo setTag(int mTag) {
         this.mTag = mTag;
+        return this;
+    }
+
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
+
+    public FormElementMemo setRequired(boolean required) {
+        this.required = required;
         return this;
     }
 

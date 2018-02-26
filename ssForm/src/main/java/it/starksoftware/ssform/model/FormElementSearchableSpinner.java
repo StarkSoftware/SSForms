@@ -29,6 +29,17 @@ public class FormElementSearchableSpinner implements FormObject {
     private boolean refresh;
     private boolean visibility = true;
     private int pos;
+    private boolean required = false;
+    private String requiredResponseMessage = mTitle;
+
+    public String getRequiredResponseMessage() {
+        return requiredResponseMessage;
+    }
+
+    public FormElementSearchableSpinner setRequiredResponseMessage(String requiredResponseMessage) {
+        this.requiredResponseMessage = requiredResponseMessage;
+        return this;
+    }
 
     public FormElementSearchableSpinner() {
     }
@@ -36,6 +47,16 @@ public class FormElementSearchableSpinner implements FormObject {
 
     public static FormElementSearchableSpinner createInstance() {
         return new FormElementSearchableSpinner();
+    }
+
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
+
+    public FormElementSearchableSpinner setRequired(boolean required) {
+        this.required = required;
+        return this;
     }
 
     // getters and setters

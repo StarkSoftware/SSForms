@@ -21,6 +21,17 @@ public class FormElementToken implements FormObject {
     private List<String> mOptionsSelected; // list of selected options for single and multi picker
     private Context mCtx;
     private boolean visibility = true;
+    private boolean required = false;
+    private String requiredResponseMessage = mTitle;
+
+    public String getRequiredResponseMessage() {
+        return requiredResponseMessage;
+    }
+
+    public FormElementToken setRequiredResponseMessage(String requiredResponseMessage) {
+        this.requiredResponseMessage = requiredResponseMessage;
+        return this;
+    }
 
     public FormElementToken() {
     }
@@ -38,6 +49,15 @@ public class FormElementToken implements FormObject {
         return visibility;
     }
 
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
+
+    public FormElementToken setRequired(boolean required) {
+        this.required = required;
+        return this;
+    }
 
     // getters and setters
     public FormElementToken setTag(int mTag) {

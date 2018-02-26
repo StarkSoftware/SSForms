@@ -20,16 +20,33 @@ public class FormElementSignature implements FormObject {
     private Context mCtx;
     private Activity mAct;
     private boolean visibility = true;
+    private boolean required = false;
+    private String requiredResponseMessage = mTitle;
+
+    public String getRequiredResponseMessage() {
+        return requiredResponseMessage;
+    }
+
+    public FormElementSignature setRequiredResponseMessage(String requiredResponseMessage) {
+        this.requiredResponseMessage = requiredResponseMessage;
+        return this;
+    }
 
     public FormElementSignature() {
     }
 
-    /**
-     * static method to create instance
-     * @return
-     */
     public static FormElementSignature createInstance() {
         return new FormElementSignature();
+    }
+
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
+
+    public FormElementSignature setRequired(boolean required) {
+        this.required = required;
+        return this;
     }
 
     // getters and setters

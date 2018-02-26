@@ -8,17 +8,31 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import it.starksoftware.ssform.adapter.FormAdapter;
 import it.starksoftware.ssform.model.FormDivider;
 import it.starksoftware.ssform.model.FormElement;
+import it.starksoftware.ssform.model.FormElementAttach;
+import it.starksoftware.ssform.model.FormElementButton;
+import it.starksoftware.ssform.model.FormElementCheckBox;
+import it.starksoftware.ssform.model.FormElementCustomKeyboard;
+import it.starksoftware.ssform.model.FormElementDateTime;
+import it.starksoftware.ssform.model.FormElementImageMultipleView;
 import it.starksoftware.ssform.model.FormElementImageView;
 import it.starksoftware.ssform.model.FormElementMemo;
+import it.starksoftware.ssform.model.FormElementPlaceDialog;
 import it.starksoftware.ssform.model.FormElementRating;
+import it.starksoftware.ssform.model.FormElementSearchableSpinner;
+import it.starksoftware.ssform.model.FormElementSegment;
+import it.starksoftware.ssform.model.FormElementSignature;
 import it.starksoftware.ssform.model.FormElementSpinner;
 import it.starksoftware.ssform.model.FormElementSwitch;
+import it.starksoftware.ssform.model.FormElementToken;
+import it.starksoftware.ssform.model.FormHeader;
 import it.starksoftware.ssform.model.FormObject;
+import it.starksoftware.ssform.model.Validator;
 
 public class FormBuildHelper {
 
@@ -39,11 +53,165 @@ public class FormBuildHelper {
 
     }
 
+    public List<Validator> validateForm()
+    {
+        List<Validator> validatedItems = new ArrayList<>();
+
+        List<FormObject> items = this.mFormAdapter.getFormItems();
+        Validator vItem;
+
+        for (int i = 0; i < items.size(); i++)
+        {
+            if(items.get(i).isRequired()){
+                if (items.get(i).getElementType().contentEquals("Switch")) {
+                    FormElementSwitch element = (FormElementSwitch) items.get(i);
+                    if (!element.getValue()) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
+
+                } else if (items.get(i).getElementType().contentEquals("ImageView")) {
+                    FormElementImageView element = (FormElementImageView) items.get(i);
+                    if (element.getValue() == null) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
+
+                } else if (items.get(i).getElementType().contentEquals("Spinner")) {
+                    FormElementSpinner element = (FormElementSpinner) items.get(i);
+                    if (element.getValue() == null) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
+
+                } else if (items.get(i).getElementType().contentEquals("Memo")) {
+                    FormElementMemo element = (FormElementMemo) items.get(i);
+                    if (element.getValue().length() < 1) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
+
+                } else if (items.get(i).getElementType().contentEquals("Segment")) {
+                    FormElementSegment element = (FormElementSegment) items.get(i);
+                    if (!element.getValue()) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
+
+                } else if (items.get(i).getElementType().contentEquals("Attach")) {
+                    FormElementAttach element = (FormElementAttach) items.get(i);
+                    if (element.getValue() == null) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
+
+                } else if (items.get(i).getElementType().contentEquals("Signature")) {
+                    FormElementSignature element = (FormElementSignature) items.get(i);
+                    if (element.getValue() == null) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
+
+                } else if (items.get(i).getElementType().contentEquals("Rating")) {
+                    FormElementRating element = (FormElementRating) items.get(i);
+                    if (element.getValue() == null) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
+
+                } else if (items.get(i).getElementType().contentEquals("Basic")) {
+                    FormElement element = (FormElement) items.get(i);
+                    if (element.getValue().length() < 1) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
+
+                } else if (items.get(i).getElementType().contentEquals("ImageViewMultiple")) {
+                    FormElementImageMultipleView element = (FormElementImageMultipleView) items.get(i);
+                    if (element.getValue() == null) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
+
+                } else if (items.get(i).getElementType().contentEquals("DateTime")) {
+                    FormElementDateTime element = (FormElementDateTime) items.get(i);
+                    if (element.getValue() == null) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
+
+                } else if (items.get(i).getElementType().contentEquals("SearchableSpinner")) {
+                    FormElementSearchableSpinner element = (FormElementSearchableSpinner) items.get(i);
+                    if (element.getValue() == null) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
+
+                } else if (items.get(i).getElementType().contentEquals("PlaceDialog")) {
+                    FormElementPlaceDialog element = (FormElementPlaceDialog) items.get(i);
+                    if (element.getValue() == null) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
+
+                } else if (items.get(i).getElementType().contentEquals("Token")) {
+                    FormElementToken element = (FormElementToken) items.get(i);
+                    if (element.getValue().size() < 1) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
+                }
+            }
+
+        }
+
+        return validatedItems;
+    }
+
     public static String getCurrentVersion()
     {
-
-
-
         int versionCode = BuildConfig.VERSION_CODE;
         String versionName = BuildConfig.VERSION_NAME;
         return String.format("%s.%s", versionName, versionCode);

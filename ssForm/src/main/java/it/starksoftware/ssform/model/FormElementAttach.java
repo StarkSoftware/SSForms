@@ -20,10 +20,30 @@ public class FormElementAttach implements FormObject {
     private List<String> mOptionsSelected; // list of selected options for single and multi picker
     private Context mCtx;
     private boolean visibility = true;
+    private boolean required = false;
+    private String requiredResponseMessage = mTitle;
+
+    public String getRequiredResponseMessage() {
+        return requiredResponseMessage;
+    }
+
+    public FormElementAttach setRequiredResponseMessage(String requiredResponseMessage) {
+        this.requiredResponseMessage = requiredResponseMessage;
+        return this;
+    }
 
     public FormElementAttach() {
     }
 
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
+
+    public FormElementAttach setRequired(boolean required) {
+        this.required = required;
+        return this;
+    }
 
     public static FormElementAttach createInstance() {
         return new FormElementAttach();

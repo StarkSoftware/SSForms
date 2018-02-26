@@ -10,6 +10,7 @@ public class FormHeader implements FormObject {
     private String mTitle;
     private boolean visibility = true;
     private int mTag;
+    private boolean required = false;
 
     public FormHeader() {
     }
@@ -17,6 +18,11 @@ public class FormHeader implements FormObject {
     public FormHeader setTag(int mTag) {
         this.mTag = mTag;
         return this;
+    }
+
+    @Override
+    public boolean isRequired() {
+        return required;
     }
 
     public int getTag() {

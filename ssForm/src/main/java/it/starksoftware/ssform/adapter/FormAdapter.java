@@ -166,6 +166,10 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         this.mDataset.add(formObject);
     }
 
+    public List<FormObject> getFormItems() {
+        return mDataset;
+    }
+
     public void removeElement(FormObject formObject) {
 
         this.mDataset.remove(formObject);

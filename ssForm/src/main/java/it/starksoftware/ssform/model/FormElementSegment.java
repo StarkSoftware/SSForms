@@ -27,6 +27,17 @@ public class FormElementSegment implements FormObject {
     public ArrayList<RadioButton> getSegmentedButtons() {
         return segmentedButtons;
     }
+    private boolean required = false;
+    private String requiredResponseMessage = mTitle;
+
+    public String getRequiredResponseMessage() {
+        return requiredResponseMessage;
+    }
+
+    public FormElementSegment setRequiredResponseMessage(String requiredResponseMessage) {
+        this.requiredResponseMessage = requiredResponseMessage;
+        return this;
+    }
 
     public SegmentCallBack getSegmentCallBack() {
         return segmentCallBack;
@@ -45,10 +56,16 @@ public class FormElementSegment implements FormObject {
     public FormElementSegment() {
     }
 
-    /**
-     * static method to create instance
-     * @return
-     */
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
+
+    public FormElementSegment setRequired(boolean required) {
+        this.required = required;
+        return this;
+    }
+
     public static FormElementSegment createInstance() {
         return new FormElementSegment();
     }

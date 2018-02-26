@@ -3,9 +3,6 @@ package it.starksoftware.ssform.model;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Adib on 16-Apr-17.
- */
 
 public class FormElement implements FormObject {
 
@@ -32,6 +29,18 @@ public class FormElement implements FormObject {
     private List<String> mOptions; // list of options for single and multi picker
     private List<String> mOptionsSelected; // list of selected options for single and multi picker
 
+    private boolean required = false;
+    private String requiredResponseMessage = mTitle;
+
+    public String getRequiredResponseMessage() {
+        return requiredResponseMessage;
+    }
+
+    public FormElement setRequiredResponseMessage(String requiredResponseMessage) {
+        this.requiredResponseMessage = requiredResponseMessage;
+        return this;
+    }
+
     public FormElement() {
     }
 
@@ -43,10 +52,6 @@ public class FormElement implements FormObject {
         return visibility;
     }
 
-    /**
-     * static method to create instance
-     * @return
-     */
     public static FormElement createInstance() {
         return new FormElement();
     }
@@ -59,6 +64,16 @@ public class FormElement implements FormObject {
 
     public FormElement setType(int mType) {
         this.mType = mType;
+        return this;
+    }
+
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
+
+    public FormElement setRequired(boolean required) {
+        this.required = required;
         return this;
     }
 

@@ -7,6 +7,12 @@ public class FormDivider implements FormObject {
 
     private boolean visibility = true;
     private int mTag;
+    private boolean required = false;
+
+    public boolean isRequired() {
+        return required;
+    }
+
 
     public FormDivider() {
     }

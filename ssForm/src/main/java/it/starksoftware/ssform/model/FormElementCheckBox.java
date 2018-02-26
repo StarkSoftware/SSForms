@@ -10,10 +10,6 @@ import it.starksoftware.ssform.adapter.FormSpinAdapter;
 import it.starksoftware.ssform.interfaces.CheckBoxCallBack;
 import it.starksoftware.ssform.interfaces.SpinnerCallBack;
 
-/**
- * Created by Adib on 16-Apr-17.
- */
-
 public class FormElementCheckBox implements FormObject {
 
 
@@ -28,10 +24,15 @@ public class FormElementCheckBox implements FormObject {
     private boolean refresh;
     private boolean visibility = true;
     private int pos;
+    private boolean required = false;
 
     public FormElementCheckBox() {
     }
 
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
 
 
     public static FormElementCheckBox createInstance() {

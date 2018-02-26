@@ -14,10 +14,16 @@ public class FormElementButton implements FormObject {
     private boolean mValueCheckA;
     private boolean mValueCheckB;
     private boolean visibility = true;
+    private boolean required = false;
 
     private ButtonCallBack buttonCallBack;
 
     public FormElementButton() {
+    }
+
+    @Override
+    public boolean isRequired() {
+        return required;
     }
 
     public ButtonCallBack getButtonCallBack() {

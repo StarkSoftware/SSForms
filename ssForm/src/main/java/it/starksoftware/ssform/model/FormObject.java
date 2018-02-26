@@ -12,5 +12,6 @@ public interface FormObject {
      * returns if header element or not
      */
     boolean isHeader();
+    boolean isRequired();
     String getElementType();
 }

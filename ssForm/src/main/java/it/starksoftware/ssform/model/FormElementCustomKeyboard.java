@@ -8,10 +8,6 @@ import java.util.List;
 
 import it.starksoftware.ssform.customKeyboard.CustomKeyboard;
 
-/**
- * Created by Adib on 16-Apr-17.
- */
-
 public class FormElementCustomKeyboard implements FormObject {
 
 
@@ -27,8 +23,15 @@ public class FormElementCustomKeyboard implements FormObject {
     private List<String> mOptionsSelected; // list of selected options for single and multi picker
     private KeyboardView.OnKeyboardActionListener customListner;
     private CustomKeyboard mKeyboard;
+    private boolean required = false;
+
 //    private KeyboardView mKeyboardView;
 
+
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
 
     public FormElementCustomKeyboard() {
     }

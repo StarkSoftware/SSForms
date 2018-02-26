@@ -6,10 +6,6 @@ import java.util.List;
 
 import it.starksoftware.ssform.interfaces.DateTimeCallBack;
 
-/**
- * Created by Adib on 16-Apr-17.
- */
-
 public class FormElementDateTime implements FormObject {
 
     public static final int TYPE_PICKER_DATE = 6;
@@ -28,8 +24,29 @@ public class FormElementDateTime implements FormObject {
     private Date defaultDate; // value to be shown on right
     private List<String> mOptions; // list of options for single and multi picker
     private List<String> mOptionsSelected; // list of selected options for single and multi picker
+    private boolean required = false;
+    private String requiredResponseMessage = mTitle;
+
+    public String getRequiredResponseMessage() {
+        return requiredResponseMessage;
+    }
+
+    public FormElementDateTime setRequiredResponseMessage(String requiredResponseMessage) {
+        this.requiredResponseMessage = requiredResponseMessage;
+        return this;
+    }
 
     public FormElementDateTime() {
+    }
+
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
+
+    public FormElementDateTime setRequired(boolean required) {
+        this.required = required;
+        return this;
     }
 
     public FormElementDateTime setVisibility(boolean visibility) {

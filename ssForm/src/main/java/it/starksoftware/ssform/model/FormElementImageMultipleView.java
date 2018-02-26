@@ -10,10 +10,6 @@ import java.util.List;
 import it.starksoftware.ssform.adapter.ImageCardAdapter;
 import it.starksoftware.ssform.adapter.ImageMultiplePickerAdapter;
 
-/**
- * Created by Adib on 16-Apr-17.
- */
-
 public class FormElementImageMultipleView implements FormObject {
 
 
@@ -29,6 +25,17 @@ public class FormElementImageMultipleView implements FormObject {
     private int maxImages;
     private boolean visibility = true;
     private ImageCardAdapter imgAdapter;
+    private boolean required = false;
+    private String requiredResponseMessage = mTitle;
+
+    public String getRequiredResponseMessage() {
+        return requiredResponseMessage;
+    }
+
+    public FormElementImageMultipleView setRequiredResponseMessage(String requiredResponseMessage) {
+        this.requiredResponseMessage = requiredResponseMessage;
+        return this;
+    }
 
     public FormElementImageMultipleView() {
     }
@@ -42,10 +49,16 @@ public class FormElementImageMultipleView implements FormObject {
         return this;
     }
 
-    /**
-     * static method to create instance
-     * @return
-     */
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
+
+    public FormElementImageMultipleView setRequired(boolean required) {
+        this.required = required;
+        return this;
+    }
+
     public static FormElementImageMultipleView createInstance() {
         return new FormElementImageMultipleView();
     }

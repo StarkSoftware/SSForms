@@ -1,12 +1,14 @@
 package it.starksoftware.ssformsdemo;
 
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -48,6 +50,7 @@ import it.starksoftware.ssform.model.FormHeader;
 import it.starksoftware.ssform.model.FormObject;
 import it.starksoftware.ssform.model.FormSpinnerObject;
 import it.starksoftware.ssform.model.FormTokenObject;
+import it.starksoftware.ssform.model.Validator;
 
 public class MainActivity extends AppCompatActivity implements
         ButtonCallBack,
@@ -111,6 +114,8 @@ public class MainActivity extends AppCompatActivity implements
         formElement = FormElement.createInstance()
                 .setTitle("BASIC ELEMENT")
                 .setType(FormElement.TYPE_EDITTEXT_TEXT_SINGLELINE)
+                .setRequired(true)
+                .setRequiredResponseMessage("!!! REQUIRED !!!")
                 .setTag(10);
 
         formElementPickerMultiple = FormElement.createInstance()
@@ -260,8 +265,7 @@ public class MainActivity extends AppCompatActivity implements
 
     }
 
-    public List<String> multiPickerValues()
-    {
+    public List<String> multiPickerValues() {
         List<String> fruits = new ArrayList<>();
         fruits.add("Banana");
         fruits.add("Orange");
@@ -271,8 +275,7 @@ public class MainActivity extends AppCompatActivity implements
         return fruits;
     }
 
-    public ArrayList<FormSpinnerObject> spinnerValues()
-    {
+    public ArrayList<FormSpinnerObject> spinnerValues() {
         objSpinner = new ArrayList<FormSpinnerObject>();
         FormSpinnerObject item = new FormSpinnerObject();
         item.setKey("");
@@ -289,8 +292,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
-    public ArrayList<FormTokenObject> tokensValues()
-    {
+    public ArrayList<FormTokenObject> tokensValues() {
         objTokens = new ArrayList<FormTokenObject>();
         FormTokenObject item = new FormTokenObject();
         item.setKey("");
@@ -306,8 +308,7 @@ public class MainActivity extends AppCompatActivity implements
         return objTokens;
     }
 
-    public ArrayList<RadioButton> segmentValues()
-    {
+    public ArrayList<RadioButton> segmentValues() {
         segmentedButtons = new ArrayList<RadioButton>();
         RadioButton segmentedButton = new RadioButton(this);
         segmentedButton.setText("VALUE A");
@@ -322,14 +323,29 @@ public class MainActivity extends AppCompatActivity implements
         return segmentedButtons;
     }
 
-    public void showToastMessage(String sToastMessage)
-    {
-        Toast.makeText(this, sToastMessage,Toast.LENGTH_LONG).show();
+    public void showToastMessage(String sToastMessage) {
+        Toast.makeText(this, sToastMessage, Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void callbackButtonReturn(FormElementButton object, Object tag) {
         String sMessageToast = String.format("CONTROL : Button - VALUE CLICKED");
+        List<Validator> validatorResult = this.mFormBuilder.validateForm();
+
+        String sMessages = "";
+        if (validatorResult.size() > 0) {
+            for (int i = 0; i < validatorResult.size(); i++) {
+                sMessages = sMessages + validatorResult.get(i).getValidatorMessage() + "\n";
+            }
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            TextView textView = new TextView(this);
+            textView.setText(sMessages);
+            builder.setCustomTitle(textView);
+
+            builder.show();
+        }
+
         showToastMessage(sMessageToast);
     }
 
@@ -356,7 +372,7 @@ public class MainActivity extends AppCompatActivity implements
 
         ArrayList<RadioButton> item = segmentedButtons;
 
-        String sMessageToast = String.format("CONTROL : Segment - VALUE %s", (int)tag);
+        String sMessageToast = String.format("CONTROL : Segment - VALUE %s", (int) tag);
         showToastMessage(sMessageToast);
     }
 

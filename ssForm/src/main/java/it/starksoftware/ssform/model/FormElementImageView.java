@@ -9,9 +9,6 @@ import java.util.List;
 
 import it.starksoftware.ssform.adapter.ImagePickerAdapter;
 
-/**
- * Created by Adib on 16-Apr-17.
- */
 
 public class FormElementImageView implements FormObject {
 
@@ -26,14 +23,31 @@ public class FormElementImageView implements FormObject {
     private Context mCtx;
     private Activity mAct;
     private boolean visibility = true;
+    private boolean required = false;
+    private String requiredResponseMessage = mTitle;
+
+    public String getRequiredResponseMessage() {
+        return requiredResponseMessage;
+    }
+
+    public FormElementImageView setRequiredResponseMessage(String requiredResponseMessage) {
+        this.requiredResponseMessage = requiredResponseMessage;
+        return this;
+    }
 
     public FormElementImageView() {
     }
 
-    /**
-     * static method to create instance
-     * @return
-     */
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
+
+    public FormElementImageView setRequired(boolean required) {
+        this.required = required;
+        return this;
+    }
+
     public static FormElementImageView createInstance() {
         return new FormElementImageView();
     }

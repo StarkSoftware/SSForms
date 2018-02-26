@@ -5,9 +5,6 @@ import java.util.List;
 
 import it.starksoftware.ssform.interfaces.RatingCallBack;
 
-/**
- * Created by Adib on 16-Apr-17.
- */
 
 public class FormElementRating implements FormObject {
 
@@ -24,11 +21,30 @@ public class FormElementRating implements FormObject {
     private long ratingValue;
     private RatingCallBack ratingCallBack;
     private boolean visibility = true;
+    private boolean required = false;
+    private String requiredResponseMessage = mTitle;
+
+    public String getRequiredResponseMessage() {
+        return requiredResponseMessage;
+    }
+
+    public FormElementRating setRequiredResponseMessage(String requiredResponseMessage) {
+        this.requiredResponseMessage = requiredResponseMessage;
+        return this;
+    }
 
     public FormElementRating() {
     }
 
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
 
+    public FormElementRating setRequired(boolean required) {
+        this.required = required;
+        return this;
+    }
 
     public static FormElementRating createInstance() {
         return new FormElementRating();

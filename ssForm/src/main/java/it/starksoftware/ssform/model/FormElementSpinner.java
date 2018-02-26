@@ -9,10 +9,6 @@ import it.starksoftware.ssform.R;
 import it.starksoftware.ssform.adapter.FormSpinAdapter;
 import it.starksoftware.ssform.interfaces.SpinnerCallBack;
 
-/**
- * Created by Adib on 16-Apr-17.
- */
-
 public class FormElementSpinner implements FormObject {
 
 
@@ -29,6 +25,17 @@ public class FormElementSpinner implements FormObject {
     private boolean refresh;
     private boolean visibility = true;
     private int pos;
+    private boolean required = false;
+    private String requiredResponseMessage = mTitle;
+
+    public String getRequiredResponseMessage() {
+        return requiredResponseMessage;
+    }
+
+    public FormElementSpinner setRequiredResponseMessage(String requiredResponseMessage) {
+        this.requiredResponseMessage = requiredResponseMessage;
+        return this;
+    }
 
     public FormElementSpinner() {
     }
@@ -37,6 +44,16 @@ public class FormElementSpinner implements FormObject {
 
     public static FormElementSpinner createInstance() {
         return new FormElementSpinner();
+    }
+
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
+
+    public FormElementSpinner setRequired(boolean required) {
+        this.required = required;
+        return this;
     }
 
     // getters and setters

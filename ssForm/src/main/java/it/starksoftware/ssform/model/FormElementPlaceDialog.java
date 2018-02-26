@@ -6,10 +6,6 @@ import android.content.Context;
 import it.starksoftware.ssform.interfaces.CheckBoxCallBack;
 import it.starksoftware.ssform.interfaces.PlaceDialogCallBack;
 
-/**
- * Created by Adib on 16-Apr-17.
- */
-
 public class FormElementPlaceDialog implements FormObject {
 
 
@@ -25,6 +21,17 @@ public class FormElementPlaceDialog implements FormObject {
     private boolean visibility = true;
     private int pos;
     private String dialogTitle;
+    private boolean required = false;
+    private String requiredResponseMessage = mTitle;
+
+    public String getRequiredResponseMessage() {
+        return requiredResponseMessage;
+    }
+
+    public FormElementPlaceDialog setRequiredResponseMessage(String requiredResponseMessage) {
+        this.requiredResponseMessage = requiredResponseMessage;
+        return this;
+    }
 
     public FormElementPlaceDialog() {
     }
@@ -39,6 +46,16 @@ public class FormElementPlaceDialog implements FormObject {
 
     public FormElementPlaceDialog setDialogTitle(String dialogTitle) {
         this.dialogTitle = dialogTitle;
+        return this;
+    }
+
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
+
+    public FormElementPlaceDialog setRequired(boolean required) {
+        this.required = required;
         return this;
     }
 

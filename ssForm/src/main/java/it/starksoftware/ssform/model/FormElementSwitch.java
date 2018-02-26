@@ -5,10 +5,6 @@ import java.util.List;
 
 import it.starksoftware.ssform.interfaces.SwitchCallBack;
 
-/**
- * Created by Adib on 16-Apr-17.
- */
-
 public class FormElementSwitch implements FormObject {
 
 
@@ -21,14 +17,21 @@ public class FormElementSwitch implements FormObject {
     private List<String> mOptionsSelected; // list of selected options for single and multi picker
     private boolean visibility = true;
     private SwitchCallBack switchCallBack;
+    private boolean required = false;
+    private String requiredResponseMessage = mTitle;
+
+    public String getRequiredResponseMessage() {
+        return requiredResponseMessage;
+    }
+
+    public FormElementSwitch setRequiredResponseMessage(String requiredResponseMessage) {
+        this.requiredResponseMessage = requiredResponseMessage;
+        return this;
+    }
 
     public FormElementSwitch() {
     }
 
-    /**
-     * static method to create instance
-     * @return
-     */
     public static FormElementSwitch createInstance() {
         return new FormElementSwitch();
     }
@@ -39,6 +42,16 @@ public class FormElementSwitch implements FormObject {
 
     public FormElementSwitch setCallBack(SwitchCallBack switchCallBack) {
         this.switchCallBack = switchCallBack;
+        return this;
+    }
+
+    @Override
+    public boolean isRequired() {
+        return required;
+    }
+
+    public FormElementSwitch setRequired(boolean required) {
+        this.required = required;
         return this;
     }
 
