@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.codemybrainsout.placesearchdialog:placesearch-1.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/placesearch-1.0.1.aar/cb21a73bf7019322d645237226707dc7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/placesearch-1.0.1.aar/cb21a73bf7019322d645237226707dc7/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.codemybrainsout.placesearchdialog/placesearch/1.0.1/92f350ca444b919f4f22d4bd61e0eedd9170a6e5/placesearch-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -27,6 +27,17 @@
             android:theme="@style/ef_AppTheme" />
 
         <activity
+            android:name="it.starksoftware.ssform.tokens.AddTokensActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ef_AppTheme" />
+
+        <activity
+            android:name="it.starksoftware.ssform.activities.ShadowTokenActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
             android:name="it.starksoftware.ssform.activities.ShadowActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
             android:launchMode="singleTop"

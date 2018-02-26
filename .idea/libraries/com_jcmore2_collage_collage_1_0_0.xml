@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.jcmore2.collage:collage-1.0.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/collage-1.0.0.aar/ed6ca08abb33865d9048b88d4a76611f/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/collage-1.0.0.aar/ed6ca08abb33865d9048b88d4a76611f/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jcmore2.collage/collage/1.0.0/9d160c0d3bf94ee21f84ecb28d92f4b75d393d5b/collage-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

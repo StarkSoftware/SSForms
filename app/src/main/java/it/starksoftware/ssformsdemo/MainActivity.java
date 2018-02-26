@@ -43,9 +43,11 @@ import it.starksoftware.ssform.model.FormElementSegment;
 import it.starksoftware.ssform.model.FormElementSignature;
 import it.starksoftware.ssform.model.FormElementSpinner;
 import it.starksoftware.ssform.model.FormElementSwitch;
+import it.starksoftware.ssform.model.FormElementToken;
 import it.starksoftware.ssform.model.FormHeader;
 import it.starksoftware.ssform.model.FormObject;
 import it.starksoftware.ssform.model.FormSpinnerObject;
+import it.starksoftware.ssform.model.FormTokenObject;
 
 public class MainActivity extends AppCompatActivity implements
         ButtonCallBack,
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements
     public FormElementPlaceDialog formElementPlaceDialog;
     public FormElement formElementPickerSingle;
     public FormElement formElementPickerMultiple;
+    public FormElementToken formElementToken;
 
     public FormHeader formHeader;
 
@@ -90,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements
 
     public ArrayList<RadioButton> segmentedButtons;
     public ArrayList<FormSpinnerObject> objSpinner;
-
+    public ArrayList<FormTokenObject> objTokens;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -223,11 +226,17 @@ public class MainActivity extends AppCompatActivity implements
                 .setCallBack(this)
                 .setTag(150);
 
+        formElementToken = FormElementToken.createInstance()
+                .setTitle("TOKENS")
+                .setTokensObject(tokensValues())
+                .setTag(250);
+
         //formHeader = FormHeader.createInstance().setTitle("BUTTON").setTag(130);
 
         List<FormObject> formItems = new ArrayList<>();
         //formItems.add(formDivider);
         formItems.add(formElement);
+        formItems.add(formElementToken);
         formItems.add(formElementPickerMultiple);
         formItems.add(formElementAttach);
         formItems.add(formElementButton);
@@ -245,7 +254,7 @@ public class MainActivity extends AppCompatActivity implements
         formItems.add(formElementSwitch);
         formItems.add(formElementCheckBox);
         formItems.add(formElementPlaceDialog);
-       // formItems.add(formHeader);
+
         mFormBuilder.addFormElements(formItems);
         mFormBuilder.refreshView();
 
@@ -277,6 +286,24 @@ public class MainActivity extends AppCompatActivity implements
         }
 
         return objSpinner;
+    }
+
+
+    public ArrayList<FormTokenObject> tokensValues()
+    {
+        objTokens = new ArrayList<FormTokenObject>();
+        FormTokenObject item = new FormTokenObject();
+        item.setKey("");
+        item.setValue("-");
+
+        for (int p = 1; p < 11; p++) {
+            item = new FormTokenObject();
+            item.setKey(String.valueOf(p));
+            item.setValue(String.format(Locale.getDefault(), "Value %d", p));
+            objTokens.add(item);
+        }
+
+        return objTokens;
     }
 
     public ArrayList<RadioButton> segmentValues()

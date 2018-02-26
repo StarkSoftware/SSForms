@@ -5,9 +5,11 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatEditText;
@@ -45,6 +47,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.codemybrainsout.placesearch.PlaceSearchDialog;
+import com.google.android.flexbox.FlexboxLayout;
 import com.kunzisoft.switchdatetime.SwitchDateTimeDialogFragment;
 
 import java.io.File;
@@ -61,6 +64,7 @@ import in.galaxyofandroid.spinerdialog.OnSpinerItemClick;
 import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 import it.starksoftware.ssform.R;
 import it.starksoftware.ssform.activities.RxSignaturePicker;
+import it.starksoftware.ssform.activities.RxTokenPicker;
 import it.starksoftware.ssform.attach.AttachPicker;
 import it.starksoftware.ssform.activities.RxAttachPicker;
 import it.starksoftware.ssform.activities.RxImagePicker;
@@ -91,13 +95,18 @@ import it.starksoftware.ssform.model.FormElementSegment;
 import it.starksoftware.ssform.model.FormElementSignature;
 import it.starksoftware.ssform.model.FormElementSpinner;
 import it.starksoftware.ssform.model.FormElementSwitch;
+import it.starksoftware.ssform.model.FormElementToken;
 import it.starksoftware.ssform.model.FormHeader;
 import it.starksoftware.ssform.model.FormObject;
 import it.starksoftware.ssform.model.FormSpinnerObject;
+import it.starksoftware.ssform.model.FormTokenObject;
 import it.starksoftware.ssform.model.Image;
+import it.starksoftware.ssform.model.TokesTags;
 import it.starksoftware.ssform.ratings.BaseRatingBar;
 import it.starksoftware.ssform.segmented.SegmentedGroup;
 import it.starksoftware.ssform.signaturepad.SignaturePicker;
+import it.starksoftware.ssform.tokens.AddTokensActivity;
+import it.starksoftware.ssform.tokens.TokensPicker;
 import it.starksoftware.ssform.view.GridSpacingItemDecoration;
 import rx.Observable;
 import rx.functions.Action1;
@@ -123,6 +132,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
     private int IS_BUTTON_VIEW = 15;
     private int IS_CHECKBOX_VIEW = 16;
     private int IS_PLACE_DIALOG_VIEW = 17;
+    private int IS_TOKEN = 18;
 
 
     private ArrayList<Image> images = new ArrayList<>();
@@ -479,6 +489,10 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 FormElementPlaceDialog element = (FormElementPlaceDialog) mDataset.get(index);
                 if (element.getTag() == tag)
                     itemPosition = index;
+            } else if (mDataset.get(index).getElementType().contentEquals("Token")) {
+                FormElementToken element = (FormElementToken) mDataset.get(index);
+                if (element.getTag() == tag)
+                    itemPosition = index;
             }
         }
         Log.d("FM", "Position --> " + itemPosition);
@@ -566,6 +580,8 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             return IS_CHECKBOX_VIEW;
         } else if (mDataset.get(position).getElementType().contentEquals("PlaceDialog")) {
             return IS_PLACE_DIALOG_VIEW;
+        } else if (mDataset.get(position).getElementType().contentEquals("Token")) {
+            return IS_TOKEN;
         } else {
             return IS_DEFAULT_VIEW;
         }
@@ -650,6 +666,10 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 case 17:
                     v = inflater.inflate(R.layout.form_element_place_dialog, parent, false);
                     vh = new ViewHolder(v, null, IS_PLACE_DIALOG_VIEW, null);
+                    break;
+                case 18:
+                    v = inflater.inflate(R.layout.form_element_token, parent, false);
+                    vh = new ViewHolder(v, null, IS_TOKEN, null);
                     break;
                 default:
                     v = inflater.inflate(R.layout.form_element_header, parent, false);
@@ -830,6 +850,25 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
+        } else if (getItemViewType(position) == IS_TOKEN) {
+            final FormElementToken formElement = (FormElementToken) currentObject;
+            holder.mTextViewTitle.setText(formElement.getTitle());
+            if (formElement.getValue() != null) {
+                if(((FlexboxLayout) holder.tokens).getChildCount() > 0)
+                    ((FlexboxLayout) holder.tokens).removeAllViews();
+                for (int i = 0; i < formElement.getValue().size(); i++) {
+                    holder.tokens.addView((View) formElement.getValue().get(i).getTokenItem(), 0);
+                }
+            }
+            setTokenPicker(holder.btnAddTokens, position, formElement);
+
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_SIGNATURE_VIEW) {
             FormElementSignature formElement = (FormElementSignature) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
@@ -886,7 +925,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     buttonCallBack.callbackButtonReturn(formElement, formElement.getTag());
                 }
             });
-        }  else if (getItemViewType(position) == IS_ATTACH_VIEW) {
+        } else if (getItemViewType(position) == IS_ATTACH_VIEW) {
             FormElementAttach formElement = (FormElementAttach) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
             holder.mTextViewAttachValue.setText(formElement.getValue());
@@ -1106,9 +1145,21 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         }
     }
 
+
     private int dpToPx(int dp) {
         Resources r = mContext.getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
+    }
+
+
+    private void setTokenPicker(ImageButton imgButton, final int position, final FormElementToken formElement) {
+        imgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickedPosition = position;
+                getTokensPickerObservable(formElement.getTokensObject()).forEach(actionTokens);
+            }
+        });
     }
 
     private void setSignaturePicker(ImageView imgView, final int position, final LinearLayout layoutRow) {
@@ -1233,6 +1284,47 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         }
     };
 
+    public View createCustomToken(Context context, final int pos, final ArrayList<FormTokenObject> selectedTokens, final int posFormItem) {
+        View view = View.inflate(context,R.layout.token_item,null);
+        TextView tvChip = view.findViewById(R.id.tvChip);
+        tvChip.setText(selectedTokens.get(pos).getValue());
+        ImageView ivClose = view.findViewById(R.id.ivClose);
+        ivClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectedTokens.remove(selectedTokens.get(pos));
+                ArrayList<TokesTags> tokensView = new ArrayList<>();
+                for (int i = 0; i < selectedTokens.size(); i++) {
+                    View v = createCustomToken(mContext, i, selectedTokens, clickedPosition);
+                    TokesTags item = new TokesTags();
+                    item.setTokenItem(v);
+                    tokensView.add(item);
+                }
+                ((FormElementToken) mDataset.get(clickedPosition)).setValue(tokensView);
+                notifyItemChanged(clickedPosition);
+            }
+        });
+        return view;
+    }
+
+    Action1<ArrayList<FormTokenObject>> actionTokens = new Action1<ArrayList<FormTokenObject>>() {
+        @Override
+        public void call(ArrayList<FormTokenObject> tokens) {
+            if (tokens != null) {
+                ArrayList<TokesTags> tokensView = new ArrayList<>();
+                for (int i = 0; i < tokens.size(); i++) {
+                    View v = createCustomToken(mContext, i, tokens, clickedPosition);
+                    TokesTags item = new TokesTags();
+                    item.setTokenItem(v);
+                    tokensView.add(item);
+                }
+                AppTools appTools = new AppTools();
+                ((FormElementToken) mDataset.get(clickedPosition)).setValue(tokensView);
+                notifyItemChanged(clickedPosition);
+            }
+        }
+    };
+
     Action1<List<Image>> action = new Action1<List<Image>>() {
         @Override
         public void call(List<Image> images) {
@@ -1304,6 +1396,10 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
 
     private Observable<Bitmap> getSignaturePickerObservable() {
         return RxSignaturePicker.getInstance().start(mContext, SignaturePicker.create((Activity) mContext));
+    }
+
+    private Observable<ArrayList<FormTokenObject>> getTokensPickerObservable(ArrayList<FormTokenObject> objectTokens) {
+        return RxTokenPicker.getInstance().start(mContext, TokensPicker.create((Activity) mContext), objectTokens);
     }
 
     private void setEditTextFocusEnabled(final AppCompatEditText editText, final int position, final LinearLayout layoutRow) {
@@ -1725,6 +1821,8 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         public FormCustomEditMemoTextListener mFormCustomEditMemoTextListener;
         public RecyclerView mEditImageViewMultipleValue;
         public ImageButton btnAdd;
+        public FlexboxLayout tokens;
+        public ImageButton btnAddTokens;
 
         public ViewHolder(View v, FormCustomEditTextListener listener, int viewType, FormCustomEditMemoTextListener memoTextListener) {
             super(v);
@@ -1772,6 +1870,9 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 mEditCheckBoxValue = (CheckBox) v.findViewById(R.id.formElementValue);
             } else if (viewType == 17) {
                 mTextViewValue = (TextView) v.findViewById(R.id.formElementTextViewValue);
+            } else if (viewType == 18) {
+                tokens = (FlexboxLayout) v.findViewById(R.id.tokens);
+                btnAddTokens = (ImageButton) v.findViewById(R.id.btnAddTokens);
             }
 
         }
