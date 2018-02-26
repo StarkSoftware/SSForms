@@ -5,6 +5,22 @@
 SSForms is Android library to create dynamic Recyclerview forms.
 The goal of the library is to get the same power of hand-made forms but spending 1/10 of the time.
 
+# GRADLE
+// ...
+repositories {
+	mavenCentral() 
+	maven { 
+		url "https://starksoftware.github.io/SSForms"
+	}
+}
+// ...
+dependencies {
+// ...
+    compile 'it.starksoftware:ssForms:1.1.0'
+// ...
+}
+// ...
+
 # Screenshot
 
 |    Main Form     |    Main Form |   DateTime Picker |
