@@ -25,7 +25,7 @@ dependencies {
 
 |    Main Form     |    Main Form |   DateTime Picker |
 | ------------- |:-------------:|:-------------:|
-| <img src="https://github.com/StarkSoftware/SSForms/blob/master/screenshot/image_8.png" width="324" height="576"/>|<img src="https://github.com/StarkSoftware/SSForms/blob/master/screenshot/image_5.png" width="324" height="576"/> | <img src="https://github.com/StarkSoftware/SSForms/blob/master/screenshot/image_1.png" width="324" height="576"/> |
+| <img src="./blob/master/screenshot/image_8.png" width="324" height="576"/>|<img src="./blob/master/screenshot/image_5.png" width="324" height="576"/> | <img src="./blob/master/screenshot/image_1.png" width="324" height="576"/> |
 
 |    Place Dialog     |    TokenBox |   Token Items |
 | ------------- |:-------------:|:-------------:|
