@@ -2,6 +2,8 @@
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/AAlessandroni) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ssForms-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6784)
 
+[![forthebadge](https://forthebadge.com/images/badges/built-for-android.svg)](https://forthebadge.com)
+
 SSForms is Android library to create dynamic Recyclerview forms.
 The goal of the library is to get the same power of hand-made forms but spending 1/10 of the time.
 
