@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/colorFormMasterElementBackground"
+    android:layout_width="match_parent"
+    android:id="@+id/itemContainer"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:id="@+id/layoutRow"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/formElementTitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5sp"
+            android:layout_weight="2"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorFormMasterElementTextTitle"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="Personal Info" />
+
+        <it.starksoftware.ssform.DateSwitcher.DateSwitcher
+            android:id="@+id/mDateSwitcher"
+            android:layout_width="0dp"
+            android:layout_marginRight="5sp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            app:buttonBackgroundColor="@color/colorAccent"
+            app:buttonTextColor="@color/white"
+            app:textBackgroundColor="@android:color/darker_gray"
+            app:textColor="@color/white"
+            app:textSize="18sp" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/colorFormMasterDivider" />
+
+</LinearLayout>

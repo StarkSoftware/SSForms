@@ -19,9 +19,11 @@ import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import it.starksoftware.ssform.DateSwitcher.DateSwitcher;
 import it.starksoftware.ssform.helper.FormBuildHelper;
 import it.starksoftware.ssform.interfaces.ButtonCallBack;
 import it.starksoftware.ssform.interfaces.CheckBoxCallBack;
+import it.starksoftware.ssform.interfaces.DateSwitcherCallBack;
 import it.starksoftware.ssform.interfaces.DateTimeCallBack;
 import it.starksoftware.ssform.interfaces.RatingCallBack;
 import it.starksoftware.ssform.interfaces.SearchableSpinnerCallBack;
@@ -34,9 +36,11 @@ import it.starksoftware.ssform.model.FormElementAttach;
 import it.starksoftware.ssform.model.FormElementButton;
 import it.starksoftware.ssform.model.FormElementCheckBox;
 import it.starksoftware.ssform.model.FormElementCustomKeyboard;
+import it.starksoftware.ssform.model.FormElementDateSwitcher;
 import it.starksoftware.ssform.model.FormElementDateTime;
 import it.starksoftware.ssform.model.FormElementImageMultipleView;
 import it.starksoftware.ssform.model.FormElementImageView;
+import it.starksoftware.ssform.model.FormElementInputLayout;
 import it.starksoftware.ssform.model.FormElementMemo;
 import it.starksoftware.ssform.model.FormElementPlaceDialog;
 import it.starksoftware.ssform.model.FormElementRating;
@@ -60,7 +64,8 @@ public class MainActivity extends AppCompatActivity implements
         SegmentCallBack,
         SpinnerCallBack,
         SwitchCallBack,
-        CheckBoxCallBack
+        CheckBoxCallBack,
+        DateSwitcherCallBack
 
 {
 
@@ -86,7 +91,8 @@ public class MainActivity extends AppCompatActivity implements
     public FormElement formElementPickerSingle;
     public FormElement formElementPickerMultiple;
     public FormElementToken formElementToken;
-
+    public FormElementDateSwitcher formElementDateSwitcher;
+    public FormElementInputLayout formElementInputLayout;
     public FormHeader formHeader;
 
     // BUILDER
@@ -236,12 +242,27 @@ public class MainActivity extends AppCompatActivity implements
                 .setTokensObject(tokensValues())
                 .setTag(250);
 
+        formElementDateSwitcher = FormElementDateSwitcher.createInstance()
+                .setTitle("DATE SWITCHER")
+                .setDateSwitcherType(DateSwitcher.Type.FORNIGHT)
+                .setDateSwitcherCallBack(this)
+                .setTag(251);
+
+        formElementInputLayout = FormElementInputLayout.createInstance()
+                .setmHint("BASIC ELEMENT LAYOUT")
+                .setType(FormElement.TYPE_EDITTEXT_TEXT_SINGLELINE)
+                .setRequired(true)
+                .setRequiredResponseMessage("!!! REQUIRED !!!")
+                .setTag(252);
+
         //formHeader = FormHeader.createInstance().setTitle("BUTTON").setTag(130);
 
         List<FormObject> formItems = new ArrayList<>();
         //formItems.add(formDivider);
         formItems.add(formElement);
+        formItems.add(formElementInputLayout);
         formItems.add(formElementToken);
+        formItems.add(formElementDateSwitcher);
         formItems.add(formElementPickerMultiple);
         formItems.add(formElementAttach);
         formItems.add(formElementButton);
@@ -373,6 +394,13 @@ public class MainActivity extends AppCompatActivity implements
         ArrayList<RadioButton> item = segmentedButtons;
 
         String sMessageToast = String.format("CONTROL : Segment - VALUE %s", (int) tag);
+        showToastMessage(sMessageToast);
+    }
+
+    @Override
+    public void callbackDateSwitcherReturn(Date topDate, Date bottomDate, FormElementDateSwitcher object, Object tag) {
+
+        String sMessageToast = String.format("CONTROL : DateSwitcher - topDate %s - bottomDate %s", topDate, bottomDate);
         showToastMessage(sMessageToast);
     }
 

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:weightSum="7">
+
+    <ImageButton
+        android:id="@+id/btnPrevious"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/float_transparent"
+        android:layout_weight="1"
+        android:src="@drawable/ic_chevron_left_green_700_24dp"
+        android:text="Previous" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:gravity="center"
+        android:id="@+id/txtDate"
+        android:text="January"
+        android:textSize="20sp" />
+
+    <ImageButton
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:background="@color/float_transparent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/ic_chevron_right_green_700_24dp"
+        android:text="Next" />
+
+
+</LinearLayout>

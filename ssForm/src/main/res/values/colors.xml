@@ -7,6 +7,11 @@
     <color name="colorFormMasterElementTextValue">#000000</color>
     <color name="colorFormMasterDivider">#DDDDDD</color>
 
+    <color name="textColorHighlight">#1Ed761</color>
+
+    <color name="accent">#FFFFFF</color>
+    <color name="btnBackgroundColorDefault">@android:color/darker_gray</color>
+
     <color name="radio_button_selected_color">#ff33b5e5</color>
     <color name="radio_button_unselected_color">#e0e0e0</color>
 

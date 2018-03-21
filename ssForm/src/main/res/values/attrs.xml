@@ -13,6 +13,15 @@
         <attr name="ef_matProg_linearProgress" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="DateSwitcher">
+        <attr name="buttonTextColor" format="color"/>
+        <attr name="buttonBackgroundColor" format="color"/>
+        <attr name="textColor" format="color"/>
+        <attr name="textBackgroundColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+    </declare-styleable>
+
+
     <declare-styleable name="SignaturePad">
         <attr name="penMinWidth" format="dimension" />
         <attr name="penMaxWidth" format="dimension" />

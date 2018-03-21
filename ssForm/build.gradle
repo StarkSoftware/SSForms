@@ -52,7 +52,7 @@ android {
         }
     }
 }
-
+/*
 uploadArchives {
     repositories {
         mavenDeployer {
@@ -60,6 +60,7 @@ uploadArchives {
         }
     }
 }
+*/
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
