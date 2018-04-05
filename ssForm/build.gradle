@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven'
 
 group = 'it.starksoftware'
-version = '1.1.0'
+version = '1.2.0'
 
 ext {
     bintrayRepo = 'maven'
@@ -17,7 +17,7 @@ ext {
     siteUrl = 'https://github.com/StarkSoftware/SSForms'
     gitUrl = 'https://github.com/StarkSoftware/SSForms.git'
 
-    libraryVersion = '1.1.0'
+    libraryVersion = '1.2.0'
 
 
     licenseName = 'The Apache Software License, Version 2.0'
@@ -31,10 +31,10 @@ android {
     buildToolsVersion "26.0.3"
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 26
-        versionCode 2
-        versionName "1.1.0"
+        versionCode 3
+        versionName "1.2.0"
     }
 
     dataBinding {
@@ -80,6 +80,8 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.jcmore2.collage:collage:1.0.0'
     implementation 'com.google.android:flexbox:0.3.2'
+    implementation 'com.github.abdularis:CircularImageView:v1.1'
+    implementation 'com.github.sujithkanna:smileyrating:1.6.8'
 }
 
 

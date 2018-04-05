@@ -48,7 +48,10 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.codemybrainsout.placesearch.PlaceSearchDialog;
+import com.github.abdularis.civ.CircleImageView;
 import com.google.android.flexbox.FlexboxLayout;
+import com.hsalf.smilerating.BaseRating;
+import com.hsalf.smilerating.SmileRating;
 import com.kunzisoft.switchdatetime.SwitchDateTimeDialogFragment;
 
 import java.io.File;
@@ -58,6 +61,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -78,6 +82,7 @@ import it.starksoftware.ssform.interfaces.CheckBoxCallBack;
 import it.starksoftware.ssform.interfaces.DateSwitcherCallBack;
 import it.starksoftware.ssform.interfaces.DateTimeCallBack;
 import it.starksoftware.ssform.interfaces.RatingCallBack;
+import it.starksoftware.ssform.interfaces.RatingSmileCallBack;
 import it.starksoftware.ssform.interfaces.SearchableSpinnerCallBack;
 import it.starksoftware.ssform.interfaces.SegmentCallBack;
 import it.starksoftware.ssform.interfaces.SpinnerCallBack;
@@ -95,10 +100,12 @@ import it.starksoftware.ssform.model.FormElementImageView;
 import it.starksoftware.ssform.model.FormElementInputLayout;
 import it.starksoftware.ssform.model.FormElementMemo;
 import it.starksoftware.ssform.model.FormElementPlaceDialog;
+import it.starksoftware.ssform.model.FormElementProfileView;
 import it.starksoftware.ssform.model.FormElementRating;
 import it.starksoftware.ssform.model.FormElementSearchableSpinner;
 import it.starksoftware.ssform.model.FormElementSegment;
 import it.starksoftware.ssform.model.FormElementSignature;
+import it.starksoftware.ssform.model.FormElementSmileRating;
 import it.starksoftware.ssform.model.FormElementSpinner;
 import it.starksoftware.ssform.model.FormElementSwitch;
 import it.starksoftware.ssform.model.FormElementToken;
@@ -141,6 +148,8 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
     private int IS_TOKEN = 18;
     private int IS_DATE_SWITCHER = 19;
     private int IS_INPUT_LAYOUT = 20;
+    private int IS_PROFILE_VIEW = 21;
+    private int IS_SMILE_RATING = 22;
 
     private ArrayList<Image> images = new ArrayList<>();
     private ArrayList<String> attachs = new ArrayList<>();
@@ -512,8 +521,16 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 FormElementInputLayout element = (FormElementInputLayout) mDataset.get(index);
                 if (element.getTag() == tag)
                     itemPosition = index;
+            } else if (mDataset.get(index).getElementType().contentEquals("ProfileView")) {
+                FormElementProfileView element = (FormElementProfileView) mDataset.get(index);
+                if (element.getTag() == tag)
+                    itemPosition = index;
+            } else if (mDataset.get(index).getElementType().contentEquals("SmileRating")) {
+                FormElementSmileRating element = (FormElementSmileRating) mDataset.get(index);
+                if (element.getTag() == tag)
+                    itemPosition = index;
             }
-        }
+        }//
         Log.d("FM", "Position --> " + itemPosition);
         Log.d("FM", "Tag --> " + tag);
         return itemPosition;
@@ -605,12 +622,16 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             return IS_DATE_SWITCHER;
         } else if (mDataset.get(position).getElementType().contentEquals("InputLayout")) {
             return IS_INPUT_LAYOUT;
+        } else if (mDataset.get(position).getElementType().contentEquals("ProfileView")) {
+            return IS_PROFILE_VIEW;
+        } else if (mDataset.get(position).getElementType().contentEquals("SmileRating")) {
+            return IS_SMILE_RATING;
         } else {
             return IS_DEFAULT_VIEW;
         }
     }
 
-
+//
 
     @Override
     public FormAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -703,6 +724,14 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 case 20:
                     v = inflater.inflate(R.layout.form_element_input_layout, parent, false);
                     vh = new ViewHolder(v, null, new FormCustomEditTextInputLayoutListener(), IS_INPUT_LAYOUT, null);
+                    break;
+                case 21:
+                    v = inflater.inflate(R.layout.form_element_profileview, parent, false);
+                    vh = new ViewHolder(v, null, null, IS_PROFILE_VIEW, null);
+                    break;
+                case 22:
+                    v = inflater.inflate(R.layout.form_element_smile_rating, parent, false);
+                    vh = new ViewHolder(v, null, null, IS_SMILE_RATING, null);
                     break;
                 default:
                     v = inflater.inflate(R.layout.form_element_header, parent, false);
@@ -954,6 +983,23 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
+        } else if (getItemViewType(position) == IS_PROFILE_VIEW) {
+            FormElementProfileView formElement = (FormElementProfileView) currentObject;
+            holder.formElementProfileName.setText(formElement.getProfileName());
+            if (formElement.getProfileImage() != null)
+                holder.circleImageView.setImageBitmap(formElement.getProfileImage());
+            setImageProfilePicker(holder.circleImageView, position, holder.layoutRow);
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_TOKEN) {
             final FormElementToken formElement = (FormElementToken) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
@@ -1009,6 +1055,67 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             FormElementMemo formElement = (FormElementMemo) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
             holder.mEditMemoTextValue.setText(formElement.getValue());
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
+        } else if (getItemViewType(position) == IS_SMILE_RATING) {
+            final FormElementSmileRating formElement = (FormElementSmileRating) currentObject;
+            holder.mTextViewTitle.setText(formElement.getTitle());
+
+            Iterator myVeryOwnIterator = formElement.getSmileTitleByValue().keySet().iterator();
+            while(myVeryOwnIterator.hasNext()) {
+                Integer key = (Integer)myVeryOwnIterator.next();
+                String value = formElement.getSmileTitleByValue().get(key);
+                holder.mSmileValue.setNameForSmile(key, value);
+           }
+
+            holder.mSmileValue.setSelectedSmile(formElement.getValue());
+            final RatingSmileCallBack callback = formElement.getRatingSmileCallBack();
+            holder.mSmileValue.setOnSmileySelectionListener(new SmileRating.OnSmileySelectionListener() {
+                @Override
+                public void onSmileySelected(@BaseRating.Smiley int smiley, boolean reselected) {
+                    switch (smiley) {
+                        case SmileRating.NONE:
+                            formElement.setValue(0);
+                            if (callback != null)
+                                callback.callbackRatingSmileReturn(0);
+                            break;
+                        case SmileRating.TERRIBLE:
+                            formElement.setValue(1);
+                            if (callback != null)
+                                callback.callbackRatingSmileReturn(1);
+                            break;
+                        case SmileRating.BAD:
+                            formElement.setValue(2);
+                            if (callback != null)
+                                callback.callbackRatingSmileReturn(2);
+                            break;
+                        case SmileRating.GOOD:
+                            formElement.setValue(3);
+                            if (callback != null)
+                                callback.callbackRatingSmileReturn(3);
+                            break;
+                        case SmileRating.OKAY:
+                            formElement.setValue(4);
+                            if (callback != null)
+                                callback.callbackRatingSmileReturn(4);
+                            break;
+                        case SmileRating.GREAT:
+                            formElement.setValue(5);
+                            if (callback != null)
+                                callback.callbackRatingSmileReturn(5);
+                            break;
+                    }
+                }
+            });
             if (holder.linearLayout.getLayoutParams() != null) {
                 if (!formElement.getVisibility()) {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
@@ -1365,6 +1472,17 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         });
     }
 
+    private void setImageProfilePicker(CircleImageView imgView, final int position, final LinearLayout layoutRow) {
+        imgView.setFocusableInTouchMode(false);
+        imgView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickedPosition = position;
+                getImageProfilePickerObservable().forEach(actionProfile);
+            }
+        });
+    }
+
     private void setAttachPicker(TextView tv, final int position, final LinearLayout layoutRow) {
         tv.setFocusableInTouchMode(false);
         layoutRow.setOnClickListener(new View.OnClickListener() {
@@ -1444,6 +1562,35 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         }
     };
 
+    Action1<List<Image>> actionProfile = new Action1<List<Image>>() {
+        @Override
+        public void call(List<Image> images) {
+            if (images != null) {
+                AppTools appTools = new AppTools();
+                Uri imageUri = Uri.fromFile(new File(images.get(0).getPath()));
+
+                try {
+                    int rotateImage = appTools.getCameraPhotoOrientation((Activity) mContext, imageUri);
+                    Bitmap bmp = appTools.getThumbnail(imageUri, rotateImage, mContext);
+
+                    Glide.with((Activity) mContext)
+                            .load(appTools.bitmapToByte(bmp))
+                            .asBitmap()
+                            .into(new SimpleTarget<Bitmap>() {
+                                @Override
+                                public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                                    ((FormElementProfileView) mDataset.get(clickedPosition)).setProfileImage(resource);
+                                    notifyItemChanged(clickedPosition);
+                                }
+                            });
+                } catch (Exception ex) {
+                    String sX = ex.toString();
+                    String gg = "";
+                }
+            }
+        }
+    };
+
     Action1<List<Image>> action = new Action1<List<Image>>() {
         @Override
         public void call(List<Image> images) {
@@ -1506,6 +1653,10 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
     }
 
     private Observable<List<Image>> getImagePickerObservable() {
+        return RxImagePicker.getInstance().start(mContext, ImagePicker.create((Activity) mContext), 0);
+    }
+
+    private Observable<List<Image>> getImageProfilePickerObservable() {
         return RxImagePicker.getInstance().start(mContext, ImagePicker.create((Activity) mContext), 0);
     }
 
@@ -2145,6 +2296,9 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         public ImageButton btnAddTokens;
         public DateSwitcher dateSwitcher;
         public EditText editText;
+        public CircleImageView circleImageView;
+        public AppCompatTextView formElementProfileName;
+        public SmileRating mSmileValue;
 
         public ViewHolder(View v, FormCustomEditTextListener listener, FormCustomEditTextInputLayoutListener listenerInputLayout, int viewType, FormCustomEditMemoTextListener memoTextListener) {
             super(v);
@@ -2202,6 +2356,12 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 mFormCustomEditTextInputLayoutListener = listenerInputLayout;
                 if (editText != null)
                     editText.addTextChangedListener(mFormCustomEditTextInputLayoutListener);
+            } else if (viewType == 21) {
+                circleImageView = (CircleImageView) v.findViewById(R.id.circleImageView);
+                formElementProfileName = (AppCompatTextView) v.findViewById(R.id.formElementProfileName);
+            } else if (viewType == 22) {
+                mSmileValue = (SmileRating) v.findViewById(R.id.ratingView);
+
             }
 
         }

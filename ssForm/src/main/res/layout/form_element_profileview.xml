@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/colorFormMasterElementBackground"
+    android:layout_width="match_parent"
+    android:id="@+id/itemContainer"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170sp"
+        android:id="@+id/layoutRow"
+        android:orientation="vertical">
+
+        <com.github.abdularis.civ.CircleImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="10sp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/no_image_profile"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="2px" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/formElementProfileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10sp"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorFormMasterElementTextTitle"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            tools:text="My Profile Name" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/colorFormMasterDivider" />
+
+</LinearLayout>

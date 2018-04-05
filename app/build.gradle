@@ -25,6 +25,7 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation 'com.jakewharton:butterknife:8.8.1'
     implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.github.sujithkanna:smileyrating:1.6.8'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'

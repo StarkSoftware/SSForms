@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50sp"
+        android:layout_height="60sp"
         android:id="@+id/layoutRow"
         android:layout_weight="1"
         android:orientation="horizontal">
@@ -22,14 +22,18 @@
 
             <EditText
                 android:id="@+id/formElementValue"
+                android:fontFamily="sans-serif-thin"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10sp"
-                android:layout_marginRight="5sp"
                 android:background="@drawable/selector_bg_edit"
-                android:paddingBottom="2dp"
+                android:layout_margin="5sp"
+                android:backgroundTint="@android:color/transparent"
                 android:textColor="@android:color/black"
-                android:textColorHighlight="@color/textColorHighlight" />
+                android:textColorHighlight="@color/textColorHighlight"
+                android:textCursorDrawable="@drawable/bg_input_cursor" />
+
         </android.support.design.widget.TextInputLayout>
 
 

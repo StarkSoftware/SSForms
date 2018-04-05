@@ -1,9 +1,14 @@
 package it.starksoftware.ssformsdemo;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -11,9 +16,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hsalf.smilerating.BaseRating;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -26,6 +34,7 @@ import it.starksoftware.ssform.interfaces.CheckBoxCallBack;
 import it.starksoftware.ssform.interfaces.DateSwitcherCallBack;
 import it.starksoftware.ssform.interfaces.DateTimeCallBack;
 import it.starksoftware.ssform.interfaces.RatingCallBack;
+import it.starksoftware.ssform.interfaces.RatingSmileCallBack;
 import it.starksoftware.ssform.interfaces.SearchableSpinnerCallBack;
 import it.starksoftware.ssform.interfaces.SegmentCallBack;
 import it.starksoftware.ssform.interfaces.SpinnerCallBack;
@@ -43,10 +52,12 @@ import it.starksoftware.ssform.model.FormElementImageView;
 import it.starksoftware.ssform.model.FormElementInputLayout;
 import it.starksoftware.ssform.model.FormElementMemo;
 import it.starksoftware.ssform.model.FormElementPlaceDialog;
+import it.starksoftware.ssform.model.FormElementProfileView;
 import it.starksoftware.ssform.model.FormElementRating;
 import it.starksoftware.ssform.model.FormElementSearchableSpinner;
 import it.starksoftware.ssform.model.FormElementSegment;
 import it.starksoftware.ssform.model.FormElementSignature;
+import it.starksoftware.ssform.model.FormElementSmileRating;
 import it.starksoftware.ssform.model.FormElementSpinner;
 import it.starksoftware.ssform.model.FormElementSwitch;
 import it.starksoftware.ssform.model.FormElementToken;
@@ -65,7 +76,8 @@ public class MainActivity extends AppCompatActivity implements
         SpinnerCallBack,
         SwitchCallBack,
         CheckBoxCallBack,
-        DateSwitcherCallBack
+        DateSwitcherCallBack,
+        RatingSmileCallBack
 
 {
 
@@ -94,6 +106,9 @@ public class MainActivity extends AppCompatActivity implements
     public FormElementDateSwitcher formElementDateSwitcher;
     public FormElementInputLayout formElementInputLayout;
     public FormHeader formHeader;
+    public FormElementProfileView formElementProfileView;
+    public FormElementSmileRating formElementSmileRating;
+
 
     // BUILDER
     public FormBuildHelper mFormBuilder;
@@ -111,6 +126,30 @@ public class MainActivity extends AppCompatActivity implements
         ButterKnife.bind(this);
         mFormBuilder = new FormBuildHelper(this, this, recyclerView, getSupportFragmentManager());
         setupForm();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.delete_item:
+                removeItem();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void removeItem()
+    {
+        mFormBuilder.hideFormElement(mFormBuilder.getFormElement(10));
+        mFormBuilder.refreshView();
     }
 
     public void setupForm() {
@@ -255,10 +294,29 @@ public class MainActivity extends AppCompatActivity implements
                 .setRequiredResponseMessage("!!! REQUIRED !!!")
                 .setTag(252);
 
+        Bitmap imgProfile = BitmapFactory.decodeResource(getResources(), R.drawable.iron_man);
+        formElementProfileView = FormElementProfileView.createInstance()
+                .setProfileName("Tony Stark")
+                .setProfileImage(imgProfile)
+                .setTag(999);
+
+        HashMap<Integer, String> smileTitleByValue = new HashMap<Integer, String>();
+        smileTitleByValue.put(BaseRating.GOOD, "GOOD");
+        smileTitleByValue.put(BaseRating.TERRIBLE, "BLEAA");
+
+        formElementSmileRating = FormElementSmileRating.createInstance()
+                .setTitle("SMILE RATING")
+                .setValue(0)
+                .setRatingSmileCallBack(this)
+                .setSmileTitleByValue(smileTitleByValue)
+                .setTag(1098);
+
         //formHeader = FormHeader.createInstance().setTitle("BUTTON").setTag(130);
 
         List<FormObject> formItems = new ArrayList<>();
         //formItems.add(formDivider);
+        formItems.add(formElementProfileView);
+        formItems.add(formElementSmileRating);
         formItems.add(formElement);
         formItems.add(formElementInputLayout);
         formItems.add(formElementToken);
@@ -381,6 +439,13 @@ public class MainActivity extends AppCompatActivity implements
         String sMessageToast = String.format("CONTROL : Rating - VALUE %s", value);
         showToastMessage(sMessageToast);
     }
+
+    @Override
+    public void callbackRatingSmileReturn(int value) {
+        String sMessageToast = String.format("CONTROL : Rating Smile - VALUE %s", value);
+        showToastMessage(sMessageToast);
+    }
+
 
     @Override
     public void callbackSearchableSpinnerReturn(FormElementSearchableSpinner object, Object tag, FormSpinnerObject spinnerObject) {
