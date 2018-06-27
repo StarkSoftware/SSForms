@@ -27,6 +27,7 @@ public class FormElementSpinner implements FormObject {
     private int pos;
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
+    private String mAttribute;
 
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
@@ -130,10 +131,21 @@ public class FormElementSpinner implements FormObject {
         return this;
     }
 
+    public FormElementSpinner setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
+    }
+
+
     public FormElementSpinner setRefresh(Boolean refresh) {
         this.refresh = refresh;
         return this;
     }
+
 
     public boolean getRefresh() {
         return refresh;

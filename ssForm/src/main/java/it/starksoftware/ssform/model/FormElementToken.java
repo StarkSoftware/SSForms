@@ -23,6 +23,7 @@ public class FormElementToken implements FormObject {
     private boolean visibility = true;
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
+    private String mAttribute;
 
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
@@ -93,6 +94,16 @@ public class FormElementToken implements FormObject {
         this.mOptionsSelected = mOptionsSelected;
         return this;
     }
+
+    public FormElementToken setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
+    }
+
 
     public int getTag() {
         return mTag;

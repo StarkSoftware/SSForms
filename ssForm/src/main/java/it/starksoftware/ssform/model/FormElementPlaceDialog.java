@@ -23,6 +23,7 @@ public class FormElementPlaceDialog implements FormObject {
     private String dialogTitle;
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
+    private String mAttribute;
 
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
@@ -106,6 +107,17 @@ public class FormElementPlaceDialog implements FormObject {
         this.visibility = visibility;
         return this;
     }
+
+    public FormElementPlaceDialog setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
+    }
+
+
     public boolean getVisibility() {
         return visibility;
     }

@@ -23,6 +23,7 @@ public class FormElement implements FormObject {
 
     // private variables
     private int mTag; // unique tag to identify the object
+    private String mAttribute; // unique tag to identify the object
     private int mType; // type for the form element
     private String mTitle; // title to be shown on left
     private String mValue; // value to be shown on right
@@ -67,6 +68,16 @@ public class FormElement implements FormObject {
         return this;
     }
 
+    public FormElement setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
+    }
+
+
     @Override
     public boolean isRequired() {
         return required;
@@ -101,6 +112,7 @@ public class FormElement implements FormObject {
         return mTag;
     }
 
+
     public int getType() {
         return mType;
     }
@@ -120,6 +132,8 @@ public class FormElement implements FormObject {
     public List<String> getOptionsSelected() {
         return (mOptionsSelected == null) ? new ArrayList<String>() : mOptionsSelected;
     }
+
+
 
     @Override
     public boolean isHeader() {

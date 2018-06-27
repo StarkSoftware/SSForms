@@ -25,6 +25,7 @@ public class FormElementCheckBox implements FormObject {
     private boolean visibility = true;
     private int pos;
     private boolean required = false;
+    private String mAttribute;
 
     public FormElementCheckBox() {
     }
@@ -101,6 +102,15 @@ public class FormElementCheckBox implements FormObject {
     public FormElementCheckBox setRefresh(Boolean refresh) {
         this.refresh = refresh;
         return this;
+    }
+
+    public FormElementCheckBox setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
     }
 
     public boolean getRefresh() {

@@ -31,6 +31,7 @@ public class FormElementSearchableSpinner implements FormObject {
     private int pos;
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
+    private String mAttribute;
 
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
@@ -136,6 +137,15 @@ public class FormElementSearchableSpinner implements FormObject {
     public FormElementSearchableSpinner setCallback(SearchableSpinnerCallBack callback) {
         this.spinCallback = callback;
         return this;
+    }
+
+    public FormElementSearchableSpinner setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
     }
 
     public SearchableSpinnerCallBack getCallback() {

@@ -17,6 +17,7 @@ public class FormElementButton implements FormObject {
     private boolean required = false;
 
     private ButtonCallBack buttonCallBack;
+    private String mAttribute;
 
     public FormElementButton() {
     }
@@ -76,6 +77,15 @@ public class FormElementButton implements FormObject {
     public FormElementButton setValueCheckB(boolean mValue) {
         this.mValueCheckB = mValue;
         return this;
+    }
+
+    public FormElementButton setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
     }
 
     public int getTag() {

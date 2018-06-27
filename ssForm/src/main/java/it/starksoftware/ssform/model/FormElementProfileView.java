@@ -26,6 +26,7 @@ public class FormElementProfileView implements FormObject {
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
     private String mProfileName;
+    private String mAttribute;
 
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
@@ -110,6 +111,15 @@ public class FormElementProfileView implements FormObject {
     public FormElementProfileView setActivity(Activity act) {
         this.mAct = act;
         return this;
+    }
+
+    public FormElementProfileView setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
     }
 
     public ImagePickerAdapter getSpinnerAdapter() {

@@ -22,6 +22,7 @@ public class FormElementSignature implements FormObject {
     private boolean visibility = true;
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
+    private String mAttribute;
 
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
@@ -123,6 +124,14 @@ public class FormElementSignature implements FormObject {
     }
 
 
+    public FormElementSignature setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
+    }
 
 
     @Override

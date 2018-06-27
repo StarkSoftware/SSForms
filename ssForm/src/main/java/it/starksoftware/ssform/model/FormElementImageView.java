@@ -25,6 +25,7 @@ public class FormElementImageView implements FormObject {
     private boolean visibility = true;
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
+    private String mAttribute;
 
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
@@ -100,6 +101,15 @@ public class FormElementImageView implements FormObject {
     public FormElementImageView setActivity(Activity act) {
         this.mAct = act;
         return this;
+    }
+
+    public FormElementImageView setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
     }
 
     public ImagePickerAdapter getSpinnerAdapter() {
