@@ -13,6 +13,7 @@ public class FormElementMemo implements FormObject {
     private Context mCtx;
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
+    private String mAttribute;
 
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
@@ -71,6 +72,15 @@ public class FormElementMemo implements FormObject {
     public FormElementMemo setValue(String mValue) {
         this.mValue = mValue;
         return this;
+    }
+
+    public FormElementMemo setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
     }
 
     public String getTitle() {

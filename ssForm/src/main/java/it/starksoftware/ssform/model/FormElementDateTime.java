@@ -26,6 +26,7 @@ public class FormElementDateTime implements FormObject {
     private List<String> mOptionsSelected; // list of selected options for single and multi picker
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
+    private String mAttribute;
 
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
@@ -104,6 +105,16 @@ public class FormElementDateTime implements FormObject {
         this.mOptionsSelected = mOptionsSelected;
         return this;
     }
+
+    public FormElementDateTime setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
+    }
+
 
     public int getTag() {
         return mTag;

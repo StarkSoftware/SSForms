@@ -22,6 +22,8 @@ public class FormElementDateSwitcher implements FormObject {
     private String requiredResponseMessage = mTitle;
     private DateSwitcher.Type dateSwitcherType;
     private DateSwitcherCallBack dateSwitcherCallBack;
+    private String mAttribute;
+
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
     }
@@ -97,6 +99,15 @@ public class FormElementDateSwitcher implements FormObject {
     public FormElementDateSwitcher setValue(Date mValue) {
         this.mValue = mValue;
         return this;
+    }
+
+    public FormElementDateSwitcher setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
     }
 
     public int getTag() {

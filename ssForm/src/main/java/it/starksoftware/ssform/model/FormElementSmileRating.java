@@ -23,6 +23,7 @@ public class FormElementSmileRating implements FormObject {
     private String requiredResponseMessage = mTitle;
     private RatingSmileCallBack ratingSmileCallBack;
     public HashMap<Integer, String> smileTitleByValue;
+    private String mAttribute;
 
     public HashMap<Integer, String> getSmileTitleByValue() {
         return smileTitleByValue;
@@ -118,6 +119,16 @@ public class FormElementSmileRating implements FormObject {
 
         return mValue;
     }
+
+    public FormElementSmileRating setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
+    }
+
 
     @Override
     public boolean isHeader() {

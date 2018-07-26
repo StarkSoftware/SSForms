@@ -27,6 +27,7 @@ public class FormElementImageMultipleView implements FormObject {
     private ImageCardAdapter imgAdapter;
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
+    private String mAttribute;
 
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
@@ -117,6 +118,16 @@ public class FormElementImageMultipleView implements FormObject {
         this.maxImages = maxImages;
         return this;
     }
+
+    public FormElementImageMultipleView setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
+    }
+
 
     public ImageMultiplePickerAdapter getSpinnerAdapter() {
         return new ImageMultiplePickerAdapter(mCtx,null,null);

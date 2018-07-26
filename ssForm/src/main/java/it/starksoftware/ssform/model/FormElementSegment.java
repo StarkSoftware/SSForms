@@ -24,6 +24,8 @@ public class FormElementSegment implements FormObject {
     private List<String> mOptionsSelected; // list of selected options for single and multi picker
     private ArrayList<RadioButton> segmentedButtons;
     private SegmentCallBack segmentCallBack;
+    private String mAttribute;
+
     public ArrayList<RadioButton> getSegmentedButtons() {
         return segmentedButtons;
     }
@@ -140,6 +142,15 @@ public class FormElementSegment implements FormObject {
     }
     public boolean getValueCheckB() {
         return mValueCheckB;
+    }
+
+    public FormElementSegment setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
     }
 
 

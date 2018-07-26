@@ -23,6 +23,7 @@ public class FormElementRating implements FormObject {
     private boolean visibility = true;
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
+    private String mAttribute;
 
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
@@ -114,6 +115,15 @@ public class FormElementRating implements FormObject {
     public FormElementRating setOptionsSelected(List<String> mOptionsSelected) {
         this.mOptionsSelected = mOptionsSelected;
         return this;
+    }
+
+    public FormElementRating setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
     }
 
     public int getTag() {

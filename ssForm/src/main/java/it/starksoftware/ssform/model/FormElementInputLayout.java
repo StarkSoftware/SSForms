@@ -31,6 +31,7 @@ public class FormElementInputLayout implements FormObject {
 
     private boolean required = false;
     private String requiredResponseMessage = mHint;
+    private String mAttribute;
 
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
@@ -99,6 +100,15 @@ public class FormElementInputLayout implements FormObject {
     public FormElementInputLayout setOptionsSelected(List<String> mOptionsSelected) {
         this.mOptionsSelected = mOptionsSelected;
         return this;
+    }
+
+    public FormElementInputLayout setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
     }
 
     public int getTag() {

@@ -24,6 +24,7 @@ public class FormElementCustomKeyboard implements FormObject {
     private KeyboardView.OnKeyboardActionListener customListner;
     private CustomKeyboard mKeyboard;
     private boolean required = false;
+    private String mAttribute;
 
 //    private KeyboardView mKeyboardView;
 
@@ -100,6 +101,15 @@ public class FormElementCustomKeyboard implements FormObject {
     public FormElementCustomKeyboard setOptionsSelected(List<String> mOptionsSelected) {
         this.mOptionsSelected = mOptionsSelected;
         return this;
+    }
+
+    public FormElementCustomKeyboard setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
     }
 
 

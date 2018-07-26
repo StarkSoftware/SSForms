@@ -19,6 +19,7 @@ public class FormElementSwitch implements FormObject {
     private SwitchCallBack switchCallBack;
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
+    private String mAttribute;
 
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
@@ -117,6 +118,16 @@ public class FormElementSwitch implements FormObject {
     public List<String> getOptionsSelected() {
         return (mOptionsSelected == null) ? new ArrayList<String>() : mOptionsSelected;
     }
+
+    public FormElementSwitch setAttribute(String attribute) {
+        this.mAttribute = attribute;
+        return this;
+    }
+
+    public String getAttribute() {
+        return mAttribute;
+    }
+
 
     @Override
     public boolean isHeader() {
