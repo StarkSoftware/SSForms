@@ -3,6 +3,8 @@ package it.starksoftware.ssform.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.starksoftware.ssform.interfaces.TextCallBack;
+
 
 public class FormElementInputLayout implements FormObject {
 
@@ -18,7 +20,7 @@ public class FormElementInputLayout implements FormObject {
     public static final int TYPE_PICKER_MULTI_CHECKBOX = 9;
     public static final int TYPE_EDITTEXT_PASSWORD = 10;
     public static final int TYPE_EDITTEXT_NUMBER_INTEGER = 11;
-
+    private TextCallBack textCallBack;
     private boolean visibility = true;
 
     // private variables
@@ -52,6 +54,15 @@ public class FormElementInputLayout implements FormObject {
     }
 
     public FormElementInputLayout() {
+    }
+
+    public FormElementInputLayout setCallback(TextCallBack callback) {
+        this.textCallBack = callback;
+        return this;
+    }
+
+    public TextCallBack getCallback() {
+        return this.textCallBack;
     }
 
     public FormElementInputLayout setVisibility(boolean visibility) {

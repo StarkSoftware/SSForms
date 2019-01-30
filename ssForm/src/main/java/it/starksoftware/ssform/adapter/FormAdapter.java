@@ -87,6 +87,7 @@ import it.starksoftware.ssform.interfaces.SearchableSpinnerCallBack;
 import it.starksoftware.ssform.interfaces.SegmentCallBack;
 import it.starksoftware.ssform.interfaces.SpinnerCallBack;
 import it.starksoftware.ssform.interfaces.SwitchCallBack;
+import it.starksoftware.ssform.interfaces.TextCallBack;
 import it.starksoftware.ssform.model.FormDivider;
 import it.starksoftware.ssform.model.FormElement;
 import it.starksoftware.ssform.model.FormElementAttach;
@@ -162,7 +163,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
     private FormSpinAdapter spinAdapter;
     private int clickedPosition;
     private FragmentManager fManager;
-
+    private TextCallBack textCallBackFE;
     public FormAdapter(Context context, Activity activity, FragmentManager fragmentManager) {
         mContext = context;
         mActivity = activity;
@@ -768,7 +769,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             FormElement formElement = (FormElement) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
             holder.mEditTextValue.setText(formElement.getValue());
-
+            textCallBackFE = formElement.getCallback();
             switch (formElement.getType()) {
                 case FormElement.TYPE_EDITTEXT_TEXT_SINGLELINE:
                     holder.mEditTextValue.setMaxLines(1);
@@ -825,18 +826,20 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
                     params.height = 0;
                     holder.linearLayout.setLayoutParams(params);
+
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
                     params.height = -2;
                     holder.linearLayout.setLayoutParams(params);
+
                 }
             }
 
         } else if (getItemViewType(position) == IS_INPUT_LAYOUT) {
-            FormElementInputLayout formElement = (FormElementInputLayout) currentObject;
+            final FormElementInputLayout formElement = (FormElementInputLayout) currentObject;
             holder.editText.setHint(formElement.getmHint());
             //holder.editText.setText(formElement.getValue());
-
+            final TextCallBack textCallBack = formElement.getCallback();
             switch (formElement.getType()) {
                 case FormElementInputLayout.TYPE_EDITTEXT_TEXT_SINGLELINE:
                     holder.editText.setMaxLines(1);
@@ -897,6 +900,16 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
                     params.height = -2;
                     holder.linearLayout.setLayoutParams(params);
+
+                    holder.editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                        @Override
+                        public void onFocusChange(View v, boolean hasFocus) {
+                            if (!hasFocus) {
+                                textCallBack.callbackTextReturn(holder.editText.getText().toString(), formElement, formElement.getTag());
+                            }
+                        }
+                    });
+
                 }
             }
 
@@ -1680,6 +1693,15 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 editText.requestFocus();
                 InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT);
+            }
+        });
+
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    textCallBackFE.callbackTextFEReturn(editText.getText().toString(), editText, editText.getTag());
+                }
             }
         });
 

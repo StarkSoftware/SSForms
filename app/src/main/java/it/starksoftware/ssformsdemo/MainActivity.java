@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -39,6 +40,7 @@ import it.starksoftware.ssform.interfaces.SearchableSpinnerCallBack;
 import it.starksoftware.ssform.interfaces.SegmentCallBack;
 import it.starksoftware.ssform.interfaces.SpinnerCallBack;
 import it.starksoftware.ssform.interfaces.SwitchCallBack;
+import it.starksoftware.ssform.interfaces.TextCallBack;
 import it.starksoftware.ssform.model.FormDivider;
 import it.starksoftware.ssform.model.FormElement;
 import it.starksoftware.ssform.model.FormElementAttach;
@@ -77,7 +79,8 @@ public class MainActivity extends AppCompatActivity implements
         SwitchCallBack,
         CheckBoxCallBack,
         DateSwitcherCallBack,
-        RatingSmileCallBack
+        RatingSmileCallBack,
+        TextCallBack
 
 {
 
@@ -160,6 +163,7 @@ public class MainActivity extends AppCompatActivity implements
                 .setTitle("BASIC ELEMENT")
                 .setType(FormElement.TYPE_EDITTEXT_TEXT_SINGLELINE)
                 .setRequired(true)
+                .setCallback(this)
                 .setRequiredResponseMessage("!!! REQUIRED !!!")
                 .setTag(10);
 
@@ -288,9 +292,10 @@ public class MainActivity extends AppCompatActivity implements
                 .setTag(251);
 
         formElementInputLayout = FormElementInputLayout.createInstance()
-                .setmHint("BASIC ELEMENT LAYOUT")
+                .setmHint("BASIC ELEMENT LAYOUT InputLayout")
                 .setType(FormElement.TYPE_EDITTEXT_TEXT_SINGLELINE)
                 .setRequired(true)
+                .setCallback(this)
                 .setRequiredResponseMessage("!!! REQUIRED !!!")
                 .setTag(252);
 
@@ -443,6 +448,22 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void callbackRatingSmileReturn(int value) {
         String sMessageToast = String.format("CONTROL : Rating Smile - VALUE %s", value);
+        showToastMessage(sMessageToast);
+    }
+
+    @Override
+    public void callbackTextReturn(String value, FormElementInputLayout object, Object tag)
+    {
+
+        String sMessageToast = String.format("CONTROL : FormElementInputLayout - VALUE %s", value);
+        showToastMessage(sMessageToast);
+
+
+    }
+
+    @Override
+    public void callbackTextFEReturn(String value, AppCompatEditText object, Object tag) {
+        String sMessageToast = String.format("CONTROL : FormElement - VALUE %s", value);
         showToastMessage(sMessageToast);
     }
 
