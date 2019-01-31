@@ -773,48 +773,71 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             switch (formElement.getType()) {
                 case FormElement.TYPE_EDITTEXT_TEXT_SINGLELINE:
                     holder.mEditTextValue.setMaxLines(1);
+                    if(formElement.isReadOnly())
+                        holder.mEditTextValue.setEnabled(false);
+
                     setEditTextFocusEnabled(holder.mEditTextValue, position, holder.layoutRow);
                     break;
                 case FormElement.TYPE_EDITTEXT_TEXT_MULTILINE:
                     holder.mEditTextValue.setSingleLine(false);
+                    if(formElement.isReadOnly())
+                        holder.mEditTextValue.setEnabled(false);
                     holder.mEditTextValue.setMaxLines(4);
                     setEditTextFocusEnabled(holder.mEditTextValue, position, holder.layoutRow);
                     break;
                 case FormElement.TYPE_EDITTEXT_NUMBER:
                     holder.mEditTextValue.setRawInputType(InputType.TYPE_NUMBER_FLAG_SIGNED);
+                    if(formElement.isReadOnly())
+                        holder.mEditTextValue.setEnabled(false);
                     KeyListener keyListenerkeyListenerEDITTEXT_NUMBER = DigitsKeyListener.getInstance("1234567890.");
                     holder.mEditTextValue.setKeyListener(keyListenerkeyListenerEDITTEXT_NUMBER);
                     setEditTextFocusEnabled(holder.mEditTextValue, position, holder.layoutRow);
                     break;
                 case FormElement.TYPE_EDITTEXT_NUMBER_INTEGER:
                     holder.mEditTextValue.setRawInputType(InputType.TYPE_CLASS_NUMBER);
+                    if(formElement.isReadOnly())
+                        holder.mEditTextValue.setEnabled(false);
                     KeyListener keyListenerNUMBER_INTEGER = DigitsKeyListener.getInstance("1234567890");
                     holder.mEditTextValue.setKeyListener(keyListenerNUMBER_INTEGER);
                     setEditTextFocusEnabled(holder.mEditTextValue, position, holder.layoutRow);
                     break;
                 case FormElement.TYPE_EDITTEXT_EMAIL:
+                    if(formElement.isReadOnly())
+                        holder.mEditTextValue.setEnabled(false);
                     holder.mEditTextValue.setRawInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
                     setEditTextFocusEnabled(holder.mEditTextValue, position, holder.layoutRow);
                     break;
                 case FormElement.TYPE_EDITTEXT_PHONE:
+                    if(formElement.isReadOnly())
+                        holder.mEditTextValue.setEnabled(false);
                     holder.mEditTextValue.setRawInputType(InputType.TYPE_CLASS_PHONE);
                     setEditTextFocusEnabled(holder.mEditTextValue, position, holder.layoutRow);
                     break;
                 case FormElement.TYPE_EDITTEXT_PASSWORD:
+                    if(formElement.isReadOnly())
+                        holder.mEditTextValue.setEnabled(false);
                     holder.mEditTextValue.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
                     holder.mEditTextValue.setSelection(holder.mEditTextValue.getText().length());
                     setEditTextFocusEnabled(holder.mEditTextValue, position, holder.layoutRow);
                     break;
                 case FormElement.TYPE_PICKER_DATE:
+                    if(formElement.isReadOnly())
+                        holder.mEditTextValue.setEnabled(false);
                     setDatePicker(holder.mEditTextValue, position, holder.layoutRow);
                     break;
                 case FormElement.TYPE_PICKER_TIME:
+                    if(formElement.isReadOnly())
+                        holder.mEditTextValue.setEnabled(false);
                     setTimePicker(holder.mEditTextValue, position, holder.layoutRow);
                     break;
                 case FormElement.TYPE_SPINNER_DROPDOWN:
+                    if(formElement.isReadOnly())
+                        holder.mEditTextValue.setEnabled(false);
                     setSingleOptionsDialog(holder.mEditTextValue, position, holder.layoutRow);
                     break;
                 case FormElement.TYPE_PICKER_MULTI_CHECKBOX:
+                    if(formElement.isReadOnly())
+                        holder.mEditTextValue.setEnabled(false);
                     setMultipleOptionsDialog(holder.mEditTextValue, position, holder.layoutRow);
                     break;
                 default:
@@ -842,49 +865,71 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             final TextCallBack textCallBack = formElement.getCallback();
             switch (formElement.getType()) {
                 case FormElementInputLayout.TYPE_EDITTEXT_TEXT_SINGLELINE:
+                    if(formElement.isReadOnly())
+                        holder.editText.setEnabled(false);
                     holder.editText.setMaxLines(1);
                     setEditTextInputLayoutFocusEnabled(holder.editText, position, holder.layoutRow);
                     break;
                 case FormElementInputLayout.TYPE_EDITTEXT_TEXT_MULTILINE:
+                    if(formElement.isReadOnly())
+                        holder.editText.setEnabled(false);
                     holder.editText.setSingleLine(false);
                     holder.editText.setMaxLines(4);
                     setEditTextInputLayoutFocusEnabled(holder.editText, position, holder.layoutRow);
                     break;
                 case FormElementInputLayout.TYPE_EDITTEXT_NUMBER:
+                    if(formElement.isReadOnly())
+                        holder.editText.setEnabled(false);
                     holder.editText.setRawInputType(InputType.TYPE_NUMBER_FLAG_SIGNED);
                     KeyListener keyListenerkeyListenerEDITTEXT_NUMBER = DigitsKeyListener.getInstance("1234567890.");
                     holder.editText.setKeyListener(keyListenerkeyListenerEDITTEXT_NUMBER);
                     setEditTextInputLayoutFocusEnabled(holder.editText, position, holder.layoutRow);
                     break;
                 case FormElementInputLayout.TYPE_EDITTEXT_NUMBER_INTEGER:
+                    if(formElement.isReadOnly())
+                        holder.editText.setEnabled(false);
                     holder.editText.setRawInputType(InputType.TYPE_CLASS_NUMBER);
                     KeyListener keyListenerNUMBER_INTEGER = DigitsKeyListener.getInstance("1234567890");
                     holder.editText.setKeyListener(keyListenerNUMBER_INTEGER);
                     setEditTextInputLayoutFocusEnabled(holder.editText, position, holder.layoutRow);
                     break;
                 case FormElementInputLayout.TYPE_EDITTEXT_EMAIL:
+                    if(formElement.isReadOnly())
+                        holder.editText.setEnabled(false);
                     holder.editText.setRawInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
                     setEditTextInputLayoutFocusEnabled(holder.editText, position, holder.layoutRow);
                     break;
                 case FormElementInputLayout.TYPE_EDITTEXT_PHONE:
+                    if(formElement.isReadOnly())
+                        holder.editText.setEnabled(false);
                     holder.editText.setRawInputType(InputType.TYPE_CLASS_PHONE);
                     setEditTextInputLayoutFocusEnabled(holder.editText, position, holder.layoutRow);
                     break;
                 case FormElementInputLayout.TYPE_EDITTEXT_PASSWORD:
+                    if(formElement.isReadOnly())
+                        holder.editText.setEnabled(false);
                     holder.editText.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
                     holder.editText.setSelection(holder.editText.getText().length());
                     setEditTextInputLayoutFocusEnabled(holder.editText, position, holder.layoutRow);
                     break;
                 case FormElementInputLayout.TYPE_PICKER_DATE:
+                    if(formElement.isReadOnly())
+                        holder.editText.setEnabled(false);
                     setDatePickerInputLayout(holder.editText, position, holder.layoutRow);
                     break;
                 case FormElementInputLayout.TYPE_PICKER_TIME:
+                    if(formElement.isReadOnly())
+                        holder.editText.setEnabled(false);
                     setTimePickerInputLayout(holder.editText, position, holder.layoutRow);
                     break;
                 case FormElementInputLayout.TYPE_SPINNER_DROPDOWN:
+                    if(formElement.isReadOnly())
+                        holder.editText.setEnabled(false);
                     setSingleOptionsDialogInputLayout(holder.editText, position, holder.layoutRow);
                     break;
                 case FormElementInputLayout.TYPE_PICKER_MULTI_CHECKBOX:
+                    if(formElement.isReadOnly())
+                        holder.editText.setEnabled(false);
                     setMultipleOptionsDialogInputLayout(holder.editText, position, holder.layoutRow);
                     break;
                 default:
@@ -905,7 +950,9 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                         @Override
                         public void onFocusChange(View v, boolean hasFocus) {
                             if (!hasFocus) {
-                                textCallBack.callbackTextReturn(holder.editText.getText().toString(), formElement, formElement.getTag());
+                                if (textCallBack != null) {
+                                    textCallBack.callbackTextReturn(holder.editText.getText().toString(), formElement, formElement.getTag());
+                                }
                             }
                         }
                     });
@@ -1700,7 +1747,10 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
-                    textCallBackFE.callbackTextFEReturn(editText.getText().toString(), editText, editText.getTag());
+                    if (textCallBackFE != null) {
+                        FormElement fe = (FormElement) mDataset.get(position);
+                        textCallBackFE.callbackTextFEReturn(editText.getText().toString(), editText, fe.getTag());
+                    }
                 }
             }
         });
@@ -2477,9 +2527,13 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
 
             // act only if clicked position is a valid index
             if (clickedPosition >= 0) {
-                ((FormElement) mDataset.get(clickedPosition)).setValue(sdfDate.format(mCalendarCurrentDate.getTime()));
+                FormElementDateTime fe = (FormElementDateTime) mDataset.get(clickedPosition);
+                fe.setValue(mCalendarCurrentTime.getTime());
+                DateTimeCallBack dateTimeCallBack = fe.getCallback();
+                dateTimeCallBack.callbackDateTimeReturn(mCalendarCurrentDate.getTime(), fe, fe.getTag());
                 notifyItemChanged(clickedPosition);
                 clickedPosition = -1;
+
             }
         }
 
@@ -2500,6 +2554,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 ((FormElement) mDataset.get(clickedPosition)).setValue(sdfTime.format(mCalendarCurrentTime.getTime()));
                 notifyItemChanged(clickedPosition);
                 clickedPosition = -1;
+
             }
         }
     };
@@ -2516,9 +2571,12 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
 
             // act only if clicked position is a valid index
             if (clickedPosition >= 0) {
-                ((FormElementDateTime) mDataset.get(clickedPosition)).setValue(mCalendarCurrentDate.getTime());
-                notifyItemChanged(clickedPosition);
+                FormElementDateTime fe = (FormElementDateTime) mDataset.get(clickedPosition);
+                fe.setValue(mCalendarCurrentTime.getTime());
+                DateTimeCallBack dateTimeCallBack = fe.getCallback();
+                dateTimeCallBack.callbackDateTimeReturn(mCalendarCurrentDate.getTime(), fe, fe.getTag());
                 clickedPosition = -1;
+
             }
         }
 
@@ -2536,9 +2594,14 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
 
             // act only if clicked position is a valid index
             if (clickedPosition >= 0) {
-                ((FormElementDateTime) mDataset.get(clickedPosition)).setValue(mCalendarCurrentTime.getTime());
+                FormElementDateTime fe = (FormElementDateTime) mDataset.get(clickedPosition);
+                fe.setValue(mCalendarCurrentTime.getTime());
+                DateTimeCallBack dateTimeCallBack = fe.getCallback();
+                dateTimeCallBack.callbackDateTimeReturn(mCalendarCurrentDate.getTime(), fe, fe.getTag());
                 notifyItemChanged(clickedPosition);
                 clickedPosition = -1;
+
+
             }
         }
     };

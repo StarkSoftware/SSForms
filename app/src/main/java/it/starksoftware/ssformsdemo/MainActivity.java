@@ -437,6 +437,10 @@ public class MainActivity extends AppCompatActivity implements
     public void callbackDateTimeReturn(Date value, FormElementDateTime object, Object tag) {
         String sMessageToast = String.format("CONTROL : DateTime - VALUE %s", value);
         showToastMessage(sMessageToast);
+
+        mFormBuilder.getFormElement(10).setValue(value.toString()).setRefresh(true);
+        mFormBuilder.refreshItemByTag(10);
+
     }
 
     @Override

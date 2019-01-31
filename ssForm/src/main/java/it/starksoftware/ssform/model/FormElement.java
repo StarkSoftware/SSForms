@@ -22,6 +22,8 @@ public class FormElement implements FormObject {
     public static final int TYPE_EDITTEXT_NUMBER_INTEGER = 11;
     private TextCallBack textCallBack;
     private boolean visibility = true;
+    private boolean refresh;
+    private boolean readOnly = false;
 
     // private variables
     private int mTag; // unique tag to identify the object
@@ -45,6 +47,15 @@ public class FormElement implements FormObject {
     }
 
     public FormElement() {
+    }
+
+    public FormElement setRefresh(Boolean refresh) {
+        this.refresh = refresh;
+        return this;
+    }
+
+    public boolean getRefresh() {
+        return refresh;
     }
 
     public FormElement setVisibility(boolean visibility) {
@@ -88,6 +99,15 @@ public class FormElement implements FormObject {
         return mAttribute;
     }
 
+
+    public boolean isReadOnly() {
+        return readOnly;
+    }
+
+    public FormElement setReadOnly(boolean readOnly) {
+        this.readOnly = readOnly;
+        return this;
+    }
 
     @Override
     public boolean isRequired() {

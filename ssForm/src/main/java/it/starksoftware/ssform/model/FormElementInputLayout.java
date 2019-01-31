@@ -22,7 +22,7 @@ public class FormElementInputLayout implements FormObject {
     public static final int TYPE_EDITTEXT_NUMBER_INTEGER = 11;
     private TextCallBack textCallBack;
     private boolean visibility = true;
-
+    private boolean readOnly = false;
     // private variables
     private int mTag; // unique tag to identify the object
     private int mType; // type for the form element
@@ -75,6 +75,15 @@ public class FormElementInputLayout implements FormObject {
 
     public static FormElementInputLayout createInstance() {
         return new FormElementInputLayout();
+    }
+
+    public boolean isReadOnly() {
+        return readOnly;
+    }
+
+    public FormElementInputLayout setReadOnly(boolean readOnly) {
+        this.readOnly = readOnly;
+        return this;
     }
 
     // getters and setters
