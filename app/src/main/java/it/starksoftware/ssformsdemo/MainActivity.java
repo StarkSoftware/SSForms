@@ -41,6 +41,7 @@ import it.starksoftware.ssform.interfaces.SegmentCallBack;
 import it.starksoftware.ssform.interfaces.SpinnerCallBack;
 import it.starksoftware.ssform.interfaces.SwitchCallBack;
 import it.starksoftware.ssform.interfaces.TextCallBack;
+import it.starksoftware.ssform.interfaces.YesNoNACallBack;
 import it.starksoftware.ssform.model.FormDivider;
 import it.starksoftware.ssform.model.FormElement;
 import it.starksoftware.ssform.model.FormElementAttach;
@@ -63,6 +64,8 @@ import it.starksoftware.ssform.model.FormElementSmileRating;
 import it.starksoftware.ssform.model.FormElementSpinner;
 import it.starksoftware.ssform.model.FormElementSwitch;
 import it.starksoftware.ssform.model.FormElementToken;
+import it.starksoftware.ssform.model.FormElementYesNo;
+import it.starksoftware.ssform.model.FormElementYesNoNA;
 import it.starksoftware.ssform.model.FormHeader;
 import it.starksoftware.ssform.model.FormObject;
 import it.starksoftware.ssform.model.FormSpinnerObject;
@@ -80,7 +83,8 @@ public class MainActivity extends AppCompatActivity implements
         CheckBoxCallBack,
         DateSwitcherCallBack,
         RatingSmileCallBack,
-        TextCallBack
+        TextCallBack,
+        YesNoNACallBack
 
 {
 
@@ -111,7 +115,11 @@ public class MainActivity extends AppCompatActivity implements
     public FormHeader formHeader;
     public FormElementProfileView formElementProfileView;
     public FormElementSmileRating formElementSmileRating;
+    public FormElementYesNo formElementYesNo;
+    public FormElementYesNo formElementYesNoA;
+    public FormElementYesNo formElementYesNoB;
 
+    public FormElementYesNoNA formElementYesNoNa;
 
     // BUILDER
     public FormBuildHelper mFormBuilder;
@@ -166,6 +174,33 @@ public class MainActivity extends AppCompatActivity implements
                 .setCallback(this)
                 .setRequiredResponseMessage("!!! REQUIRED !!!")
                 .setTag(10);
+
+        formElementYesNoNa = FormElementYesNoNA.createInstance()
+                .setTitle("FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA ")
+                .setDbField("AS1")
+                .setValue(0)
+                .setCallback(this)
+                .setRequired(true)
+                .setRequiredResponseMessage("OLA")
+                .setTag(50);
+
+        formElementYesNo = FormElementYesNo.createInstance()
+                .setTitle("FORM ELEMENT NO")
+                .setDbField("AS1")
+                .setValue(0)
+                .setTag(50);
+
+        formElementYesNoA = FormElementYesNo.createInstance()
+                .setTitle("FORM ELEMENT YES")
+                .setDbField("AS1")
+                .setValue(1)
+                .setTag(50);
+
+        formElementYesNoB = FormElementYesNo.createInstance()
+                .setTitle("FORM ELEMENT NA")
+                .setDbField("AS1")
+                .setValue(9)
+                .setTag(50);
 
         formElementPickerMultiple = FormElement.createInstance()
                 .setTitle("MULTIPLE PICKER")
@@ -320,7 +355,11 @@ public class MainActivity extends AppCompatActivity implements
 
         List<FormObject> formItems = new ArrayList<>();
         //formItems.add(formDivider);
-        formItems.add(formElementProfileView);
+        /*formItems.add(formElementProfileView);
+        formItems.add(formElementYesNoNa);
+        formItems.add(formElementYesNo);
+        formItems.add(formElementYesNoA);
+        formItems.add(formElementYesNoB);
         formItems.add(formElementSmileRating);
         formItems.add(formElement);
         formItems.add(formElementInputLayout);
@@ -335,14 +374,14 @@ public class MainActivity extends AppCompatActivity implements
         formItems.add(formElementImageMultipleView);
         formItems.add(formElementImageView);
         formItems.add(formElementMemo);
-        formItems.add(formElementRating);
+        formItems.add(formElementRating);*/
         formItems.add(formElementSearchableSpinner);
-        formItems.add(formElementSegment);
+       /* formItems.add(formElementSegment);
         formItems.add(formElementSignature);
         formItems.add(formElementSpinner);
         formItems.add(formElementSwitch);
         formItems.add(formElementCheckBox);
-        formItems.add(formElementPlaceDialog);
+        formItems.add(formElementPlaceDialog);*/
 
         mFormBuilder.addFormElements(formItems);
         mFormBuilder.refreshView();
@@ -476,6 +515,12 @@ public class MainActivity extends AppCompatActivity implements
     public void callbackSearchableSpinnerReturn(FormElementSearchableSpinner object, Object tag, FormSpinnerObject spinnerObject) {
         String sMessageToast = String.format("CONTROL : SearchableSpinner - VALUE %s", spinnerObject.getValue());
         showToastMessage(sMessageToast);
+    }
+
+    @Override
+    public void callbackYesNoNAReturn(Object tag, RadioGroup radioGroup, int value)
+    {
+
     }
 
     @Override

@@ -23,7 +23,7 @@ public class FormElementDateSwitcher implements FormObject {
     private DateSwitcher.Type dateSwitcherType;
     private DateSwitcherCallBack dateSwitcherCallBack;
     private String mAttribute;
-
+    private String dbField;
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
     }
@@ -44,6 +44,13 @@ public class FormElementDateSwitcher implements FormObject {
         this.dateSwitcherCallBack = dateSwitcherCallBack;
         return this;
     }
+
+    public String getDbField() { return dbField; }
+    public FormElementDateSwitcher setDbField(String dbField) {
+        this.dbField = dbField;
+        return this;
+    }
+
 
     public DateSwitcher.Type getDateSwitcherType() {
         return dateSwitcherType;

@@ -24,7 +24,7 @@ public class FormElementToken implements FormObject {
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
     private String mAttribute;
-
+    private String dbField;
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
     }
@@ -53,6 +53,12 @@ public class FormElementToken implements FormObject {
     @Override
     public boolean isRequired() {
         return required;
+    }
+
+    public String getDbField() { return dbField; }
+    public FormElementToken setDbField(String dbField) {
+        this.dbField = dbField;
+        return this;
     }
 
     public FormElementToken setRequired(boolean required) {

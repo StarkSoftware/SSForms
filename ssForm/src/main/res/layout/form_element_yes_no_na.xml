@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/colorFormMasterElementBackground"
+    android:layout_width="match_parent"
+    android:id="@+id/itemContainer"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:weightSum="5"
+        android:id="@+id/layoutRow"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/formElementTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5sp"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorFormMasterElementTextTitle"
+            android:textSize="14sp"
+            android:layout_weight="2"
+            android:textStyle="bold"
+            tools:text="Personal Info" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/formElementRadioGroup"
+            android:gravity="end"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/formElementRadioYes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5sp"
+                android:text="SI" />
+
+            <RadioButton
+                android:id="@+id/formElementRadioNo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5sp"
+                android:text="NO" />
+
+            <RadioButton
+                android:id="@+id/formElementRadioNa"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5sp"
+                android:text="N/A" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/colorFormMasterDivider" />
+
+</LinearLayout>

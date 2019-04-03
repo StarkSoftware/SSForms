@@ -24,7 +24,7 @@ public class FormElementSmileRating implements FormObject {
     private RatingSmileCallBack ratingSmileCallBack;
     public HashMap<Integer, String> smileTitleByValue;
     private String mAttribute;
-
+    private String dbField;
     public HashMap<Integer, String> getSmileTitleByValue() {
         return smileTitleByValue;
     }
@@ -54,6 +54,12 @@ public class FormElementSmileRating implements FormObject {
 
     public FormElementSmileRating() {
 
+    }
+
+    public String getDbField() { return dbField; }
+    public FormElementSmileRating setDbField(String dbField) {
+        this.dbField = dbField;
+        return this;
     }
 
     public static FormElementSmileRating createInstance() {

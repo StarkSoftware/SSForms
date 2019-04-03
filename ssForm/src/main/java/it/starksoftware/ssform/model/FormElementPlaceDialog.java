@@ -24,7 +24,7 @@ public class FormElementPlaceDialog implements FormObject {
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
     private String mAttribute;
-
+    private String dbField;
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
     }
@@ -47,6 +47,12 @@ public class FormElementPlaceDialog implements FormObject {
 
     public FormElementPlaceDialog setDialogTitle(String dialogTitle) {
         this.dialogTitle = dialogTitle;
+        return this;
+    }
+
+    public String getDbField() { return dbField; }
+    public FormElementPlaceDialog setDbField(String dbField) {
+        this.dbField = dbField;
         return this;
     }
 

@@ -118,4 +118,8 @@
   <com.android.tools.fakeadbserver/>
   <androidx.savedstate/>
   <com.google.android.libraries.places/>
+  <androidx.viewpager2/>
+  <androidx.navigation/>
+  <androidx.work/>
+  <androidx.sharetarget/>
 </metadata>

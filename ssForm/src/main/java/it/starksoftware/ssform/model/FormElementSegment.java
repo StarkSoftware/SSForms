@@ -25,7 +25,7 @@ public class FormElementSegment implements FormObject {
     private ArrayList<RadioButton> segmentedButtons;
     private SegmentCallBack segmentCallBack;
     private String mAttribute;
-
+    private String dbField;
     public ArrayList<RadioButton> getSegmentedButtons() {
         return segmentedButtons;
     }
@@ -47,6 +47,12 @@ public class FormElementSegment implements FormObject {
 
     public FormElementSegment setCallBack(SegmentCallBack segmentCallBack) {
         this.segmentCallBack = segmentCallBack;
+        return this;
+    }
+
+    public String getDbField() { return dbField; }
+    public FormElementSegment setDbField(String dbField) {
+        this.dbField = dbField;
         return this;
     }
 

@@ -21,7 +21,7 @@ public class FormElementSearchableSpinner implements FormObject {
     private Activity mAct;
 
     private String dialogTitle;
-
+    private String dbField;
     private List<FormSpinnerObject> mOptions;
     private ArrayList<String> items;
     private FormSpinnerObject mOptionsSelected; // list of selected options for single and multi picker
@@ -45,6 +45,11 @@ public class FormElementSearchableSpinner implements FormObject {
     public FormElementSearchableSpinner() {
     }
 
+    public String getDbField() { return dbField; }
+    public FormElementSearchableSpinner setDbField(String dbField) {
+        this.dbField = dbField;
+        return this;
+    }
 
     public static FormElementSearchableSpinner createInstance() {
         return new FormElementSearchableSpinner();

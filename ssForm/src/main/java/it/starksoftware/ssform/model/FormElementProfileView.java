@@ -27,7 +27,7 @@ public class FormElementProfileView implements FormObject {
     private String requiredResponseMessage = mTitle;
     private String mProfileName;
     private String mAttribute;
-
+    private String dbField;
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
     }
@@ -47,6 +47,12 @@ public class FormElementProfileView implements FormObject {
 
     public FormElementProfileView setRequired(boolean required) {
         this.required = required;
+        return this;
+    }
+
+    public String getDbField() { return dbField; }
+    public FormElementProfileView setDbField(String dbField) {
+        this.dbField = dbField;
         return this;
     }
 

@@ -23,6 +23,7 @@ public class FormElementAttach implements FormObject {
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
     private String mAttribute;
+    private String dbField;
 
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
@@ -43,6 +44,12 @@ public class FormElementAttach implements FormObject {
 
     public FormElementAttach setRequired(boolean required) {
         this.required = required;
+        return this;
+    }
+
+    public String getDbField() { return dbField; }
+    public FormElementAttach setDbField(String dbField) {
+        this.dbField = dbField;
         return this;
     }
 

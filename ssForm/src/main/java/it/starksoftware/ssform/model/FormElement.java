@@ -24,6 +24,7 @@ public class FormElement implements FormObject {
     private boolean visibility = true;
     private boolean refresh;
     private boolean readOnly = false;
+    private String dbField;
 
     // private variables
     private int mTag; // unique tag to identify the object
@@ -51,6 +52,12 @@ public class FormElement implements FormObject {
 
     public FormElement setRefresh(Boolean refresh) {
         this.refresh = refresh;
+        return this;
+    }
+
+    public String getDbField() { return dbField; }
+    public FormElement setDbField(String dbField) {
+        this.dbField = dbField;
         return this;
     }
 

@@ -30,7 +30,7 @@ public class FormElementInputLayout implements FormObject {
     private String mValue; // value to be shown on right
     private List<String> mOptions; // list of options for single and multi picker
     private List<String> mOptionsSelected; // list of selected options for single and multi picker
-
+    private String dbField;
     private boolean required = false;
     private String requiredResponseMessage = mHint;
     private String mAttribute;
@@ -41,6 +41,12 @@ public class FormElementInputLayout implements FormObject {
 
     public FormElementInputLayout setRequiredResponseMessage(String requiredResponseMessage) {
         this.requiredResponseMessage = requiredResponseMessage;
+        return this;
+    }
+
+    public String getDbField() { return dbField; }
+    public FormElementInputLayout setDbField(String dbField) {
+        this.dbField = dbField;
         return this;
     }
 

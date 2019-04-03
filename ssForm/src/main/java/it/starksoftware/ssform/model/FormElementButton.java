@@ -10,7 +10,7 @@ public class FormElementButton implements FormObject {
     private int mType; // type for the form element
     private String mTitle; // title to be shown on left
     private boolean mValue; // value to be shown on right
-
+    private String dbField;
     private boolean mValueCheckA;
     private boolean mValueCheckB;
     private boolean visibility = true;
@@ -44,6 +44,13 @@ public class FormElementButton implements FormObject {
         this.visibility = visibility;
         return this;
     }
+
+    public String getDbField() { return dbField; }
+    public FormElementButton setDbField(String dbField) {
+        this.dbField = dbField;
+        return this;
+    }
+
     public boolean getVisibility() {
         return visibility;
     }

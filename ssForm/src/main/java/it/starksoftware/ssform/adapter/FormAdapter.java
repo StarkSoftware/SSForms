@@ -66,10 +66,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import in.galaxyofandroid.spinerdialog.OnSpinerItemClick;
-import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 import it.starksoftware.ssform.DateSwitcher.DateSwitcher;
 import it.starksoftware.ssform.R;
+import it.starksoftware.ssform.SearchableSpinner.OnSpinerItemClick;
+import it.starksoftware.ssform.SearchableSpinner.SpinnerDialog;
 import it.starksoftware.ssform.activities.RxSignaturePicker;
 import it.starksoftware.ssform.activities.RxTokenPicker;
 import it.starksoftware.ssform.attach.AttachPicker;
@@ -88,6 +88,8 @@ import it.starksoftware.ssform.interfaces.SegmentCallBack;
 import it.starksoftware.ssform.interfaces.SpinnerCallBack;
 import it.starksoftware.ssform.interfaces.SwitchCallBack;
 import it.starksoftware.ssform.interfaces.TextCallBack;
+import it.starksoftware.ssform.interfaces.YesNoCallBack;
+import it.starksoftware.ssform.interfaces.YesNoNACallBack;
 import it.starksoftware.ssform.model.FormDivider;
 import it.starksoftware.ssform.model.FormElement;
 import it.starksoftware.ssform.model.FormElementAttach;
@@ -110,6 +112,8 @@ import it.starksoftware.ssform.model.FormElementSmileRating;
 import it.starksoftware.ssform.model.FormElementSpinner;
 import it.starksoftware.ssform.model.FormElementSwitch;
 import it.starksoftware.ssform.model.FormElementToken;
+import it.starksoftware.ssform.model.FormElementYesNo;
+import it.starksoftware.ssform.model.FormElementYesNoNA;
 import it.starksoftware.ssform.model.FormHeader;
 import it.starksoftware.ssform.model.FormObject;
 import it.starksoftware.ssform.model.FormSpinnerObject;
@@ -151,6 +155,8 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
     private int IS_INPUT_LAYOUT = 20;
     private int IS_PROFILE_VIEW = 21;
     private int IS_SMILE_RATING = 22;
+    private int IS_YES_NO = 23;
+    private int IS_YES_NO_NA = 24;
 
     private ArrayList<Image> images = new ArrayList<>();
     private ArrayList<String> attachs = new ArrayList<>();
@@ -384,6 +390,30 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         return null;
     }
 
+    public FormElementYesNo getFormElementYesNoByTag(int tag) {
+        for (FormObject f : this.mDataset) {
+            if (f instanceof FormElementYesNo) {
+                FormElementYesNo formElement = (FormElementYesNo) f;
+                if (formElement.getTag() == tag) {
+                    return formElement;
+                }
+            }
+        }
+        return null;
+    }
+
+    public FormElementYesNoNA getFormElementYesNoNAByTag(int tag) {
+        for (FormObject f : this.mDataset) {
+            if (f instanceof FormElementYesNoNA) {
+                FormElementYesNoNA formElement = (FormElementYesNoNA) f;
+                if (formElement.getTag() == tag) {
+                    return formElement;
+                }
+            }
+        }
+        return null;
+    }
+
     public FormElementRating getRatingValueAtTag(int tag) {
         for (FormObject f : this.mDataset) {
             if (f instanceof FormElementRating) {
@@ -530,6 +560,14 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 FormElementSmileRating element = (FormElementSmileRating) mDataset.get(index);
                 if (element.getTag() == tag)
                     itemPosition = index;
+            } else if (mDataset.get(index).getElementType().contentEquals("YesNo")) {
+                FormElementYesNo element = (FormElementYesNo) mDataset.get(index);
+                if (element.getTag() == tag)
+                    itemPosition = index;
+            } else if (mDataset.get(index).getElementType().contentEquals("YesNoNA")) {
+                FormElementYesNoNA element = (FormElementYesNoNA) mDataset.get(index);
+                if (element.getTag() == tag)
+                    itemPosition = index;
             }
         }//
         Log.d("FM", "Position --> " + itemPosition);
@@ -627,7 +665,11 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             return IS_PROFILE_VIEW;
         } else if (mDataset.get(position).getElementType().contentEquals("SmileRating")) {
             return IS_SMILE_RATING;
-        } else {
+        } else if (mDataset.get(position).getElementType().contentEquals("YesNo")) {
+            return IS_YES_NO;
+        } else if (mDataset.get(position).getElementType().contentEquals("YesNoNA")) {
+            return IS_YES_NO_NA;
+        }  else {
             return IS_DEFAULT_VIEW;
         }
     }
@@ -733,6 +775,14 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 case 22:
                     v = inflater.inflate(R.layout.form_element_smile_rating, parent, false);
                     vh = new ViewHolder(v, null, null, IS_SMILE_RATING, null);
+                    break;
+                case 23:
+                    v = inflater.inflate(R.layout.form_element_yes_no, parent, false);
+                    vh = new ViewHolder(v, null, null, IS_YES_NO, null);
+                    break;
+                case 24:
+                    v = inflater.inflate(R.layout.form_element_yes_no_na, parent, false);
+                    vh = new ViewHolder(v, null, null, IS_YES_NO_NA, null);
                     break;
                 default:
                     v = inflater.inflate(R.layout.form_element_header, parent, false);
@@ -1352,6 +1402,108 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     }
                 });
             }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
+        } else if (getItemViewType(position) == IS_YES_NO) {
+            final FormElementYesNo formElement = (FormElementYesNo) currentObject;
+            holder.mTextViewTitle.setText(formElement.getTitle());
+            if (formElement.getValue() ==  1) {
+                holder.mEditRadioNoValue.setChecked(true);
+                holder.mEditRadioYesValue.setChecked(false);
+            }  else if (formElement.getValue() ==  2) {
+                holder.mEditRadioYesValue.setChecked(true);
+                holder.mEditRadioNoValue.setChecked(false);
+            } else {
+                holder.mEditRadioNoValue.setChecked(false);
+                holder.mEditRadioYesValue.setChecked(false);
+            }
+
+            if (formElement.getCallback() != null) {
+                final YesNoCallBack yesNoCallBack = formElement.getCallback();
+                holder.mEditRadioGroupValue.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+                {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId)
+                    {
+                        if (holder.mEditRadioNoValue.isChecked()) {
+                            yesNoCallBack.callbackYesNoReturn(formElement.getTag(), holder.mEditRadioGroupValue, 1);
+                            formElement.setValue(1);
+                        } else if (holder.mEditRadioYesValue.isChecked()) {
+                            yesNoCallBack.callbackYesNoReturn(formElement.getTag(), holder.mEditRadioGroupValue, 2);
+                            formElement.setValue(2);
+                        } else {
+                            yesNoCallBack.callbackYesNoReturn(formElement.getTag(), holder.mEditRadioGroupValue, 99);
+                            formElement.setValue(99);
+                        }
+                    }
+                });
+            }
+
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
+        } else if (getItemViewType(position) == IS_YES_NO_NA ) {
+            final FormElementYesNoNA formElement = (FormElementYesNoNA) currentObject;
+            holder.mTextViewTitle.setText(formElement.getTitle());
+            if (formElement.getValue() ==  1) {
+                holder.mEditRadioNoValue.setChecked(true);
+                holder.mEditRadioYesValue.setChecked(false);
+                holder.mEditRadioNaValue.setChecked(false);
+            }  else if (formElement.getValue() ==  2) {
+                holder.mEditRadioYesValue.setChecked(true);
+                holder.mEditRadioNoValue.setChecked(false);
+                holder.mEditRadioNaValue.setChecked(false);
+            }  else if (formElement.getValue() ==  3) {
+                holder.mEditRadioYesValue.setChecked(false);
+                holder.mEditRadioNoValue.setChecked(false);
+                holder.mEditRadioNaValue.setChecked(true);
+            } else {
+                holder.mEditRadioNoValue.setChecked(false);
+                holder.mEditRadioYesValue.setChecked(false);
+                holder.mEditRadioNaValue.setChecked(false);
+            }
+
+            if (formElement.getCallback() != null) {
+                final YesNoNACallBack yesNoNACallBack = formElement.getCallback();
+                holder.mEditRadioGroupValue.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+                {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId)
+                    {
+                        if (holder.mEditRadioNoValue.isChecked()) {
+                            yesNoNACallBack.callbackYesNoNAReturn(formElement.getTag(), holder.mEditRadioGroupValue, 1);
+                            formElement.setValue(1);
+                        } else if (holder.mEditRadioYesValue.isChecked()) {
+                            yesNoNACallBack.callbackYesNoNAReturn(formElement.getTag(), holder.mEditRadioGroupValue, 2);
+                            formElement.setValue(2);
+                        } else if (holder.mEditRadioNaValue.isChecked()) {
+                            yesNoNACallBack.callbackYesNoNAReturn(formElement.getTag(), holder.mEditRadioGroupValue, 3);
+                            formElement.setValue(3);
+                        } else {
+                            yesNoNACallBack.callbackYesNoNAReturn(formElement.getTag(), holder.mEditRadioGroupValue, 99);
+                            formElement.setValue(99);
+                        }
+                    }
+                });
+            }
+
             if (holder.linearLayout.getLayoutParams() != null) {
                 if (!formElement.getVisibility()) {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
@@ -2354,6 +2506,10 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         public TextView mTextViewValue;
         public Switch mEditSwitchValue;
         public CheckBox mEditCheckBoxValue;
+        public RadioButton mEditRadioYesValue;
+        public RadioButton mEditRadioNoValue;
+        public RadioButton mEditRadioNaValue;
+        public RadioGroup mEditRadioGroupValue;
         public ImageView mEditImageViewValue;
         public TextView mTextViewAttachValue;
         public BaseRatingBar mEditRatingValue;
@@ -2434,6 +2590,17 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             } else if (viewType == 22) {
                 mSmileValue = (SmileRating) v.findViewById(R.id.ratingView);
 
+            } else if (viewType == 23) {
+                mEditTextValue = (AppCompatEditText) v.findViewById(R.id.formElementValue);
+                mEditRadioGroupValue = (RadioGroup) v.findViewById(R.id.formElementRadioGroup);
+                mEditRadioYesValue = (RadioButton) v.findViewById(R.id.formElementRadioYes);
+                mEditRadioNoValue = (RadioButton) v.findViewById(R.id.formElementRadioNo);
+            } else if (viewType == 24) {
+                mEditTextValue = (AppCompatEditText) v.findViewById(R.id.formElementValue);
+                mEditRadioGroupValue = (RadioGroup) v.findViewById(R.id.formElementRadioGroup);
+                mEditRadioYesValue = (RadioButton) v.findViewById(R.id.formElementRadioYes);
+                mEditRadioNoValue = (RadioButton) v.findViewById(R.id.formElementRadioNo);
+                mEditRadioNaValue = (RadioButton) v.findViewById(R.id.formElementRadioNa);
             }
 
         }

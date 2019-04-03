@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: cn.pedant.sweetalert:library:1.3@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.3.aar/edc4f9a9521b3620a302571764e28ffc/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.3.aar/edc4f9a9521b3620a302571764e28ffc/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.3.aar/cb856e87a25aef33102ae5f10c66c6cb/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.3.aar/cb856e87a25aef33102ae5f10c66c6cb/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

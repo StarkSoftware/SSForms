@@ -28,7 +28,7 @@ public class FormElementImageMultipleView implements FormObject {
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
     private String mAttribute;
-
+    private String dbField;
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
     }
@@ -47,6 +47,12 @@ public class FormElementImageMultipleView implements FormObject {
 
     public FormElementImageMultipleView setImgAdapter(ImageCardAdapter imgAdapter) {
         this.imgAdapter = imgAdapter;
+        return this;
+    }
+
+    public String getDbField() { return dbField; }
+    public FormElementImageMultipleView setDbField(String dbField) {
+        this.dbField = dbField;
         return this;
     }
 

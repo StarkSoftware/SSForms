@@ -27,7 +27,7 @@ public class FormElementDateTime implements FormObject {
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
     private String mAttribute;
-
+    private String dbField;
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
     }
@@ -47,6 +47,12 @@ public class FormElementDateTime implements FormObject {
 
     public FormElementDateTime setRequired(boolean required) {
         this.required = required;
+        return this;
+    }
+
+    public String getDbField() { return dbField; }
+    public FormElementDateTime setDbField(String dbField) {
+        this.dbField = dbField;
         return this;
     }
 

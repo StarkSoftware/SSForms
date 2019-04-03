@@ -19,6 +19,11 @@
         <item name="android:spinnerStyle">@style/Widget.App.Spinner</item>
     </style>
 
+    <style name="DialogAnimations" />
+    <style name="DialogAnimations.SmileWindow">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_top</item>
+    </style>
 
     <style name="RadioButton">
         <item name="android:textColor">@drawable/button_text_color</item>

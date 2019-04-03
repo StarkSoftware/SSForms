@@ -28,7 +28,7 @@ public class FormElementSpinner implements FormObject {
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
     private String mAttribute;
-
+    private String dbField;
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
     }
@@ -50,6 +50,12 @@ public class FormElementSpinner implements FormObject {
     @Override
     public boolean isRequired() {
         return required;
+    }
+
+    public String getDbField() { return dbField; }
+    public FormElementSpinner setDbField(String dbField) {
+        this.dbField = dbField;
+        return this;
     }
 
     public FormElementSpinner setRequired(boolean required) {

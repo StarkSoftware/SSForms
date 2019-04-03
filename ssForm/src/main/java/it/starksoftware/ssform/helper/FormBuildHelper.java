@@ -30,6 +30,8 @@ import it.starksoftware.ssform.model.FormElementSignature;
 import it.starksoftware.ssform.model.FormElementSpinner;
 import it.starksoftware.ssform.model.FormElementSwitch;
 import it.starksoftware.ssform.model.FormElementToken;
+import it.starksoftware.ssform.model.FormElementYesNo;
+import it.starksoftware.ssform.model.FormElementYesNoNA;
 import it.starksoftware.ssform.model.FormHeader;
 import it.starksoftware.ssform.model.FormObject;
 import it.starksoftware.ssform.model.Validator;
@@ -202,6 +204,24 @@ public class FormBuildHelper {
                         vItem.setValidatorStatus(false);
                         validatedItems.add(vItem);
                     }
+                } else if (items.get(i).getElementType().contentEquals("YesNo")) {
+                    FormElementYesNo element = (FormElementYesNo) items.get(i);
+                    if (element.getValue() == 0) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
+                } else if (items.get(i).getElementType().contentEquals("YesNoNA")) {
+                    FormElementYesNoNA element = (FormElementYesNoNA) items.get(i);
+                    if (element.getValue() == 0) {
+                        vItem = new Validator();
+                        vItem.setValidatorMessage(element.getRequiredResponseMessage());
+                        vItem.setValidatorTag(element.getTag());
+                        vItem.setValidatorStatus(false);
+                        validatedItems.add(vItem);
+                    }
                 }
             }
 
@@ -270,6 +290,16 @@ public class FormBuildHelper {
     public FormElementMemo getFormMemoElement(int tag) {
 
         return this.mFormAdapter.getMemoValueAtTag(tag);
+    }
+
+    public FormElementYesNo getFormElementYesNo(int tag) {
+
+        return this.mFormAdapter.getFormElementYesNoByTag(tag);
+    }
+
+    public FormElementYesNoNA getFormElementYesNoNA(int tag) {
+
+        return this.mFormAdapter.getFormElementYesNoNAByTag(tag);
     }
 
     public FormElementImageView getFormImageViewElement(int tag) {

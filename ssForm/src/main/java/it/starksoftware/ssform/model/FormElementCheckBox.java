@@ -26,7 +26,7 @@ public class FormElementCheckBox implements FormObject {
     private int pos;
     private boolean required = false;
     private String mAttribute;
-
+    private String dbField;
     public FormElementCheckBox() {
     }
 
@@ -52,6 +52,12 @@ public class FormElementCheckBox implements FormObject {
 
     public FormElementCheckBox setValue(boolean value) {
         this.value = value;
+        return this;
+    }
+
+    public String getDbField() { return dbField; }
+    public FormElementCheckBox setDbField(String dbField) {
+        this.dbField = dbField;
         return this;
     }
 
