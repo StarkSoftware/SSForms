@@ -2,12 +2,14 @@ package it.starksoftware.ssform.attach;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,7 +21,6 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-import cn.pedant.SweetAlert.SweetAlertDialog;
 import it.starksoftware.ssform.R;
 import it.starksoftware.ssform.adapter.FormAttachAdapter;
 import it.starksoftware.ssform.file_explorer.FileExplorerActivity;
@@ -149,28 +150,25 @@ public class AttachPickerActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(View view, final int position) {
 
-                        new SweetAlertDialog(ctx, SweetAlertDialog.WARNING_TYPE)
-                                .setTitleText("Attach")
-                                .setContentText("Vuoi Eliminare l'allegato ?")
-                                .setConfirmText("Elimina")
-                                .setCancelText("Annulla")
-                                .showCancelButton(true)
-                                .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
+                        builder.setTitle(R.string.app_name)
+                                .setMessage("Vuoi Eliminare l'allegato ?")
+                                .setCancelable(false)
+                                .setPositiveButton("Elimina", new DialogInterface.OnClickListener() {
                                     @Override
-                                    public void onClick(SweetAlertDialog sDialog) {
-                                        sDialog.cancel();
-                                    }
-                                })
-                                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                    @Override
-                                    public void onClick(SweetAlertDialog sDialog) {
-
+                                    public void onClick(DialogInterface dialog, int which) {
                                         attachFiles.remove(position);
                                         setupAdapter();
-                                        sDialog.cancel();
                                     }
                                 })
-                                .show();
+                                .setNegativeButton("Annulla", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                    }
+                                });
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
 
                     }
 

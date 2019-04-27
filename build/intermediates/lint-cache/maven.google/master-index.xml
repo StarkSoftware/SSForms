@@ -122,4 +122,5 @@
   <androidx.navigation/>
   <androidx.work/>
   <androidx.sharetarget/>
+  <androidx.enterprise/>
 </metadata>

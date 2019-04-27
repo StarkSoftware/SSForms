@@ -70,6 +70,8 @@ import it.starksoftware.ssform.DateSwitcher.DateSwitcher;
 import it.starksoftware.ssform.R;
 import it.starksoftware.ssform.SearchableSpinner.OnSpinerItemClick;
 import it.starksoftware.ssform.SearchableSpinner.SpinnerDialog;
+import it.starksoftware.ssform.StarkSpinner.Interfaces.OnItemSelectedListener;
+import it.starksoftware.ssform.StarkSpinner.StarkSpinner;
 import it.starksoftware.ssform.activities.RxSignaturePicker;
 import it.starksoftware.ssform.activities.RxTokenPicker;
 import it.starksoftware.ssform.attach.AttachPicker;
@@ -86,6 +88,7 @@ import it.starksoftware.ssform.interfaces.RatingSmileCallBack;
 import it.starksoftware.ssform.interfaces.SearchableSpinnerCallBack;
 import it.starksoftware.ssform.interfaces.SegmentCallBack;
 import it.starksoftware.ssform.interfaces.SpinnerCallBack;
+import it.starksoftware.ssform.interfaces.SpinnerStarkCallBack;
 import it.starksoftware.ssform.interfaces.SwitchCallBack;
 import it.starksoftware.ssform.interfaces.TextCallBack;
 import it.starksoftware.ssform.interfaces.YesNoCallBack;
@@ -101,6 +104,7 @@ import it.starksoftware.ssform.model.FormElementDateTime;
 import it.starksoftware.ssform.model.FormElementImageMultipleView;
 import it.starksoftware.ssform.model.FormElementImageView;
 import it.starksoftware.ssform.model.FormElementInputLayout;
+import it.starksoftware.ssform.model.FormElementLabel;
 import it.starksoftware.ssform.model.FormElementMemo;
 import it.starksoftware.ssform.model.FormElementPlaceDialog;
 import it.starksoftware.ssform.model.FormElementProfileView;
@@ -110,6 +114,7 @@ import it.starksoftware.ssform.model.FormElementSegment;
 import it.starksoftware.ssform.model.FormElementSignature;
 import it.starksoftware.ssform.model.FormElementSmileRating;
 import it.starksoftware.ssform.model.FormElementSpinner;
+import it.starksoftware.ssform.model.FormElementStarkSpinner;
 import it.starksoftware.ssform.model.FormElementSwitch;
 import it.starksoftware.ssform.model.FormElementToken;
 import it.starksoftware.ssform.model.FormElementYesNo;
@@ -157,6 +162,8 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
     private int IS_SMILE_RATING = 22;
     private int IS_YES_NO = 23;
     private int IS_YES_NO_NA = 24;
+    private int IS_LABEL = 25;
+    private int IS_STARK_SPINNER = 26;
 
     private ArrayList<Image> images = new ArrayList<>();
     private ArrayList<String> attachs = new ArrayList<>();
@@ -414,6 +421,18 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         return null;
     }
 
+    public FormElementLabel getFormElementLabelByTag(int tag) {
+        for (FormObject f : this.mDataset) {
+            if (f instanceof FormElementYesNoNA) {
+                FormElementLabel formElement = (FormElementLabel) f;
+                if (formElement.getTag() == tag) {
+                    return formElement;
+                }
+            }
+        }
+        return null;
+    }
+
     public FormElementRating getRatingValueAtTag(int tag) {
         for (FormObject f : this.mDataset) {
             if (f instanceof FormElementRating) {
@@ -568,6 +587,14 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 FormElementYesNoNA element = (FormElementYesNoNA) mDataset.get(index);
                 if (element.getTag() == tag)
                     itemPosition = index;
+            } else if (mDataset.get(index).getElementType().contentEquals("Label")) {
+                FormElementLabel element = (FormElementLabel) mDataset.get(index);
+                if (element.getTag() == tag)
+                    itemPosition = index;
+            } else if (mDataset.get(index).getElementType().contentEquals("StarkSpinner")) {
+                FormElementStarkSpinner element = (FormElementStarkSpinner) mDataset.get(index);
+                if (element.getTag() == tag)
+                    itemPosition = index;
             }
         }//
         Log.d("FM", "Position --> " + itemPosition);
@@ -669,7 +696,11 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             return IS_YES_NO;
         } else if (mDataset.get(position).getElementType().contentEquals("YesNoNA")) {
             return IS_YES_NO_NA;
-        }  else {
+        } else if (mDataset.get(position).getElementType().contentEquals("Label")) {
+            return IS_LABEL;
+        } else if (mDataset.get(position).getElementType().contentEquals("StarkSpinner")) {
+            return IS_STARK_SPINNER;
+        } else {
             return IS_DEFAULT_VIEW;
         }
     }
@@ -783,6 +814,14 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 case 24:
                     v = inflater.inflate(R.layout.form_element_yes_no_na, parent, false);
                     vh = new ViewHolder(v, null, null, IS_YES_NO_NA, null);
+                    break;
+                case 25:
+                    v = inflater.inflate(R.layout.form_element_label, parent, false);
+                    vh = new ViewHolder(v, null, null, IS_LABEL, null);
+                    break;
+                case 26:
+                    v = inflater.inflate(R.layout.form_element_stark_spinner, parent, false);
+                    vh = new ViewHolder(v, null, null, IS_STARK_SPINNER, null);
                     break;
                 default:
                     v = inflater.inflate(R.layout.form_element_header, parent, false);
@@ -908,6 +947,23 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 }
             }
 
+        } else if (getItemViewType(position) == IS_LABEL) {
+            FormElementLabel formElement = (FormElementLabel) currentObject;
+            holder.mTextViewTitle.setText(formElement.getTitle());
+            holder.mTextViewDetail.setText(formElement.getValue());
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+
+                }
+            }
         } else if (getItemViewType(position) == IS_INPUT_LAYOUT) {
             final FormElementInputLayout formElement = (FormElementInputLayout) currentObject;
             holder.editText.setHint(formElement.getmHint());
@@ -1326,7 +1382,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             final FormSpinAdapter adapter = formElement.getSpinnerAdapter();
             final SpinnerCallBack spinnerCallBack = formElement.getCallback();
             holder.mEditSpinnerValue.setAdapter(adapter);
-            if (formElement.getValue() != null) {
+            if (formElement.getValue().getKey() != null) {
                 int spinnerPosition = adapter.indexOfSpinner(formElement.getValue());
                 holder.mEditSpinnerValue.setSelection(spinnerPosition);
             }
@@ -1349,6 +1405,55 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 }
             });
             holder.mEditSpinnerValue.setOnFocusChangeListener(new AdapterView.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    String aa = "";
+                }
+            });
+
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
+
+        } else if (getItemViewType(position) == IS_STARK_SPINNER) {
+            final FormElementStarkSpinner formElement = (FormElementStarkSpinner) currentObject;
+            holder.mTextViewTitle.setText(formElement.getTitle());
+            final StarkSpinnerAdapter adapter = formElement.getSpinnerAdapter();
+            final SpinnerStarkCallBack spinnerCallBack = formElement.getCallback();
+            holder.mEditStarkSpinnerValue.setAdapter(adapter);
+            if (formElement.getValue() != null) {
+                int spinnerPosition = adapter.indexOfSpinner(formElement.getValue());
+                holder.mEditStarkSpinnerValue.setSelectedItem(spinnerPosition);
+            }
+
+            if (formElement.getRefresh())
+                holder.mEditStarkSpinnerValue.setTag(formElement.getTag());
+
+            holder.mEditStarkSpinnerValue.setOnItemSelectedListener(new OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(View view, int position, long id) {
+                    FormSpinnerObject user = adapter.getItem(position);
+                    formElement.setValue(user);
+                    if (spinnerCallBack != null)
+                        spinnerCallBack.callbackSpinnerStarkReturn(user, formElement.getTag(), holder.mEditStarkSpinnerValue);
+                }
+
+                @Override
+                public void onNothingSelected() {
+
+                }
+            });
+
+            holder.mEditStarkSpinnerValue.setOnFocusChangeListener(new AdapterView.OnFocusChangeListener() {
                 @Override
                 public void onFocusChange(View v, boolean hasFocus) {
                     String aa = "";
@@ -1435,13 +1540,13 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     public void onCheckedChanged(RadioGroup group, int checkedId)
                     {
                         if (holder.mEditRadioNoValue.isChecked()) {
-                            yesNoCallBack.callbackYesNoReturn(formElement.getTag(), holder.mEditRadioGroupValue, 1);
+                            yesNoCallBack.callbackYesNoReturn(formElement.getTag(), holder.mEditRadioGroupValue, 1, formElement.getExtraValue());
                             formElement.setValue(1);
                         } else if (holder.mEditRadioYesValue.isChecked()) {
-                            yesNoCallBack.callbackYesNoReturn(formElement.getTag(), holder.mEditRadioGroupValue, 2);
+                            yesNoCallBack.callbackYesNoReturn(formElement.getTag(), holder.mEditRadioGroupValue, 2, formElement.getExtraValue());
                             formElement.setValue(2);
                         } else {
-                            yesNoCallBack.callbackYesNoReturn(formElement.getTag(), holder.mEditRadioGroupValue, 99);
+                            yesNoCallBack.callbackYesNoReturn(formElement.getTag(), holder.mEditRadioGroupValue, 99, formElement.getExtraValue());
                             formElement.setValue(99);
                         }
                     }
@@ -1488,16 +1593,16 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     public void onCheckedChanged(RadioGroup group, int checkedId)
                     {
                         if (holder.mEditRadioNoValue.isChecked()) {
-                            yesNoNACallBack.callbackYesNoNAReturn(formElement.getTag(), holder.mEditRadioGroupValue, 1);
+                            yesNoNACallBack.callbackYesNoNAReturn(formElement.getTag(), holder.mEditRadioGroupValue, 1, formElement.getExtraValue());
                             formElement.setValue(1);
                         } else if (holder.mEditRadioYesValue.isChecked()) {
-                            yesNoNACallBack.callbackYesNoNAReturn(formElement.getTag(), holder.mEditRadioGroupValue, 2);
+                            yesNoNACallBack.callbackYesNoNAReturn(formElement.getTag(), holder.mEditRadioGroupValue, 2, formElement.getExtraValue());
                             formElement.setValue(2);
                         } else if (holder.mEditRadioNaValue.isChecked()) {
-                            yesNoNACallBack.callbackYesNoNAReturn(formElement.getTag(), holder.mEditRadioGroupValue, 3);
+                            yesNoNACallBack.callbackYesNoNAReturn(formElement.getTag(), holder.mEditRadioGroupValue, 3, formElement.getExtraValue());
                             formElement.setValue(3);
                         } else {
-                            yesNoNACallBack.callbackYesNoNAReturn(formElement.getTag(), holder.mEditRadioGroupValue, 99);
+                            yesNoNACallBack.callbackYesNoNAReturn(formElement.getTag(), holder.mEditRadioGroupValue, 99, formElement.getExtraValue());
                             formElement.setValue(99);
                         }
                     }
@@ -2514,6 +2619,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         public TextView mTextViewAttachValue;
         public BaseRatingBar mEditRatingValue;
         public Spinner mEditSpinnerValue;
+        public StarkSpinner mEditStarkSpinnerValue;
         public SegmentedGroup mEditSegmentGroupValue;
         public FormCustomEditTextListener mFormCustomEditTextListener;
         public FormCustomEditTextInputLayoutListener mFormCustomEditTextInputLayoutListener;
@@ -2601,6 +2707,10 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 mEditRadioYesValue = (RadioButton) v.findViewById(R.id.formElementRadioYes);
                 mEditRadioNoValue = (RadioButton) v.findViewById(R.id.formElementRadioNo);
                 mEditRadioNaValue = (RadioButton) v.findViewById(R.id.formElementRadioNa);
+            } else if (viewType == 25) {
+                mTextViewDetail = (AppCompatTextView) v.findViewById(R.id.formElementValue);
+            }else if (viewType == 26) {
+                mEditStarkSpinnerValue = (StarkSpinner) v.findViewById(R.id.formElementValue);
             }
 
         }

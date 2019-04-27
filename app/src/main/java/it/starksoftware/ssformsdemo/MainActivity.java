@@ -29,6 +29,7 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import it.starksoftware.ssform.DateSwitcher.DateSwitcher;
+import it.starksoftware.ssform.StarkSpinner.StarkSpinner;
 import it.starksoftware.ssform.helper.FormBuildHelper;
 import it.starksoftware.ssform.interfaces.ButtonCallBack;
 import it.starksoftware.ssform.interfaces.CheckBoxCallBack;
@@ -39,6 +40,7 @@ import it.starksoftware.ssform.interfaces.RatingSmileCallBack;
 import it.starksoftware.ssform.interfaces.SearchableSpinnerCallBack;
 import it.starksoftware.ssform.interfaces.SegmentCallBack;
 import it.starksoftware.ssform.interfaces.SpinnerCallBack;
+import it.starksoftware.ssform.interfaces.SpinnerStarkCallBack;
 import it.starksoftware.ssform.interfaces.SwitchCallBack;
 import it.starksoftware.ssform.interfaces.TextCallBack;
 import it.starksoftware.ssform.interfaces.YesNoNACallBack;
@@ -53,6 +55,7 @@ import it.starksoftware.ssform.model.FormElementDateTime;
 import it.starksoftware.ssform.model.FormElementImageMultipleView;
 import it.starksoftware.ssform.model.FormElementImageView;
 import it.starksoftware.ssform.model.FormElementInputLayout;
+import it.starksoftware.ssform.model.FormElementLabel;
 import it.starksoftware.ssform.model.FormElementMemo;
 import it.starksoftware.ssform.model.FormElementPlaceDialog;
 import it.starksoftware.ssform.model.FormElementProfileView;
@@ -62,6 +65,7 @@ import it.starksoftware.ssform.model.FormElementSegment;
 import it.starksoftware.ssform.model.FormElementSignature;
 import it.starksoftware.ssform.model.FormElementSmileRating;
 import it.starksoftware.ssform.model.FormElementSpinner;
+import it.starksoftware.ssform.model.FormElementStarkSpinner;
 import it.starksoftware.ssform.model.FormElementSwitch;
 import it.starksoftware.ssform.model.FormElementToken;
 import it.starksoftware.ssform.model.FormElementYesNo;
@@ -84,7 +88,8 @@ public class MainActivity extends AppCompatActivity implements
         DateSwitcherCallBack,
         RatingSmileCallBack,
         TextCallBack,
-        YesNoNACallBack
+        YesNoNACallBack,
+        SpinnerStarkCallBack
 
 {
 
@@ -104,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements
     public FormElementSegment formElementSegment;
     public FormElementSignature formElementSignature;
     public FormElementSpinner formElementSpinner;
+    public FormElementStarkSpinner formElementStarkSpinner;
     public FormElementSwitch formElementSwitch;
     public FormElementCheckBox formElementCheckBox;
     public FormElementPlaceDialog formElementPlaceDialog;
@@ -118,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements
     public FormElementYesNo formElementYesNo;
     public FormElementYesNo formElementYesNoA;
     public FormElementYesNo formElementYesNoB;
-
+    public FormElementLabel formElementLabel;
     public FormElementYesNoNA formElementYesNoNa;
 
     // BUILDER
@@ -188,6 +194,11 @@ public class MainActivity extends AppCompatActivity implements
                 .setTitle("FORM ELEMENT NO")
                 .setDbField("AS1")
                 .setValue(0)
+                .setTag(50);
+
+        formElementLabel = FormElementLabel.createInstance()
+                .setTitle("FORM ELEMENT NO")
+                .setValue("ALLLLLLLLLL")
                 .setTag(50);
 
         formElementYesNoA = FormElementYesNo.createInstance()
@@ -302,6 +313,19 @@ public class MainActivity extends AppCompatActivity implements
                 .setCallback(this)
                 .setTag(130);
 
+
+        FormSpinnerObject ob = new FormSpinnerObject();
+
+
+        formElementStarkSpinner = FormElementStarkSpinner.createInstance()
+                .setTitle("STARK SPINNER")
+                .setSpinnerObject(spinnerValues())
+                .setActivity(this)
+                .setShowIcon(false)
+                .setContext(this)
+                .setCallback(this)
+                .setTag(130);
+
         formElementCheckBox = FormElementCheckBox.createInstance()
                 .setTitle("CheckBOX")
                 .setActivity(this)
@@ -375,7 +399,8 @@ public class MainActivity extends AppCompatActivity implements
         formItems.add(formElementImageView);
         formItems.add(formElementMemo);
         formItems.add(formElementRating);*/
-        formItems.add(formElementSearchableSpinner);
+        formItems.add(formElementLabel);
+        formItems.add(formElementStarkSpinner);
        /* formItems.add(formElementSegment);
         formItems.add(formElementSignature);
         formItems.add(formElementSpinner);
@@ -518,7 +543,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void callbackYesNoNAReturn(Object tag, RadioGroup radioGroup, int value)
+    public void callbackYesNoNAReturn(Object tag, RadioGroup radioGroup, int value, String extra)
     {
 
     }
@@ -555,6 +580,13 @@ public class MainActivity extends AppCompatActivity implements
     public void callbackCheckBoxReturn(Object tag, CheckBox checkBox, boolean isChecked) {
 
         String sMessageToast = String.format("CONTROL : CheckBox - VALUE %s", isChecked);
+        showToastMessage(sMessageToast);
+    }
+
+    @Override
+    public void callbackSpinnerStarkReturn(FormSpinnerObject object, Object tag, StarkSpinner spinner)
+    {
+        String sMessageToast = String.format("CONTROL : StarkSpinner - VALUE %s", object.getValue());
         showToastMessage(sMessageToast);
     }
 

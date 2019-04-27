@@ -21,6 +21,7 @@ public class FormElementYesNo implements FormObject {
     private int pos;
     private boolean required = false;
     private String mAttribute;
+    private String extraValue;
     private String requiredResponseMessage = mTitle;
 
     public FormElementYesNo() {
@@ -66,7 +67,14 @@ public class FormElementYesNo implements FormObject {
         return this;
     }
 
+    public String getExtraValue() {
+        return extraValue;
+    }
 
+    public FormElementYesNo setExtraValue(String extraValue) {
+        this.extraValue = extraValue;
+        return this;
+    }
 
     public FormElementYesNo setTitle(String mTitle) {
         this.mTitle = mTitle;

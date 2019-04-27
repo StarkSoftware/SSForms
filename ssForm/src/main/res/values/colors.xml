@@ -6,7 +6,7 @@
     <color name="colorFormMasterElementTextTitle">#222222</color>
     <color name="colorFormMasterElementTextValue">#000000</color>
     <color name="colorFormMasterDivider">#DDDDDD</color>
-
+    <color name="float_transparent">#DDDDDD</color>
     <color name="textColorHighlight">#1Ed761</color>
 
     <color name="accent">#FFFFFF</color>

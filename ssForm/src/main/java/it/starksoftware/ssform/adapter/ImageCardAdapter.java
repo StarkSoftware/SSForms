@@ -1,7 +1,9 @@
 package it.starksoftware.ssform.adapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +12,6 @@ import android.widget.ImageView;
 
 import java.util.List;
 
-import cn.pedant.SweetAlert.SweetAlertDialog;
 import it.starksoftware.ssform.R;
 
 
@@ -50,27 +51,26 @@ public class ImageCardAdapter extends RecyclerView.Adapter<ImageCardAdapter.MyVi
             @Override
             public void onClick(View view) {
 
-                new SweetAlertDialog(mContext, SweetAlertDialog.WARNING_TYPE)
-                        .setTitleText("Gestione Immagini")
-                        .setContentText("Vuoi eliminare l'immagine selezionata ?")
-                        .setConfirmText("Elimina")
-                        .setCancelText("Annulla")
-                        .showCancelButton(true)
-                        .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                builder.setTitle("Gestione Immagini")
+                        .setMessage("Vuoi eliminare l'immagine selezionata ?")
+                        .setCancelable(false)
+                        .setPositiveButton("Elimina", new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(SweetAlertDialog sDialog) {
-                                sDialog.cancel();
-                            }
-                        })
-                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                            @Override
-                            public void onClick(SweetAlertDialog sDialog) {
+                            public void onClick(DialogInterface dialog, int which) {
                                 imagesList.remove(position);
                                 notifyDataSetChanged();
-                                sDialog.cancel();
                             }
                         })
-                        .show();
+                        .setNegativeButton("Annulla", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
             }
         });
     }

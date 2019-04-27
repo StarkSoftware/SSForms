@@ -22,6 +22,7 @@ public class FormElementYesNoNA implements FormObject {
     private boolean required = false;
     private String mAttribute;
     private String requiredResponseMessage = mTitle;
+    private String extraValue;
 
     public FormElementYesNoNA() {
     }
@@ -84,6 +85,14 @@ public class FormElementYesNoNA implements FormObject {
         return this;
     }
 
+    public String getExtraValue() {
+        return extraValue;
+    }
+
+    public FormElementYesNoNA setExtraValue(String extraValue) {
+        this.extraValue = extraValue;
+        return this;
+    }
 
     public FormElementYesNoNA setContext(Context ctx) {
         this.mCtx = ctx;
