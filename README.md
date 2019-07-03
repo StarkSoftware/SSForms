@@ -11,7 +11,8 @@ The goal of the library is to get the same power of hand-made forms but spending
 Add this in your app's **build.gradle** file:
 ```
 repositories {
-	mavenCentral() 
+	mavenCentral()
+	maven { url "https://jitpack.io" }
 	maven { 
 		url "https://starksoftware.github.io/SSForms"
 	}
