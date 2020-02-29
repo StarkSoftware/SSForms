@@ -3,18 +3,14 @@ package it.starksoftware.ssform.tokens;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.support.annotation.StyleRes;
-import android.support.v4.app.Fragment;
-import android.view.View;
+
+import androidx.annotation.StyleRes;
+import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import it.starksoftware.ssform.model.FormTokenObject;
 import it.starksoftware.ssform.model.Image;
-import it.starksoftware.ssform.model.TokesTags;
-import it.starksoftware.ssform.signaturepad.SignaturePickerActivity;
 import it.starksoftware.ssform.signaturepad.SignaturePickerConfig;
 
 public abstract class TokensPicker {

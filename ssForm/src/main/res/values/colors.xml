@@ -8,7 +8,7 @@
     <color name="colorFormMasterDivider">#DDDDDD</color>
     <color name="float_transparent">#DDDDDD</color>
     <color name="textColorHighlight">#1Ed761</color>
-
+    <color name="whiteColor">#ffffff</color>
     <color name="accent">#FFFFFF</color>
     <color name="btnBackgroundColorDefault">@android:color/darker_gray</color>
 

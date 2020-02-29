@@ -2,11 +2,14 @@ package it.starksoftware.ssform.tokens;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -79,7 +82,33 @@ public class AddTokensActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
+        menu.clear();
         getMenuInflater().inflate(R.menu.tokens_picker_menu_main, menu);
+        //super.onCreateOptionsMenu(menu, getMenuInflater());
+
+        MenuItem myActionMenuItem = menu.findItem(R.id.action_search);
+        final SearchView searchView = (SearchView) myActionMenuItem.getActionView();
+        EditText searchEditText = (EditText) searchView.findViewById(R.id.search_src_text);
+        searchEditText.setTextColor(getResources().getColor(R.color.whiteColor));
+        searchEditText.setHintTextColor(getResources().getColor(R.color.whiteColor));
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                if (TextUtils.isEmpty(newText)) {
+                    simpleSearchAdapter.filter("");
+                } else {
+                    simpleSearchAdapter.filter(newText);
+                }
+                return true;
+            }
+        });
         return true;
     }
 

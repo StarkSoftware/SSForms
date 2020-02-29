@@ -5,18 +5,17 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.AppCompatEditText;
-import android.support.v7.widget.AppCompatTextView;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
@@ -106,6 +105,7 @@ import it.starksoftware.ssform.model.FormElementImageView;
 import it.starksoftware.ssform.model.FormElementInputLayout;
 import it.starksoftware.ssform.model.FormElementLabel;
 import it.starksoftware.ssform.model.FormElementMemo;
+import it.starksoftware.ssform.model.FormElementMultiSelect;
 import it.starksoftware.ssform.model.FormElementPlaceDialog;
 import it.starksoftware.ssform.model.FormElementProfileView;
 import it.starksoftware.ssform.model.FormElementRating;
@@ -128,7 +128,6 @@ import it.starksoftware.ssform.model.TokesTags;
 import it.starksoftware.ssform.ratings.BaseRatingBar;
 import it.starksoftware.ssform.segmented.SegmentedGroup;
 import it.starksoftware.ssform.signaturepad.SignaturePicker;
-import it.starksoftware.ssform.tokens.AddTokensActivity;
 import it.starksoftware.ssform.tokens.TokensPicker;
 import it.starksoftware.ssform.view.GridSpacingItemDecoration;
 import rx.Observable;
@@ -164,6 +163,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
     private int IS_YES_NO_NA = 24;
     private int IS_LABEL = 25;
     private int IS_STARK_SPINNER = 26;
+    private int IS_MULTISELECT = 27;
 
     private ArrayList<Image> images = new ArrayList<>();
     private ArrayList<String> attachs = new ArrayList<>();
@@ -595,6 +595,10 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 FormElementStarkSpinner element = (FormElementStarkSpinner) mDataset.get(index);
                 if (element.getTag() == tag)
                     itemPosition = index;
+            } else if (mDataset.get(index).getElementType().contentEquals("MultiSelect")) {
+                FormElementMultiSelect element = (FormElementMultiSelect) mDataset.get(index);
+                if (element.getTag() == tag)
+                    itemPosition = index;
             }
         }//
         Log.d("FM", "Position --> " + itemPosition);
@@ -700,6 +704,8 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             return IS_LABEL;
         } else if (mDataset.get(position).getElementType().contentEquals("StarkSpinner")) {
             return IS_STARK_SPINNER;
+        } else if (mDataset.get(position).getElementType().contentEquals("MultiSelect")) {
+            return IS_MULTISELECT;
         } else {
             return IS_DEFAULT_VIEW;
         }
@@ -823,6 +829,10 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     v = inflater.inflate(R.layout.form_element_stark_spinner, parent, false);
                     vh = new ViewHolder(v, null, null, IS_STARK_SPINNER, null);
                     break;
+                case 27:
+                    v = inflater.inflate(R.layout.form_element_multiselect, parent, false);
+                    vh = new ViewHolder(v, null, null, IS_MULTISELECT, null);
+                    break;
                 default:
                     v = inflater.inflate(R.layout.form_element_header, parent, false);
                     vh = new ViewHolder(v, null, null, IS_HEADER_VIEW, null);
@@ -917,7 +927,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 case FormElement.TYPE_PICKER_TIME:
                     if(formElement.isReadOnly())
                         holder.mEditTextValue.setEnabled(false);
-                    setTimePicker(holder.mEditTextValue, position, holder.layoutRow);
+                    setTimePicker(holder.mEditTextValue, position, holder.layoutRow, true);
                     break;
                 case FormElement.TYPE_SPINNER_DROPDOWN:
                     if(formElement.isReadOnly())
@@ -1430,9 +1440,13 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             final StarkSpinnerAdapter adapter = formElement.getSpinnerAdapter();
             final SpinnerStarkCallBack spinnerCallBack = formElement.getCallback();
             holder.mEditStarkSpinnerValue.setAdapter(adapter);
-            if (formElement.getValue() != null) {
-                int spinnerPosition = adapter.indexOfSpinner(formElement.getValue());
-                holder.mEditStarkSpinnerValue.setSelectedItem(spinnerPosition);
+            try {
+                if (formElement.getValue() != null) {
+                    int spinnerPosition = adapter.indexOfSpinner(formElement.getValue());
+                    holder.mEditStarkSpinnerValue.setSelectedItem(spinnerPosition);
+                }
+            } catch (Exception ex) {
+                holder.mEditStarkSpinnerValue.setSelectedItem(0);
             }
 
             if (formElement.getRefresh())
@@ -1454,6 +1468,54 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             });
 
             holder.mEditStarkSpinnerValue.setOnFocusChangeListener(new AdapterView.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    String aa = "";
+                }
+            });
+
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
+
+        } else if (getItemViewType(position) == IS_MULTISELECT) {
+            final FormElementMultiSelect formElement = (FormElementMultiSelect) currentObject;
+            holder.mTextViewTitle.setText(formElement.getTitle());
+            final FormSpinAdapter adapter = formElement.getSpinnerAdapter();
+            final SpinnerCallBack spinnerCallBack = formElement.getCallback();
+            holder.mEditSpinnerValue.setAdapter(adapter);
+            if (formElement.getValue().getKey() != null) {
+                int spinnerPosition = adapter.indexOfSpinner(formElement.getValue());
+                holder.mEditSpinnerValue.setSelection(spinnerPosition);
+            }
+
+            if (formElement.getRefresh())
+                holder.mEditSpinnerValue.setTag(formElement.getTag());
+
+            holder.mEditSpinnerValue.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                    FormSpinnerObject user = adapter.getItem(position);
+                    formElement.setValue(user);
+                    if (spinnerCallBack != null)
+                        spinnerCallBack.callbackSpinnerReturn(user, formElement.getTag(), holder.mEditSpinnerValue);
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapter) {
+
+                }
+            });
+            holder.mEditSpinnerValue.setOnFocusChangeListener(new AdapterView.OnFocusChangeListener() {
                 @Override
                 public void onFocusChange(View v, boolean hasFocus) {
                     String aa = "";
@@ -1660,7 +1722,14 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                         DateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
                         holder.mTextViewValue.setText(dateFormat.format(formElement.getValue()));
                     }
-                    setTimePickerTextView(holder.mTextViewValue, position, holder.layoutRow);
+                    setTimePickerTextView(holder.mTextViewValue, position, holder.layoutRow, true);
+                    break;
+                case FormElementDateTime.TYPE_PICKER_TIME_AMPM:
+                    if (formElement.getValue() != null) {
+                        DateFormat dateFormat = new SimpleDateFormat("HH:mm a", Locale.getDefault());
+                        holder.mTextViewValue.setText(dateFormat.format(formElement.getValue()));
+                    }
+                    setTimePickerTextView(holder.mTextViewValue, position, holder.layoutRow, false);
                     break;
                 case FormElementDateTime.TYPE_PICKER_DATE_TIME:
                     if (formElement.getValue() != null) {
@@ -2150,7 +2219,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
 
     }
 
-    private void setTimePicker(final AppCompatEditText editText, final int position, final LinearLayout layoutRow) {
+    private void setTimePicker(final AppCompatEditText editText, final int position, final LinearLayout layoutRow, final boolean is24HourView) {
 
         editText.setFocusableInTouchMode(false);
 
@@ -2170,15 +2239,27 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 // saves clicked position for further reference
                 clickedPosition = position;
 
-                // prepares time picker dialog
-                TimePickerDialog timePickerDialog = new TimePickerDialog(mContext,
-                        time,
-                        mCalendarCurrentDate.get(Calendar.HOUR_OF_DAY),
-                        mCalendarCurrentDate.get(Calendar.MINUTE),
-                        true);
+                if (is24HourView) {
+                    // prepares time picker dialog
+                    TimePickerDialog timePickerDialog = new TimePickerDialog(mContext,
+                            time,
+                            mCalendarCurrentDate.get(Calendar.HOUR_OF_DAY),
+                            mCalendarCurrentDate.get(Calendar.MINUTE),
+                            true);
+                    // display the picker
+                    timePickerDialog.show();
+                } else {
+                    // prepares time picker dialog
+                    TimePickerDialog timePickerDialog = new TimePickerDialog(mContext,
+                            timeUS,
+                            mCalendarCurrentDate.get(Calendar.HOUR_OF_DAY),
+                            mCalendarCurrentDate.get(Calendar.MINUTE),
+                            false);
+                    // display the picker
+                    timePickerDialog.show();
+                }
 
-                // display the picker
-                timePickerDialog.show();
+
             }
         });
 
@@ -2261,7 +2342,13 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 "Annulla"
         );
 
-        dateTimeFragment.set24HoursMode(true);
+        if (formElementDateTime.getType() == FormElementDateTime.TYPE_PICKER_TIME) {
+            dateTimeFragment.set24HoursMode(true);
+        } else if (formElementDateTime.getType() == FormElementDateTime.TYPE_PICKER_TIME_AMPM) {
+            dateTimeFragment.set24HoursMode(false);
+        } else {
+            dateTimeFragment.set24HoursMode(true);
+        }
         Calendar c = Calendar.getInstance();
         c.setTime(new Date());
         c.add(Calendar.DATE, -1);  // number of days to add
@@ -2328,23 +2415,18 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         });
     }
 
-    private void setTimePickerTextView(final TextView textView, final int position, final LinearLayout layoutRow) {
+    private void setTimePickerTextView(final TextView textView, final int position, final LinearLayout layoutRow, final boolean is24HourView) {
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                // saves clicked position for further reference
                 clickedPosition = position;
-
-                // prepares time picker dialog
                 TimePickerDialog timePickerDialog = new TimePickerDialog(mContext,
                         timeTextView,
                         mCalendarCurrentDate.get(Calendar.HOUR_OF_DAY),
                         mCalendarCurrentDate.get(Calendar.MINUTE),
-                        true);
+                        is24HourView);
 
-                // display the picker
                 timePickerDialog.show();
             }
         });
@@ -2352,18 +2434,12 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         layoutRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                // saves clicked position for further reference
                 clickedPosition = position;
-
-                // prepares time picker dialog
                 TimePickerDialog timePickerDialog = new TimePickerDialog(mContext,
                         timeTextView,
                         mCalendarCurrentDate.get(Calendar.HOUR_OF_DAY),
                         mCalendarCurrentDate.get(Calendar.MINUTE),
-                        true);
-
-                // display the picker
+                        is24HourView);
                 timePickerDialog.show();
             }
         });
@@ -2380,7 +2456,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         // reformat the options in format needed
         final CharSequence[] options = new CharSequence[currentObj.getOptions().size()];
         for (int i = 0; i < currentObj.getOptions().size(); i++) {
-            options[i] = currentObj.getOptions().get(i);
+            options[i] = currentObj.getOptions().get(i).getValue();
         }
 
         // prepare the dialog
@@ -2449,53 +2525,59 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         // reformat the options in format needed
         final CharSequence[] options = new CharSequence[currentObj.getOptions().size()];
         final boolean[] optionsSelected = new boolean[currentObj.getOptions().size()];
-        final ArrayList<Integer> mSelectedItems = new ArrayList();
+        final ArrayList<FormSpinnerObject> mSelectedItems = new ArrayList();
 
         for (int i = 0; i < currentObj.getOptions().size(); i++) {
-            options[i] = currentObj.getOptions().get(i);
+            options[i] = currentObj.getOptions().get(i).getValue();
             optionsSelected[i] = false;
 
-            if (currentObj.getOptionsSelected().contains(options[i])) {
-                optionsSelected[i] = true;
-                mSelectedItems.add(i);
+            for (int x = 0; x < currentObj.getOptionsSelected().size(); x++) {
+                if (currentObj.getOptionsSelected().get(x).getValue().equals(options[i])) {
+                    optionsSelected[i] = true;
+                    mSelectedItems.add(currentObj.getOptions().get(i));
+                }
             }
         }
 
         // prepare the dialog
         final AlertDialog dialog = new AlertDialog.Builder(mContext)
-                .setTitle("Pick one or more")
+                .setTitle(currentObj.getDialogTitle())
                 .setMultiChoiceItems(options, optionsSelected,
                         new DialogInterface.OnMultiChoiceClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which,
                                                 boolean isChecked) {
+                                FormSpinnerObject obj = currentObj.getOptions().get(which);
                                 if (isChecked) {
-                                    // If the user checked the item, add it to the selected items
-                                    mSelectedItems.add(which);
-                                } else if (mSelectedItems.contains(which)) {
-                                    // Else, if the item is already in the array, remove it
-                                    mSelectedItems.remove(Integer.valueOf(which));
+                                    mSelectedItems.add(obj);
+                                } else {
+                                    for (int x = 0; x < mSelectedItems.size(); x++) {
+                                        if (mSelectedItems.get(x).getKey().equals(obj.getKey())) {
+                                            mSelectedItems.remove(mSelectedItems.get(x));
+                                        }
+                                    }
                                 }
                             }
                         })
                 // Set the action buttons
-                .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                .setPositiveButton(currentObj.getDialogOk(), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         String s = "";
                         for (int i = 0; i < mSelectedItems.size(); i++) {
-                            s += options[mSelectedItems.get(i)];
+                            s += mSelectedItems.get(i).getValue();
 
                             if (i < mSelectedItems.size() - 1) {
                                 s += ", ";
                             }
                         }
                         editText.setText(s);
+                        ((FormElement) mDataset.get(position)).setOptionsSelected(mSelectedItems);
                         ((FormElement) mDataset.get(position)).setValue(s);
                         notifyItemChanged(clickedPosition);
                     }
                 })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                .setNegativeButton(currentObj.getDialogCalcel(), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
 
@@ -2548,6 +2630,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                             @Override
                             public void onClick(DialogInterface dialog, int which,
                                                 boolean isChecked) {
+
                                 if (isChecked) {
                                     // If the user checked the item, add it to the selected items
                                     mSelectedItems.add(which);
@@ -2816,6 +2899,24 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
 
     };
 
+    TimePickerDialog.OnTimeSetListener timeUS = new TimePickerDialog.OnTimeSetListener() {
+        @Override
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+            mCalendarCurrentTime.set(Calendar.HOUR_OF_DAY, hourOfDay);
+            mCalendarCurrentTime.set(Calendar.MINUTE, minute);
+
+            String myFormatTime = "HH:mm a"; // custom format
+            SimpleDateFormat sdfTime = new SimpleDateFormat(myFormatTime, Locale.getDefault());
+
+            // act only if clicked position is a valid index
+            if (clickedPosition >= 0) {
+                ((FormElement) mDataset.get(clickedPosition)).setValue(sdfTime.format(mCalendarCurrentTime.getTime()));
+                notifyItemChanged(clickedPosition);
+                clickedPosition = -1;
+
+            }
+        }
+    };
 
     TimePickerDialog.OnTimeSetListener time = new TimePickerDialog.OnTimeSetListener() {
         @Override

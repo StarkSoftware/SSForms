@@ -3,7 +3,7 @@ package it.starksoftware.ssform.attach;
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.StyleRes;
+import androidx.annotation.StyleRes;
 
 import java.util.ArrayList;
 

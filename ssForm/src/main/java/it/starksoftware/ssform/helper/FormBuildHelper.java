@@ -1,23 +1,20 @@
 package it.starksoftware.ssform.helper;
 
 import android.app.Activity;
-import android.support.v4.app.FragmentManager;
+import androidx.fragment.app.FragmentManager;
 import android.content.Context;
-import android.support.v7.appcompat.BuildConfig;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import it.starksoftware.ssform.BuildConfig;
 import it.starksoftware.ssform.adapter.FormAdapter;
 import it.starksoftware.ssform.model.FormDivider;
 import it.starksoftware.ssform.model.FormElement;
 import it.starksoftware.ssform.model.FormElementAttach;
-import it.starksoftware.ssform.model.FormElementButton;
-import it.starksoftware.ssform.model.FormElementCheckBox;
-import it.starksoftware.ssform.model.FormElementCustomKeyboard;
 import it.starksoftware.ssform.model.FormElementDateTime;
 import it.starksoftware.ssform.model.FormElementImageMultipleView;
 import it.starksoftware.ssform.model.FormElementImageView;
@@ -32,7 +29,6 @@ import it.starksoftware.ssform.model.FormElementSwitch;
 import it.starksoftware.ssform.model.FormElementToken;
 import it.starksoftware.ssform.model.FormElementYesNo;
 import it.starksoftware.ssform.model.FormElementYesNoNA;
-import it.starksoftware.ssform.model.FormHeader;
 import it.starksoftware.ssform.model.FormObject;
 import it.starksoftware.ssform.model.Validator;
 

@@ -3,7 +3,7 @@ package it.starksoftware.ssform.customKeyboard;
 import android.app.Activity;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
-import android.support.v7.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatEditText;
 import android.text.InputType;
 import android.view.MotionEvent;
 import android.view.View;

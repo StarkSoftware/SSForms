@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.ShadowAttachActivity">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,7 +17,7 @@
         app:contentInsetStart="0dp"/>
 
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@+id/toolbar"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"

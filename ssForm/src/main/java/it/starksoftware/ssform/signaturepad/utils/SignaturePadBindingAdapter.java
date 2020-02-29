@@ -1,6 +1,6 @@
 package it.starksoftware.ssform.signaturepad.utils;
 
-import android.databinding.BindingAdapter;
+import androidx.databinding.BindingAdapter;
 
 import it.starksoftware.ssform.signaturepad.views.SignaturePad;
 

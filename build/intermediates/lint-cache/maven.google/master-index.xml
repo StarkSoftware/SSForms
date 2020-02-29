@@ -123,4 +123,22 @@
   <androidx.work/>
   <androidx.sharetarget/>
   <androidx.enterprise/>
+  <androidx.camera/>
+  <androidx.benchmark/>
+  <androidx.security/>
+  <com.google.android.datatransport/>
+  <zipflinger/>
+  <androidx.autofill/>
+  <androidx.ads/>
+  <com.android/>
+  <com.google.ads.interactivemedia.v3/>
+  <androidx.ui/>
+  <androidx.compose/>
+  <com.google.androidbrowserhelper/>
+  <org.jetbrains.kotlin/>
+  <com.google.prefab/>
+  <com.android.billingclient/>
+  <com.android.ndk.thirdparty/>
+  <com.google.oboe/>
+  <androidx.window/>
 </metadata>

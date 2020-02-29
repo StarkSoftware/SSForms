@@ -2,7 +2,7 @@ package it.starksoftware.ssform.StarkSpinner;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.IdRes;
+import androidx.annotation.IdRes;
 import android.view.View;
 
 public class SelectedView implements Parcelable {

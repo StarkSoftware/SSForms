@@ -51,4 +51,8 @@
     <string name="action_reset">Reset</string>
     <string name="no_selection">No Selection</string>
     <string name="touch_to_select">Touch to select</string>
+
+    <string name="form_radio_botton_yes">SI</string>
+    <string name="form_radio_botton_no">NO</string>
+    <string name="form_radio_botton_na">N/A</string>
 </resources>

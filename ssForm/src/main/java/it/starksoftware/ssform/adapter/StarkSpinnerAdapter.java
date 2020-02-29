@@ -28,71 +28,114 @@ public class StarkSpinnerAdapter extends ArrayAdapter<FormSpinnerObject> impleme
 
     private Context mContext;
     private boolean showIcon;
+    private boolean allowNoSelection;
     private List<FormSpinnerObject> mBackupStrings;
     private List<FormSpinnerObject> mStrings;
     private StringFilter mStringFilter = new StringFilter();
 
-    public StarkSpinnerAdapter(Context context, List<FormSpinnerObject> strings, boolean showIcon) {
+    public StarkSpinnerAdapter(Context context, List<FormSpinnerObject> strings, boolean showIcon, boolean allowNoSelection) {
         super(context, R.layout.view_list_item);
         mContext = context;
         mStrings = strings;
         mBackupStrings = strings;
         this.showIcon = showIcon;
+        this.allowNoSelection = allowNoSelection;
     }
 
     @Override
     public int getCount() {
-        return mStrings == null ? 0 : mStrings.size() + 1;
+        if (allowNoSelection) {
+            return mStrings == null ? 0 : mStrings.size() + 1;
+        } else {
+            return mStrings.size();
+        }
     }
 
     @Override
     public FormSpinnerObject getItem(int position) {
-        if (mStrings != null && position > 0)
-            return mStrings.get(position - 1);
-        else
-            return null;
+        if (allowNoSelection) {
+            if (mStrings != null && position > 0)
+                return mStrings.get(position - 1);
+            else
+                return null;
+        } else {
+            if (mStrings != null)
+                return mStrings.get(position);
+            else
+                return null;
+        }
     }
 
     public int indexOfSpinner(FormSpinnerObject value)
     {
-        if (value == null)
-            return 0;
-        else {
-            for (int index = 0, count = this.mStrings.size(); index < count; ++index) {
-                if (this.mStrings.get(index).getKey().equals(value.getKey())) {
-                    return index + 1;
+        if (allowNoSelection) {
+            if (value == null)
+                return 0;
+            else {
+                for (int index = 0, count = this.mStrings.size(); index < count; ++index) {
+                    if (this.mStrings.get(index).getKey().toLowerCase().equals(value.getKey().toLowerCase())) {
+                        return index + 1;
+                    }
                 }
+                return 0;
             }
-            return -1;
+        } else {
+            if (value == null)
+                return 0;
+            else {
+                for (int index = 0, count = this.mStrings.size(); index < count; ++index) {
+                    if (this.mStrings.get(index).getKey().toLowerCase().equals(value.getKey().toLowerCase())) {
+                        return index;
+                    }
+                }
+                return 0;
+            }
         }
     }
 
     @Override
     public long getItemId(int position) {
-        if (mStrings == null && position > 0)
-            return mStrings.get(position).hashCode();
-        else
-            return -1;
+        if (allowNoSelection) {
+            if (mStrings == null && position > 0)
+                return mStrings.get(position).hashCode();
+            else
+                return -1;
+        } else {
+            if (mStrings == null)
+                return mStrings.get(position).hashCode();
+            else
+                return 0;
+        }
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         View view = null;
-        if (position == 0) {
-            view = getNoSelectionView();
+        if (allowNoSelection) {
+            if (position == 0) {
+                view = getNoSelectionView();
+            } else {
+                view = View.inflate(mContext, R.layout.view_list_item_edit, null);
+                ImageView letters = (ImageView) view.findViewById(R.id.ImgVw_Letters);
+                TextView dispalyName = (TextView) view.findViewById(R.id.TxtVw_DisplayName);
+                dispalyName.setText(mStrings.get(position - 1).getValue());
+                if (showIcon) {
+                    letters.setVisibility(View.VISIBLE);
+                    letters.setImageDrawable(getTextDrawable(mStrings.get(position - 1).getValue()));
+                } else
+                    letters.setVisibility(View.GONE);
+            }
         } else {
             view = View.inflate(mContext, R.layout.view_list_item_edit, null);
             ImageView letters = (ImageView) view.findViewById(R.id.ImgVw_Letters);
             TextView dispalyName = (TextView) view.findViewById(R.id.TxtVw_DisplayName);
-            dispalyName.setText(mStrings.get(position - 1).getValue());
+            dispalyName.setText(mStrings.get(position).getValue());
             if (showIcon) {
                 letters.setVisibility(View.VISIBLE);
-                letters.setImageDrawable(getTextDrawable(mStrings.get(position - 1).getValue()));
-            }
-            else
+                letters.setImageDrawable(getTextDrawable(mStrings.get(position).getValue()));
+            } else
                 letters.setVisibility(View.GONE);
-
-
         }
         return view;
     }
@@ -100,18 +143,29 @@ public class StarkSpinnerAdapter extends ArrayAdapter<FormSpinnerObject> impleme
     @Override
     public View getSelectedView(int position) {
         View view = null;
-        if (position == 0) {
-            view = getNoSelectionView();
+        if (allowNoSelection) {
+            if (position == 0) {
+                view = getNoSelectionView();
+            } else {
+                view = View.inflate(mContext, R.layout.view_list_item, null);
+                ImageView letters = (ImageView) view.findViewById(R.id.ImgVw_Letters);
+                TextView dispalyName = (TextView) view.findViewById(R.id.TxtVw_DisplayName);
+                dispalyName.setText(mStrings.get(position - 1).getValue());
+                if (showIcon) {
+                    letters.setImageDrawable(getTextDrawable(mStrings.get(position - 1).getValue()));
+                    letters.setVisibility(View.VISIBLE);
+                } else
+                    letters.setVisibility(View.GONE);
+            }
         } else {
             view = View.inflate(mContext, R.layout.view_list_item, null);
             ImageView letters = (ImageView) view.findViewById(R.id.ImgVw_Letters);
             TextView dispalyName = (TextView) view.findViewById(R.id.TxtVw_DisplayName);
-            dispalyName.setText(mStrings.get(position-1).getValue());
+            dispalyName.setText(mStrings.get(position).getValue());
             if (showIcon) {
-                letters.setImageDrawable(getTextDrawable(mStrings.get(position-1).getValue()));
+                letters.setImageDrawable(getTextDrawable(mStrings.get(position).getValue()));
                 letters.setVisibility(View.VISIBLE);
-            }
-            else
+            } else
                 letters.setVisibility(View.GONE);
         }
         return view;
@@ -165,7 +219,7 @@ public class StarkSpinnerAdapter extends ArrayAdapter<FormSpinnerObject> impleme
             }
             final ArrayList<FormSpinnerObject> filterStrings = new ArrayList<>();
             for (FormSpinnerObject text : mBackupStrings) {
-                if (text.getValue().toLowerCase().contains(constraint)) {
+                if (text.getValue().toLowerCase().contains(constraint.toString().toLowerCase())) {
                     filterStrings.add(text);
                 }
             }

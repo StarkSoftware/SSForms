@@ -32,8 +32,41 @@ public class FormElement implements FormObject {
     private int mType; // type for the form element
     private String mTitle; // title to be shown on left
     private String mValue; // value to be shown on right
-    private List<String> mOptions; // list of options for single and multi picker
-    private List<String> mOptionsSelected; // list of selected options for single and multi picker
+    private List<FormSpinnerObject> mOptions; // list of options for single and multi picker
+    private List<FormSpinnerObject> mOptionsSelected; // list of selected options for single and multi picker
+
+
+    private String dialogTitle;
+    private String dialogOk;
+    private String dialogCalcel;
+
+
+    public String getDialogTitle() {
+        return dialogTitle;
+    }
+
+    public FormElement setDialogTitle(String dialogTitle) {
+        this.dialogTitle = dialogTitle;
+        return this;
+    }
+
+    public String getDialogOk() {
+        return dialogOk;
+    }
+
+    public FormElement setDialogOk(String dialogOk) {
+        this.dialogOk = dialogOk;
+        return this;
+    }
+
+    public String getDialogCalcel() {
+        return dialogCalcel;
+    }
+
+    public FormElement setDialogCalcel(String dialogCalcel) {
+        this.dialogCalcel = dialogCalcel;
+        return this;
+    }
 
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
@@ -136,12 +169,12 @@ public class FormElement implements FormObject {
         return this;
     }
 
-    public FormElement setOptions(List<String> mOptions) {
+    public FormElement setOptions(List<FormSpinnerObject> mOptions) {
         this.mOptions = mOptions;
         return this;
     }
 
-    public FormElement setOptionsSelected(List<String> mOptionsSelected) {
+    public FormElement setOptionsSelected(List<FormSpinnerObject> mOptionsSelected) {
         this.mOptionsSelected = mOptionsSelected;
         return this;
     }
@@ -163,12 +196,12 @@ public class FormElement implements FormObject {
         return (mValue == null) ? "" : mValue;
     }
 
-    public List<String> getOptions() {
-        return (mOptions == null) ? new ArrayList<String>() : mOptions;
+    public List<FormSpinnerObject> getOptions() {
+        return (mOptions == null) ? new ArrayList<FormSpinnerObject>() : mOptions;
     }
 
-    public List<String> getOptionsSelected() {
-        return (mOptionsSelected == null) ? new ArrayList<String>() : mOptionsSelected;
+    public List<FormSpinnerObject> getOptionsSelected() {
+        return (mOptionsSelected == null) ? new ArrayList<FormSpinnerObject>() : mOptionsSelected;
     }
 
 

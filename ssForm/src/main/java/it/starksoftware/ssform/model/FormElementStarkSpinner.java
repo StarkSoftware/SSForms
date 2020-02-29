@@ -25,6 +25,7 @@ public class FormElementStarkSpinner implements FormObject {
     private boolean refresh;
     private boolean visibility = true;
     private boolean showIcon = true;
+    private boolean allowEmptySelection = true;
     private int pos;
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
@@ -70,6 +71,15 @@ public class FormElementStarkSpinner implements FormObject {
 
     public FormElementStarkSpinner setRequired(boolean required) {
         this.required = required;
+        return this;
+    }
+
+    public boolean isAllowEmptySelection() {
+        return allowEmptySelection;
+    }
+
+    public FormElementStarkSpinner setAllowEmptySelection(boolean allowEmptySelection) {
+        this.allowEmptySelection = allowEmptySelection;
         return this;
     }
 
@@ -132,7 +142,7 @@ public class FormElementStarkSpinner implements FormObject {
     }
 
     public StarkSpinnerAdapter getSpinnerAdapter() {
-        return new StarkSpinnerAdapter(this.mAct, this.mOptions, this.showIcon);
+        return new StarkSpinnerAdapter(this.mAct, this.mOptions, this.showIcon, this.allowEmptySelection);
     }
 
     public FormElementStarkSpinner notifyAdapterChange() {

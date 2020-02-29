@@ -1,10 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.codemybrainsout.placesearchdialog:placesearch:1.0.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/placesearch-1.0.1.aar/58a39fb92b9ce2631b4f36b9e2eb4f50/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/placesearch-1.0.1.aar/58a39fb92b9ce2631b4f36b9e2eb4f50/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d57f2e45dfa8be7a56d679579ad5467e/jetified-placesearch-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d57f2e45dfa8be7a56d679579ad5467e/jetified-placesearch-1.0.1/res" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.codemybrainsout.placesearchdialog/placesearch/1.0.1/d9f0a2fa6d8c3514967502f301e53d8914891d25/placesearch-1.0.1-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.codemybrainsout.placesearchdialog/placesearch/1.0.1/92f350ca444b919f4f22d4bd61e0eedd9170a6e5/placesearch-1.0.1-sources.jar!/" />
     </SOURCES>

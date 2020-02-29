@@ -11,6 +11,7 @@ public class FormElementDateTime implements FormObject {
     public static final int TYPE_PICKER_DATE = 6;
     public static final int TYPE_PICKER_TIME = 7;
     public static final int TYPE_PICKER_DATE_TIME = 9;
+    public static final int TYPE_PICKER_TIME_AMPM = 11;
 
     private boolean visibility = true;
     private DateTimeCallBack dateTimeCallBack;

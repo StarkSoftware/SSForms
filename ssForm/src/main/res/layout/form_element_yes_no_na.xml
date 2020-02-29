@@ -14,7 +14,7 @@
         android:id="@+id/layoutRow"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/formElementTitle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -40,21 +40,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="5sp"
-                android:text="SI" />
+                android:text="@string/form_radio_botton_yes" />
 
             <RadioButton
                 android:id="@+id/formElementRadioNo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="5sp"
-                android:text="NO" />
+                android:text="@string/form_radio_botton_no" />
 
             <RadioButton
                 android:id="@+id/formElementRadioNa"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="5sp"
-                android:text="N/A" />
+                android:text="@string/form_radio_botton_na" />
         </RadioGroup>
 
     </LinearLayout>

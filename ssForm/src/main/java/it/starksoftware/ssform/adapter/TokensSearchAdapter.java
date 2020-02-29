@@ -1,14 +1,16 @@
 package it.starksoftware.ssform.adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 import it.starksoftware.ssform.model.FormTokenObject;
 
@@ -16,11 +18,36 @@ public class TokensSearchAdapter extends ArrayAdapter<FormTokenObject>{
 
     private TokensAdapter adapter;
     private ArrayList<FormTokenObject> data = new ArrayList<>();
+    private List<FormTokenObject> searchList = new ArrayList<>();
 
     public TokensSearchAdapter(Context context, TokensAdapter adapter){
         super(context,-1);
         this.adapter = adapter;
         this.data = adapter.data;
+        this.searchList = cloneList(data);
+    }
+
+    public static List<FormTokenObject> cloneList(List<FormTokenObject> list) {
+        List<FormTokenObject> clone = new ArrayList<FormTokenObject>(list.size());
+        for (FormTokenObject item : list) clone.add(item);
+        return clone;
+    }
+
+
+    public void filter(String charText) {
+        charText = charText.toLowerCase(Locale.getDefault());
+        data.clear();
+        if (charText.length() == 0) {
+            data.addAll(searchList);
+        } else {
+            for (FormTokenObject s : searchList) {
+
+                if (s.getValue().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    data.add(s);
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 
     public TokensAdapter getAdapter() {

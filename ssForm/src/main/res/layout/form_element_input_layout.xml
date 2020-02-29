@@ -15,7 +15,7 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColorHint="@color/colorPrimaryDark">
@@ -34,7 +34,7 @@
                 android:textColorHighlight="@color/textColorHighlight"
                 android:textCursorDrawable="@drawable/bg_input_cursor" />
 
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
     </LinearLayout>

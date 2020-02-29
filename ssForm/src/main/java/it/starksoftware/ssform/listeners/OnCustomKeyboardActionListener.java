@@ -1,7 +1,7 @@
 package it.starksoftware.ssform.listeners;
 
 import android.inputmethodservice.KeyboardView;
-import android.support.v7.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatEditText;
 import android.text.Editable;
 import android.util.Log;
 import android.view.View;

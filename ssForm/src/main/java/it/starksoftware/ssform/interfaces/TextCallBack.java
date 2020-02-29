@@ -1,11 +1,7 @@
 package it.starksoftware.ssform.interfaces;
 
-import android.support.v7.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatEditText;
 
-import java.util.Date;
-
-import it.starksoftware.ssform.model.FormElement;
-import it.starksoftware.ssform.model.FormElementDateTime;
 import it.starksoftware.ssform.model.FormElementInputLayout;
 
 public interface TextCallBack {

@@ -1,6 +1,6 @@
 package it.starksoftware.ssform.segmented.font;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import it.starksoftware.ssform.segmented.utils.BootstrapText;
 

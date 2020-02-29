@@ -22,7 +22,7 @@
             android:paddingRight="16dp"
             android:paddingTop="10dp">
 
-            <android.support.v7.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/formElementTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
 
         </LinearLayout>
 
-        <android.support.v7.widget.AppCompatEditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/formMemoElementValue"
             android:layout_width="match_parent"
             android:layout_height="120sp"

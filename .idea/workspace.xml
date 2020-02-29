@@ -13,110 +13,165 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9a960b8-3c2e-45e5-ba31-e8406b77c456" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amulyakhare_com_amulyakhare_textdrawable_1_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_joanzapata_iconify_android_iconify_2_2_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_joanzapata_iconify_android_iconify_material_2_2_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_tapadoo_android_alerter_3_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_13_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_2_71_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_2_71_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_2_71_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Interfaces/ISpinnerSelectedView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Interfaces/IStatusListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Interfaces/OnItemSelectedListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/SelectedView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/StarkSpinner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Tools/EditCursorColor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Tools/UITools.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/StarkSpinnerAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/interfaces/SpinnerStarkCallBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementStarkSpinner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/res/drawable/spinner_drawable.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_label.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_stark_spinner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/view_list.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_item_edit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_no_selection_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/view_stark_spinner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/built.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__cn_pedant_sweetalert_library_1_3_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_databinding_adapters_1_3_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_databinding_adapters_1_3_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_databinding_library_1_3_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_databinding_library_1_3_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_26_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_26_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_26_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_26_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_26_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_26_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_0_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_0_2_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_26_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_26_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_26_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_26_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_26_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_26_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_26_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_26_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_26_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_26_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_26_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_26_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_26_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_26_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_26_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_26_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_26_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_26_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_rules_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_rules_1_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_26_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_26_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_0_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_0_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amulyakhare_com_amulyakhare_textdrawable_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amulyakhare_com_amulyakhare_textdrawable_1_0_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_databinding_adapters_1_3_1_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_databinding_baseLibrary_3_0_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_databinding_library_1_3_1_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_26_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_26_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_26_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_0_2_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_0_2_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_26_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_26_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_26_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_27_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_26_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_26_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_26_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_26_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_26_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_26_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_26_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_1_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_1_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_rules_1_0_1_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_1_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_26_1_0_aar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_codemybrainsout_placesearchdialog_placesearch_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_codemybrainsout_placesearchdialog_placesearch_1_0_1_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_Kunzisoft_Android_SwitchDateTimePicker_1_8_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_Kunzisoft_Android_SwitchDateTimePicker_1_8_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_MdFarhanRaja_SearchableSpinner_1_9_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_MdFarhanRaja_SearchableSpinner_2_0_aar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_abdularis_CircularImageView_v1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_abdularis_CircularImageView_v1_1_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_sujithkanna_smileyrating_1_6_8_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_sujithkanna_smileyrating_1_6_8_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_flexbox_0_3_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_flexbox_0_3_2_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_11_8_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_11_8_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_license_11_8_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_license_11_8_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_11_8_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_11_8_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_license_11_8_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_license_11_8_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_maps_11_8_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_maps_11_8_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_maps_license_11_8_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_maps_license_11_8_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_places_11_8_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_places_11_8_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_places_license_11_8_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_places_license_11_8_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_11_8_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_11_8_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_license_11_8_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_license_11_8_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_8_8_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_8_8_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_11_8_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_license_11_8_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_11_8_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_license_11_8_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_maps_11_8_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_maps_license_11_8_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_places_11_8_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_places_license_11_8_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_11_8_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_license_11_8_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_8_8_1_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_annotations_8_8_1_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jcmore2_collage_collage_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jcmore2_collage_collage_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_pnikosis_materialish_progress_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_joanzapata_iconify_android_iconify_2_2_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_joanzapata_iconify_android_iconify_2_2_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_joanzapata_iconify_android_iconify_material_2_2_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_joanzapata_iconify_android_iconify_material_2_2_2_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_prolificinteractive_material_calendarview_1_4_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_prolificinteractive_material_calendarview_1_4_3_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_tapadoo_android_alerter_3_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_tapadoo_android_alerter_3_0_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_reactivex_rxjava_1_3_2_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_2_71_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_2_71_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_2_71_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__uk_co_chrisjenx_calligraphy_2_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__uk_co_chrisjenx_calligraphy_2_3_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/it/starksoftware/ssformsdemo/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/it/starksoftware/ssformsdemo/ExampleInstrumentedTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/it/starksoftware/ssformsdemo/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/starksoftware/ssformsdemo/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/android/support/constraint/group-index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/android/support/constraint/group-index.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/google/android/gms/group-index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/google/android/gms/group-index.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/master-index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/master-index.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ssForm/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/DateSwitcher/DateSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/DateSwitcher/DateSwitcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/SearchableSpinner/ArrayAdapterWithContainsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/SearchableSpinner/ArrayAdapterWithContainsFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/SelectedView.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/SelectedView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/StarkSpinner.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/StarkSpinner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FolderPickerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FolderPickerAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAttachAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAttachAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/ImageCardAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/ImageCardAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/ImageMultiplePickerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/ImageMultiplePickerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/ImagePickerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/ImagePickerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/StarkSpinnerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/StarkSpinnerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/TokensSearchAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/TokensSearchAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/attach/AttachPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/attach/AttachPicker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/attach/AttachPickerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/attach/AttachPickerActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/interfaces/YesNoCallBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/interfaces/YesNoCallBack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/interfaces/YesNoNACallBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/interfaces/YesNoNACallBack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementYesNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementYesNo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementYesNoNA.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementYesNoNA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/values/attrs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/values/attrs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/attach/AttachPickerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/attach/AttachPickerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/customKeyboard/CustomKeyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/customKeyboard/CustomKeyboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImagePicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImagePicker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImagePickerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImagePickerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImagePickerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImagePickerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/camera/DefaultCameraModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/camera/DefaultCameraModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/file_explorer/DirectoryFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/file_explorer/DirectoryFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/file_explorer/FileExplorerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/file_explorer/FileExplorerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/FormBuildHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/FormBuildHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/ImagePickerFileProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/ImagePickerFileProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/RecyclerItemClickListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/RecyclerItemClickListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/SimpleDividerItemDecoration.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/SimpleDividerItemDecoration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/Tools.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/Tools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/interfaces/TextCallBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/interfaces/TextCallBack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/listeners/OnCustomKeyboardActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/listeners/OnCustomKeyboardActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementDateTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementDateTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementStarkSpinner.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementStarkSpinner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/ratings/BaseRatingBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/ratings/BaseRatingBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/ratings/RotationRatingBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/ratings/RotationRatingBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/ratings/ScaleRatingBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/ratings/ScaleRatingBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/ratings/SimpleRatingBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/ratings/SimpleRatingBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/segmented/AwesomeRadioButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/segmented/AwesomeRadioButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/segmented/font/AwesomeTypefaceSpan.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/segmented/font/AwesomeTypefaceSpan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/segmented/font/BootstrapTextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/segmented/font/BootstrapTextView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/segmented/font/FontAwesome.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/segmented/font/FontAwesome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/signaturepad/SignaturePicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/signaturepad/SignaturePicker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/signaturepad/SignaturePickerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/signaturepad/SignaturePickerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/signaturepad/SignaturePickerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/signaturepad/SignaturePickerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/signaturepad/utils/SignaturePadBindingAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/signaturepad/utils/SignaturePadBindingAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/tokens/AddTokensActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/tokens/AddTokensActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/tokens/TokensPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/tokens/TokensPicker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/view/GridSpacingItemDecoration.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/view/GridSpacingItemDecoration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/view/SnackBarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/view/SnackBarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/actiontool_bar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/actiontool_bar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/activity_add_tokens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/activity_add_tokens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/activity_attach.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/activity_attach.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/activity_signature_picker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/activity_signature_picker.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/ef_activity_image_picker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/ef_activity_image_picker.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/ef_imagepicker_toolbar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/ef_imagepicker_toolbar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_attach.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_attach.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_checkbox.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_checkbox.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_custom_keyboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_custom_keyboard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_date_switcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_date_switcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_datetime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_datetime.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_empty.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_empty.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_header.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_header.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_imageview.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_imageview.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_imageview_multiple.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_imageview_multiple.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_input_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_input_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_label.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_label.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_memo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_memo.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_place_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_place_dialog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_profileview.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_profileview.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_rating.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_rating.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_searchable_spinner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_searchable_spinner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_segment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_segment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_signature.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_signature.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_smile_rating.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_smile_rating.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_spinner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_spinner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_stark_spinner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_stark_spinner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_switch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_switch.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_token.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_token.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_yes_no.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_yes_no.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_yes_no_na.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_yes_no_na.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/recycleview_image_card.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/recycleview_image_card.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/view_stark_spinner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/view_stark_spinner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/menu/tokens_picker_menu_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/menu/tokens_picker_menu_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ssForm/ssForm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/ssForm.iml" afterDir="false" />
@@ -127,6 +182,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_9_API_28_-_Tablet" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -204,87 +260,6 @@
       </state>
     </system>
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/view_list.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_item.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/StarkSpinnerAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="121" column="69" selection-start-line="121" selection-start-column="69" selection-end-line="121" selection-end-column="69" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5123#5124#0" expanded="true" />
-                <element signature="e#5159#5160#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_item_edit.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/view_stark_spinner.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-              <folding>
-                <element signature="e#765#3703#0" />
-              </folding>
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_stark_spinner.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_no_selection_item.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2" />
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>it.starksoftware.ssform.imagepicker.provider</find>
@@ -300,68 +275,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSearchableSpinner.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementRating.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementProfileView.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementPlaceDialog.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementMemo.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementInputLayout.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementImageView.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementImageMultipleView.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementDateTime.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementDateSwitcher.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementCheckBox.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementButton.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementAttach.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElement.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_yes_no.xml" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_yes_no_na.xml" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/FormBuildHelper.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/SearchableSpinner/ArrayAdapterWithContainsFilter.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/SearchableSpinner/SpinnerDialog.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementYesNo.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementYesNoNA.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/interfaces/YesNoCallBack.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/interfaces/YesNoNACallBack.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementLabel.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_label.xml" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/res/values/attrs.xml" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/SelectedView.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Tools/EditCursorColor.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Tools/UITools.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Interfaces/ISpinnerSelectedView.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Interfaces/IStatusListener.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Interfaces/OnItemSelectedListener.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/SearchableSpinner.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/StarkSpinner.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/interfaces/SpinnerStarkCallBack.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/res/layout/view_list.xml" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementStarkSpinner.java" />
-        <option value="$PROJECT_DIR$/ssForm/build.gradle" />
-        <option value="$PROJECT_DIR$/ssForm/build/intermediates/bundles/debug/res/layout/date_switcher.xml" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/attach/AttachPickerActivity.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/ImageCardAdapter.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/it/starksoftware/ssformsdemo/MainActivity.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_stark_spinner.xml" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_no_selection_item.xml" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_item_edit.xml" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/StarkSpinnerAdapter.java" />
-        <option value="$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_item.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="2560" />
-    <option name="height" value="1379" />
-  </component>
+  <component name="ProjectId" id="1YUzzpozQ0JDyjYeyTz5OzyG3QG" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -474,15 +388,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Gradle./SviluppoSoftware/Android/STARKSOFTWARE/SSFORMS/SSForms/ssForm [build]">
-    <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -529,8 +434,6 @@
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
-      <option name="PREFERRED_AVD" value="" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Auto" />
@@ -565,6 +468,12 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -612,6 +521,7 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <properties />
       <listeners />
@@ -643,38 +553,16 @@
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1379" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info id="Capture Tool" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.21366164" />
-      <window_info id="Structure" order="3" side_tool="true" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info id="Build Variants" order="5" side_tool="true" />
-      <window_info id="Image Layers" order="6" />
-      <window_info id="Designer" order="7" />
-      <window_info id="Resources Explorer" order="8" />
-      <window_info anchor="bottom" id="Logcat" order="0" weight="0.2658228" />
-      <window_info anchor="bottom" id="TODO" order="1" />
-      <window_info anchor="bottom" id="Missing In Actions" order="2" />
-      <window_info anchor="bottom" id="Mirror" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info anchor="bottom" id="Build" order="6" weight="0.37579113" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" />
-      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.11155064" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.44936708" />
-      <window_info anchor="bottom" id="Find" order="11" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Gradle" order="2" visible="true" weight="0.25178713" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Preview" order="5" />
-    </layout>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -682,67 +570,56 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/it/starksoftware/ssformsdemo/MainActivity.java</url>
           <line>483</line>
-          <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAdapter.java</url>
           <line>1596</line>
-          <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAdapter.java</url>
           <line>1599</line>
-          <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAdapter.java</url>
           <line>1602</line>
-          <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAdapter.java</url>
           <line>1605</line>
-          <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/it/starksoftware/ssformsdemo/MainActivity.java</url>
           <line>541</line>
-          <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/SearchableSpinner/ArrayAdapterWithContainsFilter.java</url>
           <line>35</line>
-          <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/SearchableSpinner/SpinnerDialog.java</url>
           <line>91</line>
-          <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/SearchableSpinner/SpinnerDialog.java</url>
           <line>48</line>
-          <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/StarkSpinner.java</url>
           <line>315</line>
-          <properties />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAdapter.java</url>
           <line>1383</line>
-          <properties />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
@@ -771,523 +648,5 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSearchableSpinner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SearchableSpinner-1.9.aar/ee082f2ea880983fff969a304cd71975/jars/classes.jar!/in/galaxyofandroid/spinerdialog/SpinnerDialog.class" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.MdFarhanRaja/SearchableSpinner/2.0/55b431f7c7ccf921326348930e1bfc5b5535b9f2/SearchableSpinner-2.0-sources.jar!/in/galaxyofandroid/spinerdialog/SpinnerDialog.java" />
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/items_view.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/dialog_layout.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/SearchableSpinner/ArrayAdapterWithContainsFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/interfaces/YesNoCallBack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="92" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/interfaces/YesNoNACallBack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="94" selection-start-line="5" selection-start-column="94" selection-end-line="5" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementYesNo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
-          <folding>
-            <element signature="e#1851#1852#0" expanded="true" />
-            <element signature="e#1884#1885#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementYesNoNA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1185">
-          <caret line="93" column="20" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
-          <folding>
-            <element signature="e#2289#2290#0" expanded="true" />
-            <element signature="e#2322#2323#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/SearchableSpinner/OnSpinerItemClick.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/SearchableSpinner/SpinnerDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-26/android/widget/ArrayAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7020">
-          <caret line="512" column="27" selection-start-line="512" selection-start-column="27" selection-end-line="512" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementLabel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="786">
-          <caret line="151" column="21" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/drawable/spinner_drawable.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/values/attrs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/SelectedView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Tools/EditCursorColor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Tools/UITools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Interfaces/ISpinnerSelectedView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Interfaces/IStatusListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Interfaces/OnItemSelectedListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-manifest" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="38" column="52" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/build/intermediates/bundles/debug/res/layout/view_list_no_selection_item.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormSpinAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-26/android/widget/ListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="2187" column="16" selection-start-line="2187" selection-start-column="16" selection-end-line="2187" selection-end-column="16" />
-          <folding>
-            <element signature="e#87742#87743#0" expanded="true" />
-            <element signature="e#87790#87791#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/StarkSpinner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="310" column="33" selection-start-line="310" selection-start-column="33" selection-end-line="310" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/spinner_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="32" selection-start-line="22" selection-start-column="8" selection-end-line="23" selection-end-column="32" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementRating.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_label.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="36" selection-start-line="44" selection-start-column="11" selection-end-line="46" selection-end-column="36" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/interfaces/SpinnerStarkCallBack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="96" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementStarkSpinner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="134" column="78" selection-start-line="134" selection-start-column="78" selection-end-line="134" selection-end-column="78" />
-          <folding>
-            <element signature="e#1956#1957#0" expanded="true" />
-            <element signature="e#1987#1988#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="83" column="67" selection-start-line="83" selection-start-column="67" selection-end-line="83" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/build/intermediates/bundles/debug/res/layout/form_element_token.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-275" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/build/intermediates/bundles/debug/res/layout/date_switcher.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="52" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/attach/AttachPickerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-          <folding>
-            <element signature="e#5360#5377#0" expanded="true" />
-            <element signature="e#5562#6463#0" expanded="true" />
-            <element signature="e#6462#6463#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/ImageCardAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="53" column="78" selection-start-line="53" selection-start-column="78" selection-end-line="53" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1896#2224#0" expanded="true" />
-            <element signature="e#2223#2224#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="1432" selection-start-line="1432" selection-end-line="1432" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#71229#71434#0" expanded="true" />
-            <element signature="e#71433#71434#0" expanded="true" />
-            <element signature="e#73900#74238#0" expanded="true" />
-            <element signature="e#74237#74238#0" expanded="true" />
-            <element signature="e#75735#76769#0" expanded="true" />
-            <element signature="e#76768#76769#0" expanded="true" />
-            <element signature="e#78695#80019#0" expanded="true" />
-            <element signature="e#80018#80019#0" expanded="true" />
-            <element signature="e#81020#81256#0" expanded="true" />
-            <element signature="e#81255#81256#0" expanded="true" />
-            <element signature="e#84646#84905#0" expanded="true" />
-            <element signature="e#84904#84905#0" expanded="true" />
-            <element signature="e#85105#85341#0" expanded="true" />
-            <element signature="e#85340#85341#0" expanded="true" />
-            <element signature="e#85533#86606#0" expanded="true" />
-            <element signature="e#86117#86504#0" expanded="true" />
-            <element signature="e#86503#86504#0" expanded="true" />
-            <element signature="e#86605#86606#0" expanded="true" />
-            <element signature="e#86647#87720#0" expanded="true" />
-            <element signature="e#87231#87618#0" expanded="true" />
-            <element signature="e#87617#87618#0" expanded="true" />
-            <element signature="e#87719#87720#0" expanded="true" />
-            <element signature="e#87949#88203#0" expanded="true" />
-            <element signature="e#88202#88203#0" expanded="true" />
-            <element signature="e#88401#88624#0" expanded="true" />
-            <element signature="e#88623#88624#0" expanded="true" />
-            <element signature="e#88833#89070#0" expanded="true" />
-            <element signature="e#89069#89070#0" expanded="true" />
-            <element signature="e#89258#89495#0" expanded="true" />
-            <element signature="e#89494#89495#0" expanded="true" />
-            <element signature="e#89552#90127#0" expanded="true" />
-            <element signature="e#90126#90127#0" expanded="true" />
-            <element signature="e#90168#90508#0" expanded="true" />
-            <element signature="e#90507#90508#0" expanded="true" />
-            <element signature="e#90933#91642#0" expanded="true" />
-            <element signature="e#91641#91642#0" expanded="true" />
-            <element signature="e#91728#92477#0" expanded="true" />
-            <element signature="e#92476#92477#0" expanded="true" />
-            <element signature="e#92521#93813#0" expanded="true" />
-            <element signature="e#93187#93639#0" expanded="true" />
-            <element signature="e#93638#93639#0" expanded="true" />
-            <element signature="e#93812#93813#0" expanded="true" />
-            <element signature="e#93850#95133#0" expanded="true" />
-            <element signature="e#94516#94959#0" expanded="true" />
-            <element signature="e#94958#94959#0" expanded="true" />
-            <element signature="e#95132#95133#0" expanded="true" />
-            <element signature="e#95184#96415#0" expanded="true" />
-            <element signature="e#96414#96415#0" expanded="true" />
-            <element signature="e#97842#98197#0" expanded="true" />
-            <element signature="e#98196#98197#0" expanded="true" />
-            <element signature="e#98243#98706#0" expanded="true" />
-            <element signature="e#98705#98706#0" expanded="true" />
-            <element signature="e#98747#99102#0" expanded="true" />
-            <element signature="e#99101#99102#0" expanded="true" />
-            <element signature="e#99325#99680#0" expanded="true" />
-            <element signature="e#99679#99680#0" expanded="true" />
-            <element signature="e#99721#100076#0" expanded="true" />
-            <element signature="e#100075#100076#0" expanded="true" />
-            <element signature="e#100289#100644#0" expanded="true" />
-            <element signature="e#100643#100644#0" expanded="true" />
-            <element signature="e#100685#101406#0" expanded="true" />
-            <element signature="e#101405#101406#0" expanded="true" />
-            <element signature="e#101622#101977#0" expanded="true" />
-            <element signature="e#101976#101977#0" expanded="true" />
-            <element signature="e#102018#102739#0" expanded="true" />
-            <element signature="e#102738#102739#0" expanded="true" />
-            <element signature="e#102943#103718#0" expanded="true" />
-            <element signature="e#103717#103718#0" expanded="true" />
-            <element signature="e#103759#104533#0" expanded="true" />
-            <element signature="e#104532#104533#0" expanded="true" />
-            <element signature="e#104748#105103#0" expanded="true" />
-            <element signature="e#105102#105103#0" expanded="true" />
-            <element signature="e#105144#105783#0" expanded="true" />
-            <element signature="e#105782#105783#0" expanded="true" />
-            <element signature="e#106000#106355#0" expanded="true" />
-            <element signature="e#106354#106355#0" expanded="true" />
-            <element signature="e#106396#107035#0" expanded="true" />
-            <element signature="e#107034#107035#0" expanded="true" />
-            <element signature="e#107579#108026#0" expanded="true" />
-            <element signature="e#108025#108026#0" expanded="true" />
-            <element signature="e#108067#108280#0" expanded="true" />
-            <element signature="e#108279#108280#0" expanded="true" />
-            <element signature="e#108321#108534#0" expanded="true" />
-            <element signature="e#108533#108534#0" expanded="true" />
-            <element signature="e#110725#111087#0" expanded="true" />
-            <element signature="e#111086#111087#0" expanded="true" />
-            <element signature="e#111128#111490#0" expanded="true" />
-            <element signature="e#111489#111490#0" expanded="true" />
-            <element signature="e#111653#112300#0" expanded="true" />
-            <element signature="e#112299#112300#0" expanded="true" />
-            <element signature="e#112341#112988#0" expanded="true" />
-            <element signature="e#112987#112988#0" expanded="true" />
-            <element signature="e#113726#114072#0" expanded="true" />
-            <element signature="e#114071#114072#0" expanded="true" />
-            <element signature="e#114178#114328#0" expanded="true" />
-            <element signature="e#114327#114328#0" expanded="true" />
-            <element signature="e#115090#115436#0" expanded="true" />
-            <element signature="e#115435#115436#0" expanded="true" />
-            <element signature="e#115542#115692#0" expanded="true" />
-            <element signature="e#115691#115692#0" expanded="true" />
-            <element signature="e#116855#117647#0" expanded="true" />
-            <element signature="e#117646#117647#0" expanded="true" />
-            <element signature="e#117734#118441#0" expanded="true" />
-            <element signature="e#118440#118441#0" expanded="true" />
-            <element signature="e#118778#118928#0" expanded="true" />
-            <element signature="e#118927#118928#0" expanded="true" />
-            <element signature="e#118968#119118#0" expanded="true" />
-            <element signature="e#119117#119118#0" expanded="true" />
-            <element signature="e#120304#121096#0" expanded="true" />
-            <element signature="e#121095#121096#0" expanded="true" />
-            <element signature="e#121183#121890#0" expanded="true" />
-            <element signature="e#121889#121890#0" expanded="true" />
-            <element signature="e#122227#122377#0" expanded="true" />
-            <element signature="e#122376#122377#0" expanded="true" />
-            <element signature="e#122417#122567#0" expanded="true" />
-            <element signature="e#122566#122567#0" expanded="true" />
-            <element signature="e#129590#129591#0" expanded="true" />
-            <element signature="e#129638#129639#0" expanded="true" />
-            <element signature="e#130317#130318#0" expanded="true" />
-            <element signature="e#130365#130366#0" expanded="true" />
-            <element signature="e#131027#131028#0" expanded="true" />
-            <element signature="e#131075#131076#0" expanded="true" />
-            <element signature="e#131768#132824#0" expanded="true" />
-            <element signature="e#132823#132824#0" expanded="true" />
-            <element signature="e#132874#133644#0" expanded="true" />
-            <element signature="e#133643#133644#0" expanded="true" />
-            <element signature="e#133701#134705#0" expanded="true" />
-            <element signature="e#134704#134705#0" expanded="true" />
-            <element signature="e#134763#135745#0" expanded="true" />
-            <element signature="e#135744#135745#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/it/starksoftware/ssformsdemo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="323" column="16" selection-start-line="323" selection-start-column="16" selection-end-line="323" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_stark_spinner.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_item_edit.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/StarkSpinnerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="121" column="69" selection-start-line="121" selection-start-column="69" selection-end-line="121" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5123#5124#0" expanded="true" />
-            <element signature="e#5159#5160#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/view_stark_spinner.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding>
-            <element signature="e#765#3703#0" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_no_selection_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/view_list.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
   </component>
 </project>

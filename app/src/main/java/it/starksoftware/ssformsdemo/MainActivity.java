@@ -3,10 +3,10 @@ package it.starksoftware.ssformsdemo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatEditText;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -49,7 +49,6 @@ import it.starksoftware.ssform.model.FormElement;
 import it.starksoftware.ssform.model.FormElementAttach;
 import it.starksoftware.ssform.model.FormElementButton;
 import it.starksoftware.ssform.model.FormElementCheckBox;
-import it.starksoftware.ssform.model.FormElementCustomKeyboard;
 import it.starksoftware.ssform.model.FormElementDateSwitcher;
 import it.starksoftware.ssform.model.FormElementDateTime;
 import it.starksoftware.ssform.model.FormElementImageMultipleView;
@@ -57,6 +56,7 @@ import it.starksoftware.ssform.model.FormElementImageView;
 import it.starksoftware.ssform.model.FormElementInputLayout;
 import it.starksoftware.ssform.model.FormElementLabel;
 import it.starksoftware.ssform.model.FormElementMemo;
+import it.starksoftware.ssform.model.FormElementMultiSelect;
 import it.starksoftware.ssform.model.FormElementPlaceDialog;
 import it.starksoftware.ssform.model.FormElementProfileView;
 import it.starksoftware.ssform.model.FormElementRating;
@@ -126,6 +126,7 @@ public class MainActivity extends AppCompatActivity implements
     public FormElementYesNo formElementYesNoB;
     public FormElementLabel formElementLabel;
     public FormElementYesNoNA formElementYesNoNa;
+    public FormElementMultiSelect formElementMultiSelect;
 
     // BUILDER
     public FormBuildHelper mFormBuilder;
@@ -175,11 +176,13 @@ public class MainActivity extends AppCompatActivity implements
 
         formElement = FormElement.createInstance()
                 .setTitle("BASIC ELEMENT")
-                .setType(FormElement.TYPE_EDITTEXT_TEXT_SINGLELINE)
+                .setType(FormElement.TYPE_PICKER_MULTI_CHECKBOX)
+                .setOptions(objSpinner)
                 .setRequired(true)
                 .setCallback(this)
                 .setRequiredResponseMessage("!!! REQUIRED !!!")
                 .setTag(10);
+
 
         formElementYesNoNa = FormElementYesNoNA.createInstance()
                 .setTitle("FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA FORM ELEMENT NA ")
@@ -215,8 +218,12 @@ public class MainActivity extends AppCompatActivity implements
 
         formElementPickerMultiple = FormElement.createInstance()
                 .setTitle("MULTIPLE PICKER")
+                .setDialogCalcel("Annulla")
+                .setDialogOk("Conferma")
+                .setDialogTitle("SCEGLI QUALCOSA")
                 .setType(FormElement.TYPE_PICKER_MULTI_CHECKBOX)
-                .setOptions(multiPickerValues());
+                .setOptionsSelected(spinnerDefaultValues())
+                .setOptions(spinnerValues());
 
         formElementAttach = FormElementAttach.createInstance()
                 .setTitle("ATTACH")
@@ -322,6 +329,7 @@ public class MainActivity extends AppCompatActivity implements
                 .setSpinnerObject(spinnerValues())
                 .setActivity(this)
                 .setShowIcon(false)
+                .setAllowEmptySelection(false)
                 .setContext(this)
                 .setCallback(this)
                 .setTag(130);
@@ -375,11 +383,17 @@ public class MainActivity extends AppCompatActivity implements
                 .setSmileTitleByValue(smileTitleByValue)
                 .setTag(1098);
 
+
+        formElementMultiSelect = FormElementMultiSelect.createInstance()
+                .setTitle("MULTI SELECTION")
+                .setSpinnerObject(spinnerValues())
+                .setTag(38472);
+
         //formHeader = FormHeader.createInstance().setTitle("BUTTON").setTag(130);
 
         List<FormObject> formItems = new ArrayList<>();
-        //formItems.add(formDivider);
-        /*formItems.add(formElementProfileView);
+        formItems.add(formDivider);
+        formItems.add(formElementProfileView);
         formItems.add(formElementYesNoNa);
         formItems.add(formElementYesNo);
         formItems.add(formElementYesNoA);
@@ -398,15 +412,18 @@ public class MainActivity extends AppCompatActivity implements
         formItems.add(formElementImageMultipleView);
         formItems.add(formElementImageView);
         formItems.add(formElementMemo);
-        formItems.add(formElementRating);*/
+        formItems.add(formElementRating);
+        formItems.add(formElementSearchableSpinner);
+        formItems.add(formElementPickerMultiple);
         formItems.add(formElementLabel);
         formItems.add(formElementStarkSpinner);
-       /* formItems.add(formElementSegment);
+        formItems.add(formElementButton);
+        formItems.add(formElementSegment);
         formItems.add(formElementSignature);
         formItems.add(formElementSpinner);
         formItems.add(formElementSwitch);
         formItems.add(formElementCheckBox);
-        formItems.add(formElementPlaceDialog);*/
+        formItems.add(formElementPlaceDialog);
 
         mFormBuilder.addFormElements(formItems);
         mFormBuilder.refreshView();
@@ -439,6 +456,21 @@ public class MainActivity extends AppCompatActivity implements
         return objSpinner;
     }
 
+    public ArrayList<FormSpinnerObject> spinnerDefaultValues() {
+        objSpinner = new ArrayList<FormSpinnerObject>();
+        FormSpinnerObject item = new FormSpinnerObject();
+        item.setKey("");
+        item.setValue("-");
+
+        for (int p = 1; p < 3; p++) {
+            item = new FormSpinnerObject();
+            item.setKey(String.valueOf(p));
+            item.setValue(String.format(Locale.getDefault(), "Value %d", p));
+            objSpinner.add(item);
+        }
+
+        return objSpinner;
+    }
 
     public ArrayList<FormTokenObject> tokensValues() {
         objTokens = new ArrayList<FormTokenObject>();
