@@ -67,7 +67,7 @@ public class TokensSearchAdapter extends ArrayAdapter<FormTokenObject>{
                 }else{
                     ArrayList<Object> tmp = new ArrayList<>();
                     for(int i = 0;i < adapter.data.size();i++){
-                        if(adapter.data.get(i).getValue().toLowerCase().contains(charSequence.toString().toLowerCase())){
+                        if(adapter.data.get(i).getValue().toLowerCase(Locale.getDefault()).contains(charSequence.toString().toLowerCase(Locale.getDefault()))){
                             tmp.add(adapter.data.get(i));
                         }
                     }

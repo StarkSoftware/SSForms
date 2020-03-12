@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,6 @@ public class FormElementImageView implements FormObject {
     private List<String> mOptions; // list of options for single and multi picker
     private List<String> mOptionsSelected; // list of selected options for single and multi picker
     private Context mCtx;
-    private Activity mAct;
     private boolean visibility = true;
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
@@ -36,7 +37,7 @@ public class FormElementImageView implements FormObject {
         return this;
     }
 
-    public FormElementImageView() {
+    private FormElementImageView() {
     }
 
     @Override
@@ -105,7 +106,6 @@ public class FormElementImageView implements FormObject {
     }
 
     public FormElementImageView setActivity(Activity act) {
-        this.mAct = act;
         return this;
     }
 
@@ -118,7 +118,7 @@ public class FormElementImageView implements FormObject {
         return mAttribute;
     }
 
-    public ImagePickerAdapter getSpinnerAdapter() {
+    private ImagePickerAdapter getSpinnerAdapter() {
         return new ImagePickerAdapter(mCtx,null,null);
     }
 
@@ -164,8 +164,9 @@ public class FormElementImageView implements FormObject {
         return "ImageView";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
     }
 }

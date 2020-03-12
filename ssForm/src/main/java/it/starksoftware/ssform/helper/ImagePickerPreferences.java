@@ -30,6 +30,6 @@ public class ImagePickerPreferences {
      */
     public boolean isPermissionRequested(String permission) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return preferences.getBoolean(permission, false);
+        return !preferences.getBoolean(permission, false);
     }
 }

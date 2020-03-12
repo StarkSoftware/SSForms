@@ -1,15 +1,19 @@
 package it.starksoftware.ssform.adapter;
 
 import android.content.Context;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.RecyclerView;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import androidx.annotation.RequiresApi;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,12 +38,14 @@ public class ImageMultiplePickerAdapter extends RecyclerView.Adapter<ImageMultip
         inflater = LayoutInflater.from(this.context);
     }
 
+    @NotNull
     @Override
     public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = inflater.inflate(R.layout.ef_imagepicker_item_image, parent, false);
         return new ImageViewHolder(itemView, itemClickListener);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(ImageViewHolder viewHolder, int position) {
 
@@ -53,10 +59,10 @@ public class ImageMultiplePickerAdapter extends RecyclerView.Adapter<ImageMultip
 
         if (isSelected(image)) {
             viewHolder.alphaView.setAlpha(0.5f);
-            ((FrameLayout) viewHolder.itemView).setForeground(ContextCompat.getDrawable(context, R.drawable.ic_done_white));
+            viewHolder.itemView.setForeground(ContextCompat.getDrawable(context, R.drawable.ic_done_white));
         } else {
             viewHolder.alphaView.setAlpha(0.0f);
-            ((FrameLayout) viewHolder.itemView).setForeground(null);
+            viewHolder.itemView.setForeground(null);
         }
 
     }
@@ -122,9 +128,9 @@ public class ImageMultiplePickerAdapter extends RecyclerView.Adapter<ImageMultip
         private View alphaView;
         private final OnImageClickListener itemClickListener;
 
-        public ImageViewHolder(View itemView, OnImageClickListener itemClickListener) {
+        ImageViewHolder(View itemView, OnImageClickListener itemClickListener) {
             super(itemView);
-            imageView = (ImageView) itemView.findViewById(R.id.image_view);
+            imageView = itemView.findViewById(R.id.image_view);
             alphaView = itemView.findViewById(R.id.view_alpha);
             this.itemClickListener = itemClickListener;
             itemView.setOnClickListener(this);

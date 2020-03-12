@@ -11,13 +11,13 @@
 
     <include
         android:id="@+id/tool_bar"
-        layout="@layout/actiontool_bar"></include>
+        layout="@layout/actiontool_bar" />
 
     <RelativeLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_weight="1"
-        android:layout_height="match_parent" >
+        android:layout_height="0dp" >
     </RelativeLayout>
 
 </LinearLayout>

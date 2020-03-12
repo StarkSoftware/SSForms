@@ -7,6 +7,6 @@
         android:id="@+id/cbCheck"
         android:layout_width="match_parent"
         android:layout_height="60sp"
-        android:text="Jacob Bonk" />
+        android:text="" />
 
 </LinearLayout>

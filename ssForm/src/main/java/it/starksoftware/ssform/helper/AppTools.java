@@ -1,18 +1,19 @@
 package it.starksoftware.ssform.helper;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.media.ExifInterface;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.util.Log;
 
+import androidx.exifinterface.media.ExifInterface;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -21,14 +22,14 @@ public class AppTools {
     public byte[] bitmapToByte(Bitmap bitmap) {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-        byte[] byteArray = stream.toByteArray();
-        return byteArray;
+        return stream.toByteArray();
     }
 
-    public static int getOrientation(Context context, Uri photoUri) {
-        Cursor cursor = context.getContentResolver().query(photoUri,
+    private static int getOrientation(Context context, Uri photoUri) {
+        @SuppressLint("Recycle") Cursor cursor = context.getContentResolver().query(photoUri,
                 new String[]{MediaStore.Images.ImageColumns.ORIENTATION}, null, null, null);
 
+        assert cursor != null;
         if (cursor.getCount() != 1) {
             return -1;
         }
@@ -42,6 +43,7 @@ public class AppTools {
         BitmapFactory.Options dbo = new BitmapFactory.Options();
         dbo.inJustDecodeBounds = true;
         BitmapFactory.decodeStream(is, null, dbo);
+        assert is != null;
         is.close();
 
         int rotatedWidth, rotatedHeight;
@@ -69,6 +71,7 @@ public class AppTools {
         } else {
             srcBitmap = BitmapFactory.decodeStream(is);
         }
+        assert is != null;
         is.close();
 
     /*
@@ -86,7 +89,7 @@ public class AppTools {
         return srcBitmap;
     }
 
-    public Bitmap getThumbnail(Uri uri, int rotateImage, Context ctx) throws FileNotFoundException, IOException {
+    public Bitmap getThumbnail(Uri uri, int rotateImage, Context ctx) throws IOException {
         InputStream input = ctx.getContentResolver().openInputStream(uri);
 
         BitmapFactory.Options onlyBoundsOptions = new BitmapFactory.Options();
@@ -94,13 +97,14 @@ public class AppTools {
         onlyBoundsOptions.inDither = true;//optional
         onlyBoundsOptions.inPreferredConfig = Bitmap.Config.ARGB_8888;//optional
         BitmapFactory.decodeStream(input, null, onlyBoundsOptions);
+        assert input != null;
         input.close();
 
         if ((onlyBoundsOptions.outWidth == -1) || (onlyBoundsOptions.outHeight == -1)) {
             return null;
         }
 
-        int originalSize = (onlyBoundsOptions.outHeight > onlyBoundsOptions.outWidth) ? onlyBoundsOptions.outHeight : onlyBoundsOptions.outWidth;
+        int originalSize = Math.max(onlyBoundsOptions.outHeight, onlyBoundsOptions.outWidth);
 
         double ratio = (originalSize > 1024) ? (originalSize / 768) : 1.0;
 
@@ -112,8 +116,10 @@ public class AppTools {
         Bitmap bitmap = BitmapFactory.decodeStream(input, null, bitmapOptions);
         Matrix matrix = new Matrix();
         matrix.postRotate(rotateImage);
+        assert bitmap != null;
         Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
 
+        assert input != null;
         input.close();
         return resizedBitmap;
     }
@@ -141,7 +147,7 @@ public class AppTools {
         return resizedBitmap;
     }
 
-    public int getCameraPhotoOrientation(Context context, Uri imageUri){
+    public int getCameraPhotoOrientation(Uri imageUri){
         int rotate = 0;
         try {
             File imageFile = new File(imageUri.getPath());

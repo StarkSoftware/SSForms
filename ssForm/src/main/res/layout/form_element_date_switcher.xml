@@ -19,7 +19,7 @@
             android:id="@+id/formElementTitle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="5sp"
+            android:layout_marginStart="5sp"
             android:layout_weight="2"
             android:fontFamily="sans-serif-thin"
             android:gravity="center_vertical"
@@ -31,7 +31,7 @@
         <it.starksoftware.ssform.DateSwitcher.DateSwitcher
             android:id="@+id/mDateSwitcher"
             android:layout_width="0dp"
-            android:layout_marginRight="5sp"
+            android:layout_marginEnd="5sp"
             android:layout_weight="3"
             android:layout_height="wrap_content"
             app:buttonBackgroundColor="@color/colorAccent"
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_marginBottom="2dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="2dp"
         android:background="@color/colorFormMasterDivider" />
 

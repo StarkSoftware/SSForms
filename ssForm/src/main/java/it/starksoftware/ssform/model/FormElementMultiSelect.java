@@ -3,6 +3,8 @@ package it.starksoftware.ssform.model;
 import android.app.Activity;
 import android.content.Context;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import it.starksoftware.ssform.R;
@@ -38,7 +40,7 @@ public class FormElementMultiSelect implements FormObject {
         return this;
     }
 
-    public FormElementMultiSelect() {
+    private FormElementMultiSelect() {
     }
 
 
@@ -188,8 +190,9 @@ public class FormElementMultiSelect implements FormObject {
         return "MultiSelect";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
     }
 }

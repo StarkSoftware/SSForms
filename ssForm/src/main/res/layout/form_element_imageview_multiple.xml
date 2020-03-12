@@ -19,14 +19,14 @@
             android:layout_height="wrap_content"
             android:background="#EFEFF3"
             android:paddingBottom="8dp"
-            android:paddingLeft="5sp"
-            android:paddingRight="16dp"
+            android:paddingStart="5sp"
+            android:paddingEnd="16dp"
             android:orientation="horizontal"
             android:paddingTop="10dp">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/formElementTitle"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorFormMasterHeaderText"
                 android:textSize="@dimen/headerTextSize"
@@ -40,7 +40,8 @@
                 android:id="@+id/btnAdd"
                 android:layout_height="20sp"
                 android:background="@color/float_transparent"
-                android:src="@drawable/ic_add_black_24dp" />
+                android:src="@drawable/ic_add_black_24dp"
+                android:contentDescription="@string/image_view" />
 
         </LinearLayout>
 
@@ -57,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_marginBottom="2dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="2dp"
         android:background="@color/colorFormMasterDivider" />
 

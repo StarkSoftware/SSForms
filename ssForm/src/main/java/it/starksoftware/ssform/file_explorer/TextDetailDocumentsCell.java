@@ -1,5 +1,6 @@
 package it.starksoftware.ssform.file_explorer;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Point;
 import android.graphics.Typeface;
@@ -34,12 +35,7 @@ public class TextDetailDocumentsCell extends FrameLayout {
             if (manager != null) {
                 Display display = manager.getDefaultDisplay();
                 if (display != null) {
-                    if (android.os.Build.VERSION.SDK_INT < 13) {
-                        displaySize
-                                .set(display.getWidth(), display.getHeight());
-                    } else {
-                        display.getSize(displaySize);
-                    }
+                    display.getSize(displaySize);
                     Log.e("tmessages", "display size = " + displaySize.x+ " " + displaySize.y);
                 }
             }
@@ -48,6 +44,7 @@ public class TextDetailDocumentsCell extends FrameLayout {
         }
     }
 
+    @SuppressLint("RtlHardcoded")
     public TextDetailDocumentsCell(Context context) {
 
         super(context);
@@ -155,7 +152,7 @@ public class TextDetailDocumentsCell extends FrameLayout {
         }
     }
 
-    public void setChecked(boolean checked, boolean animated) {
+    public void setChecked(boolean checked) {
         if (checkBox.getVisibility() != VISIBLE) {
             checkBox.setVisibility(VISIBLE);
         }

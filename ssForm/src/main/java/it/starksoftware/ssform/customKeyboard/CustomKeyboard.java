@@ -1,5 +1,6 @@
 package it.starksoftware.ssform.customKeyboard;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
@@ -25,7 +26,7 @@ public class CustomKeyboard {
 
     public CustomKeyboard(Activity host, int viewid, int layoutid) {
         mHostActivity = host;
-        mKeyboardView = (KeyboardView) mHostActivity.findViewById(viewid);
+        mKeyboardView = mHostActivity.findViewById(viewid);
         mKeyboardView.setKeyboard(new Keyboard(mHostActivity, layoutid));
         mKeyboardView.setPreviewEnabled(false);
         mHostActivity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -35,7 +36,7 @@ public class CustomKeyboard {
         return mKeyboardView.getVisibility() == View.VISIBLE;
     }
 
-    public void showCustomKeyboard(View v, AppCompatEditText edittext) {
+    private void showCustomKeyboard(View v, AppCompatEditText edittext) {
         mKeyboardView.setVisibility(View.VISIBLE);
 
         OnCustomKeyboardActionListener mOnKeyboardActionListener = new OnCustomKeyboardActionListener(edittext, mKeyboardView);
@@ -46,7 +47,7 @@ public class CustomKeyboard {
             ((InputMethodManager) mHostActivity.getSystemService(Activity.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 
-    public void hideCustomKeyboard() {
+    private void hideCustomKeyboard() {
         mKeyboardView.setVisibility(View.GONE);
         mKeyboardView.setEnabled(false);
 
@@ -54,6 +55,7 @@ public class CustomKeyboard {
     }
 
 
+    @SuppressLint("ClickableViewAccessibility")
     public void registerEditText(final AppCompatEditText edittext, final FormElementCustomKeyboard customKeyboard) {
         edittext.setOnFocusChangeListener(new OnFocusChangeListener() {
             @Override

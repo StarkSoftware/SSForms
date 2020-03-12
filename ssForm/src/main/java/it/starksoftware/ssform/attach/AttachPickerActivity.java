@@ -118,12 +118,13 @@ public class AttachPickerActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
 
             if (data != null) {
                 ArrayList<String> list = (ArrayList<String>) data.getExtras().getSerializable("ArrayList");
-                for (int p = 0; p < list.size(); p++)
-                    attachFiles.add(list.get(p));
+                assert list != null;
+                attachFiles.addAll(list);
                 setupAdapter();
             }
         }
@@ -137,7 +138,7 @@ public class AttachPickerActivity extends AppCompatActivity {
     }
     public void setupAdapter()
     {
-        mAdapter = new FormAttachAdapter(attachFiles, AttachPickerActivity.this);
+        mAdapter = new FormAttachAdapter(attachFiles);
         if (attachFiles != null)
             mAdapter.notifyDataSetChanged();
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(ctx);

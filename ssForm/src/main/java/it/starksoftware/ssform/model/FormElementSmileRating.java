@@ -5,6 +5,8 @@ import android.content.Context;
 
 import com.hsalf.smilerating.BaseRating;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -22,7 +24,7 @@ public class FormElementSmileRating implements FormObject {
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
     private RatingSmileCallBack ratingSmileCallBack;
-    public HashMap<Integer, String> smileTitleByValue;
+    private HashMap<Integer, String> smileTitleByValue;
     private String mAttribute;
     private String dbField;
     public HashMap<Integer, String> getSmileTitleByValue() {
@@ -52,7 +54,7 @@ public class FormElementSmileRating implements FormObject {
         return this;
     }
 
-    public FormElementSmileRating() {
+    private FormElementSmileRating() {
 
     }
 
@@ -147,8 +149,9 @@ public class FormElementSmileRating implements FormObject {
         return "SmileRating";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", VALUE: " + this.mValue ;
+        return "TAG: " + this.mTag + ", VALUE: " + this.mValue ;
     }
 }

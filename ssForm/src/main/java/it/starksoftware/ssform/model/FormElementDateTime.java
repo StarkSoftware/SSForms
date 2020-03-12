@@ -1,5 +1,7 @@
 package it.starksoftware.ssform.model;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -38,7 +40,7 @@ public class FormElementDateTime implements FormObject {
         return this;
     }
 
-    public FormElementDateTime() {
+    private FormElementDateTime() {
     }
 
     @Override
@@ -185,8 +187,9 @@ public class FormElementDateTime implements FormObject {
         return "DateTime";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
     }
 }

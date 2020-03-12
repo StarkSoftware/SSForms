@@ -6,14 +6,15 @@
     android:layout_height="wrap_content"
     android:background="#EFEFF3"
     android:paddingBottom="8dp"
-    android:paddingLeft="5sp"
-    android:paddingRight="16dp"
+    android:paddingStart="5sp"
+    android:paddingEnd="16dp"
     android:paddingTop="10dp">
 
     <LinearLayout
         android:id="@+id/layoutRow"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/formElementTitle"

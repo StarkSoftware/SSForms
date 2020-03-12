@@ -8,12 +8,12 @@
         android:icon="@drawable/ic_search_white_24dp"
         app:showAsAction="always"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
-        android:title="Search"/>
+        android:title="@string/search_menu"/>
 
     <item
         android:id="@+id/menu_check"
         android:icon="@drawable/ic_check_white_36dp"
-        android:title="Conferma"
+        android:title="@string/conferma"
         app:showAsAction="always"
         tools:ignore="AlwaysShowAction"/>
 

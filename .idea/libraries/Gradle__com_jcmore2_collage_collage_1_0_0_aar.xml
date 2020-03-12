@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.jcmore2.collage:collage:1.0.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/575b395d36e64f24e02d348075511150/collage-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/575b395d36e64f24e02d348075511150/collage-1.0.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/575b395d36e64f24e02d348075511150/jetified-collage-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/575b395d36e64f24e02d348075511150/jetified-collage-1.0.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jcmore2.collage/collage/1.0.0/ecfe0cba7c51b33c76c2dfabfd19c51731c89d79/collage-1.0.0-javadoc.jar!/" />

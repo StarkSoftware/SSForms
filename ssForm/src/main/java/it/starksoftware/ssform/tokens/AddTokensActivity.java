@@ -23,7 +23,6 @@ import it.starksoftware.ssform.model.TokesTags;
 
 public class AddTokensActivity extends AppCompatActivity {
 
-    private ActionBar actionBar;
     public ArrayList<FormTokenObject> datas;
     //private EditText etSearch;
     private ListView lvList;
@@ -39,7 +38,7 @@ public class AddTokensActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
 
         // etSearch = this.findViewById(R.id.etSearch);
         lvList = this.findViewById(R.id.lvList);
@@ -89,7 +88,7 @@ public class AddTokensActivity extends AppCompatActivity {
 
         MenuItem myActionMenuItem = menu.findItem(R.id.action_search);
         final SearchView searchView = (SearchView) myActionMenuItem.getActionView();
-        EditText searchEditText = (EditText) searchView.findViewById(R.id.search_src_text);
+        EditText searchEditText = searchView.findViewById(R.id.search_src_text);
         searchEditText.setTextColor(getResources().getColor(R.color.whiteColor));
         searchEditText.setHintTextColor(getResources().getColor(R.color.whiteColor));
 

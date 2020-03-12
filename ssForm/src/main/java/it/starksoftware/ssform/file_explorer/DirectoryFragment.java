@@ -8,7 +8,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Locale;
+import java.util.Objects;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -30,6 +33,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.jetbrains.annotations.NotNull;
+
 import it.starksoftware.ssform.R;
 
 
@@ -46,14 +51,14 @@ public class DirectoryFragment extends Fragment {
     private DocumentSelectActivityDelegate delegate;
 
     private static String title_ = "";
-    private ArrayList<ListItem> items = new ArrayList<ListItem>();
-    private ArrayList<HistoryEntry> history = new ArrayList<HistoryEntry>();
+    private ArrayList<ListItem> items = new ArrayList<>();
+    private ArrayList<HistoryEntry> history = new ArrayList<>();
     private HashMap<String, ListItem> selectedFiles = new HashMap<String, ListItem>();
     private long sizeLimit = 1024 * 1024 * 1024;
 
     //private String[] chhosefileType = {"*"};
 
-    private class HistoryEntry {
+    private static class HistoryEntry {
         int scrollItem, scrollOffset;
         File dir;
         String title;
@@ -68,7 +73,7 @@ public class DirectoryFragment extends Fragment {
     }
 
 
-    public boolean onBackPressed_() {
+    boolean onBackPressed_() {
         if (history.size() > 0) {
             HistoryEntry he = history.remove(history.size() - 1);
             title_ = he.title;
@@ -91,10 +96,10 @@ public class DirectoryFragment extends Fragment {
         }
     }
 
-    public void onFragmentDestroy() {
+    void onFragmentDestroy() {
         try {
             if (receiverRegistered) {
-                getActivity().unregisterReceiver(receiver);
+                Objects.requireNonNull(getActivity()).unregisterReceiver(receiver);
             }
         } catch (Exception e) {
             Log.e("tmessages", e.toString());
@@ -125,7 +130,7 @@ public class DirectoryFragment extends Fragment {
         }
     };
 
-    public void setDelegate(DocumentSelectActivityDelegate delegate) {
+    void setDelegate(DocumentSelectActivityDelegate delegate) {
         this.delegate = delegate;
     }
 
@@ -138,8 +143,9 @@ public class DirectoryFragment extends Fragment {
         File file;
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         if (!receiverRegistered) {
@@ -155,7 +161,7 @@ public class DirectoryFragment extends Fragment {
             filter.addAction(Intent.ACTION_MEDIA_UNMOUNTABLE);
             filter.addAction(Intent.ACTION_MEDIA_UNMOUNTED);
             filter.addDataScheme("file");
-            getActivity().registerReceiver(receiver, filter);
+            Objects.requireNonNull(getActivity()).registerReceiver(receiver, filter);
         }
         if (fragmentView == null) {
             fragmentView = inflater.inflate(R.layout.document_select_layout,
@@ -199,7 +205,7 @@ public class DirectoryFragment extends Fragment {
                         he.scrollItem = listView.getFirstVisiblePosition();
                         he.scrollOffset = listView.getChildAt(0).getTop();
                         he.dir = currentDir;
-                        he.title = title_.toString();
+                        he.title = title_;
                         updateName(title_);
                         if (!listFiles(file)) {
                             return;
@@ -223,7 +229,7 @@ public class DirectoryFragment extends Fragment {
                             return;
                         }
                         if (delegate != null) {
-                            ArrayList<String> files = new ArrayList<String>();
+                            ArrayList<String> files = new ArrayList<>();
                             files.add(file.getAbsolutePath());
                             delegate.didSelectFiles(DirectoryFragment.this, files);
                         }
@@ -246,14 +252,12 @@ public class DirectoryFragment extends Fragment {
         items.clear();
         String extStorage = Environment.getExternalStorageDirectory().getAbsolutePath();
         ListItem ext = new ListItem();
-        if (Build.VERSION.SDK_INT < 9
-                || Environment.isExternalStorageRemovable()) {
+        if (Environment.isExternalStorageRemovable()) {
             ext.title = "SdCard";
         } else {
             ext.title = "InternalStorage";
         }
-        ext.icon = Build.VERSION.SDK_INT < 9
-                || Environment.isExternalStorageRemovable() ? R.drawable.ic_external_storage
+        ext.icon = Environment.isExternalStorageRemovable() ? R.drawable.ic_external_storage
                 : R.drawable.ic_storage;
         ext.subtitle = getRootSubtitle(extStorage);
         ext.file = Environment.getExternalStorageDirectory();
@@ -263,7 +267,7 @@ public class DirectoryFragment extends Fragment {
                     "/proc/mounts"));
             String line;
             HashMap<String, ArrayList<String>> aliases = new HashMap<String, ArrayList<String>>();
-            ArrayList<String> result = new ArrayList<String>();
+            ArrayList<String> result = new ArrayList<>();
             String extDevice = null;
             while ((line = reader.readLine()) != null) {
                 if ((!line.contains("/mnt") && !line.contains("/storage") && !line
@@ -288,7 +292,7 @@ public class DirectoryFragment extends Fragment {
                 for (String path : result) {
                     try {
                         ListItem item = new ListItem();
-                        if (path.toLowerCase().contains("sd")) {
+                        if (path.toLowerCase(Locale.getDefault()).contains("sd")) {
                             ext.title = "SdCard";
                         } else {
                             ext.title = "ExternalStorage";
@@ -316,6 +320,7 @@ public class DirectoryFragment extends Fragment {
         listAdapter.notifyDataSetChanged();
     }
 
+    @SuppressLint("SetTextI18n")
     private boolean listFiles(File dir) {
         if (!dir.canRead()) {
             if (dir.getAbsolutePath().startsWith(
@@ -386,7 +391,7 @@ public class DirectoryFragment extends Fragment {
                 String[] sp = fname.split("\\.");
                 item.ext = sp.length > 1 ? sp[sp.length - 1] : "?";
                 item.subtitle = formatFileSize(file.length());
-                fname = fname.toLowerCase();
+                fname = fname.toLowerCase(Locale.getDefault());
                 if (fname.endsWith(".jpg") || fname.endsWith(".png")
                         || fname.endsWith(".gif") || fname.endsWith(".jpeg")) {
                     item.thumb = file.getAbsolutePath();
@@ -406,7 +411,8 @@ public class DirectoryFragment extends Fragment {
         return true;
     }
 
-    public static String formatFileSize(long size) {
+    @SuppressLint("DefaultLocale")
+    private static String formatFileSize(long size) {
         if (size < 1024) {
             return String.format("%d B", size);
         } else if (size < 1024 * 1024) {
@@ -418,8 +424,8 @@ public class DirectoryFragment extends Fragment {
         }
     }
 
-    public static void clearDrawableAnimation(View view) {
-        if (Build.VERSION.SDK_INT < 21 || view == null) {
+    private static void clearDrawableAnimation(View view) {
+        if (view == null) {
             return;
         }
         Drawable drawable = null;
@@ -437,7 +443,7 @@ public class DirectoryFragment extends Fragment {
         }
     }
 
-    public void showErrorBox(String error) {
+    private void showErrorBox(String error) {
         if (getActivity() == null) {
             return;
         }
@@ -460,7 +466,7 @@ public class DirectoryFragment extends Fragment {
     private class ListAdapter extends BaseFragmentAdapter {
         private Context mContext;
 
-        public ListAdapter(Context context) {
+        ListAdapter(Context context) {
             mContext = context;
         }
 
@@ -499,7 +505,7 @@ public class DirectoryFragment extends Fragment {
                         .setTextAndValueAndTypeAndThumb(item.title,
                                 item.subtitle, null, null, item.icon);
             } else {
-                String type = item.ext.toUpperCase().substring(0,
+                String type = item.ext.toUpperCase(Locale.getDefault()).substring(0,
                         Math.min(item.ext.length(), 4));
                 ((TextDetailDocumentsCell) convertView)
                         .setTextAndValueAndTypeAndThumb(item.title,

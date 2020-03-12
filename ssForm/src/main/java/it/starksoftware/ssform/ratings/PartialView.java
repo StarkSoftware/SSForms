@@ -1,5 +1,6 @@
 package it.starksoftware.ssform.ratings;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.drawable.ClipDrawable;
 import android.graphics.drawable.Drawable;
@@ -42,12 +43,12 @@ public class PartialView extends RelativeLayout {
     }
 
     public void setFilledDrawable(Drawable drawable) {
-        ClipDrawable clipDrawable = new ClipDrawable(drawable, Gravity.LEFT, ClipDrawable.HORIZONTAL);
+        @SuppressLint("RtlHardcoded") ClipDrawable clipDrawable = new ClipDrawable(drawable, Gravity.LEFT, ClipDrawable.HORIZONTAL);
         mFilledView.setImageDrawable(clipDrawable);
     }
 
     public void setEmptyDrawable(Drawable drawable) {
-        ClipDrawable clipDrawable = new ClipDrawable(drawable, Gravity.RIGHT, ClipDrawable.HORIZONTAL);
+        @SuppressLint("RtlHardcoded") ClipDrawable clipDrawable = new ClipDrawable(drawable, Gravity.RIGHT, ClipDrawable.HORIZONTAL);
         mEmptyView.setImageDrawable(clipDrawable);
     }
 

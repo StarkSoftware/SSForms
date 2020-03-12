@@ -21,9 +21,9 @@
             android:layout_width="match_parent"
             android:layout_height="40sp"
             android:paddingBottom="8dp"
-            android:paddingLeft="5sp"
+            android:paddingStart="5sp"
             android:fontFamily="sans-serif-thin"
-            android:paddingRight="16dp"
+            android:paddingEnd="16dp"
             android:paddingTop="10dp"
             android:gravity="center_vertical"
             android:textColor="@color/colorFormMasterHeaderText"
@@ -36,8 +36,8 @@
             android:id="@+id/formElementValue"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/formElementTitle"
-            android:background="@null" />
+            android:background="@null"
+            android:contentDescription="@string/image_view" />
 
     </LinearLayout>
 
@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_marginBottom="2dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="2dp"
         android:background="@color/colorFormMasterDivider" />
 

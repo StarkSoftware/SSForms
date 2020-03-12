@@ -8,17 +8,17 @@ import android.view.View;
 
 public class OnCustomKeyboardActionListener implements KeyboardView.OnKeyboardActionListener {
 
-    AppCompatEditText myEditText;
-    KeyboardView mKeyboardView;
-    public final static int CodeDelete = -5; // Keyboard.KEYCODE_DELETE
-    public final static int CodeCancel = -3; // Keyboard.KEYCODE_CANCEL
-    public final static int CodePrev = 55000;
-    public final static int CodeAllLeft = 55001;
-    public final static int CodeLeft = 55002;
-    public final static int CodeRight = 55003;
-    public final static int CodeAllRight = 55004;
-    public final static int CodeNext = 55005;
-    public final static int CodeClear = 55006;
+    private AppCompatEditText myEditText;
+    private KeyboardView mKeyboardView;
+    private final static int CodeDelete = -5; // Keyboard.KEYCODE_DELETE
+    private final static int CodeCancel = -3; // Keyboard.KEYCODE_CANCEL
+    private final static int CodePrev = 55000;
+    private final static int CodeAllLeft = 55001;
+    private final static int CodeLeft = 55002;
+    private final static int CodeRight = 55003;
+    private final static int CodeAllRight = 55004;
+    private final static int CodeNext = 55005;
+    private final static int CodeClear = 55006;
 
 
     public OnCustomKeyboardActionListener(AppCompatEditText myEditText, KeyboardView mKeyboardView) {
@@ -26,7 +26,7 @@ public class OnCustomKeyboardActionListener implements KeyboardView.OnKeyboardAc
         this.mKeyboardView = mKeyboardView;
     }
 
-    public void hideCustomKeyboard() {
+    private void hideCustomKeyboard() {
         mKeyboardView.setVisibility(View.GONE);
         mKeyboardView.setEnabled(false);
     }
@@ -57,6 +57,7 @@ public class OnCustomKeyboardActionListener implements KeyboardView.OnKeyboardAc
             View focusNew = myEditText.focusSearch(View.FOCUS_RIGHT);
             if (focusNew != null) focusNew.requestFocus();
         } else { // insert character
+            assert editable != null;
             editable.insert(start, Character.toString((char) primaryCode));
             //myEditText.setText(editable.toString());
         }

@@ -27,8 +27,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import it.starksoftware.ssform.R;
 import it.starksoftware.ssform.adapter.FolderPickerAdapter;
@@ -107,12 +110,12 @@ public class ImagePickerActivity extends AppCompatActivity
     }
 
     private void setupView(ImagePickerConfig config) {
-        progressBar = (ProgressWheel) findViewById(R.id.progress_bar);
-        emptyTextView = (TextView) findViewById(R.id.tv_empty_images);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        snackBarView = (SnackBarView) findViewById(R.id.ef_snackbar);
+        progressBar = findViewById(R.id.progress_bar);
+        emptyTextView = findViewById(R.id.tv_empty_images);
+        recyclerView = findViewById(R.id.recyclerView);
+        snackBarView = findViewById(R.id.ef_snackbar);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
 
@@ -135,6 +138,7 @@ public class ImagePickerActivity extends AppCompatActivity
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
 
+        assert bundle != null;
         config = bundle.getParcelable(ImagePickerConfig.class.getSimpleName());
         if (config == null) {
             config = IntentHelper.makeConfigFromIntent(this, intent);
@@ -156,7 +160,7 @@ public class ImagePickerActivity extends AppCompatActivity
         folderAdapter = new FolderPickerAdapter(this, new OnFolderClickListener() {
             @Override
             public void onFolderClick(Folder bucket) {
-                foldersState = recyclerView.getLayoutManager().onSaveInstanceState();
+                foldersState = Objects.requireNonNull(recyclerView.getLayoutManager()).onSaveInstanceState();
                 setImageAdapter(bucket.getImages());
             }
         });
@@ -200,7 +204,7 @@ public class ImagePickerActivity extends AppCompatActivity
 
         if (foldersState != null) {
             layoutManager.setSpanCount(folderColumns);
-            recyclerView.getLayoutManager().onRestoreInstanceState(foldersState);
+            Objects.requireNonNull(recyclerView.getLayoutManager()).onRestoreInstanceState(foldersState);
         }
         updateTitle();
     }
@@ -267,7 +271,7 @@ public class ImagePickerActivity extends AppCompatActivity
      * Config recyclerView when configuration changed
      */
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
+    public void onConfigurationChanged(@NotNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         orientationBasedUI(newConfig.orientation);
     }
@@ -329,7 +333,7 @@ public class ImagePickerActivity extends AppCompatActivity
             ActivityCompat.requestPermissions(this, permissions, RC_PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE);
         } else {
             final String permission = PREF_WRITE_EXTERNAL_STORAGE_REQUESTED;
-            if (!preferences.isPermissionRequested(permission)) {
+            if (preferences.isPermissionRequested(permission)) {
                 preferences.setPermissionRequested(permission);
                 ActivityCompat.requestPermissions(this, permissions, RC_PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE);
             } else {
@@ -354,7 +358,7 @@ public class ImagePickerActivity extends AppCompatActivity
             ActivityCompat.requestPermissions(this, permissions, RC_PERMISSION_REQUEST_CAMERA);
         } else {
             final String permission = ImagePickerPreferences.PREF_CAMERA_REQUESTED;
-            if (!preferences.isPermissionRequested(permission)) {
+            if (preferences.isPermissionRequested(permission)) {
                 preferences.setPermissionRequested(permission);
                 ActivityCompat.requestPermissions(this, permissions, RC_PERMISSION_REQUEST_CAMERA);
             } else {
@@ -612,7 +616,7 @@ public class ImagePickerActivity extends AppCompatActivity
     @Override
     public void showError(Throwable throwable) {
         String message = "Unknown Error";
-        if (throwable != null && throwable instanceof NullPointerException) {
+        if (throwable instanceof NullPointerException) {
             message = "Images not exist";
         }
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();

@@ -1,12 +1,12 @@
 package it.starksoftware.ssform.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -15,8 +15,11 @@ import android.widget.TextView;
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import it.starksoftware.ssform.R;
 import it.starksoftware.ssform.StarkSpinner.Interfaces.ISpinnerSelectedView;
@@ -66,14 +69,14 @@ public class StarkSpinnerAdapter extends ArrayAdapter<FormSpinnerObject> impleme
         }
     }
 
-    public int indexOfSpinner(FormSpinnerObject value)
+    int indexOfSpinner(FormSpinnerObject value)
     {
         if (allowNoSelection) {
             if (value == null)
                 return 0;
             else {
                 for (int index = 0, count = this.mStrings.size(); index < count; ++index) {
-                    if (this.mStrings.get(index).getKey().toLowerCase().equals(value.getKey().toLowerCase())) {
+                    if (this.mStrings.get(index).getKey().toLowerCase(Locale.getDefault()).equals(value.getKey().toLowerCase(Locale.getDefault()))) {
                         return index + 1;
                     }
                 }
@@ -84,7 +87,7 @@ public class StarkSpinnerAdapter extends ArrayAdapter<FormSpinnerObject> impleme
                 return 0;
             else {
                 for (int index = 0, count = this.mStrings.size(); index < count; ++index) {
-                    if (this.mStrings.get(index).getKey().toLowerCase().equals(value.getKey().toLowerCase())) {
+                    if (this.mStrings.get(index).getKey().toLowerCase(Locale.getDefault()).equals(value.getKey().toLowerCase(Locale.getDefault()))) {
                         return index;
                     }
                 }
@@ -93,32 +96,38 @@ public class StarkSpinnerAdapter extends ArrayAdapter<FormSpinnerObject> impleme
         }
     }
 
+    @SuppressLint("Assert")
     @Override
     public long getItemId(int position) {
         if (allowNoSelection) {
-            if (mStrings == null && position > 0)
+            if (mStrings == null && position > 0) {
+                assert false;
                 return mStrings.get(position).hashCode();
+            }
             else
                 return -1;
         } else {
-            if (mStrings == null)
+            if (mStrings == null) {
+                assert false;
                 return mStrings.get(position).hashCode();
+            }
             else
                 return 0;
         }
     }
 
+    @NotNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NotNull ViewGroup parent) {
 
-        View view = null;
+        View view;
         if (allowNoSelection) {
             if (position == 0) {
                 view = getNoSelectionView();
             } else {
                 view = View.inflate(mContext, R.layout.view_list_item_edit, null);
-                ImageView letters = (ImageView) view.findViewById(R.id.ImgVw_Letters);
-                TextView dispalyName = (TextView) view.findViewById(R.id.TxtVw_DisplayName);
+                ImageView letters = view.findViewById(R.id.ImgVw_Letters);
+                TextView dispalyName = view.findViewById(R.id.TxtVw_DisplayName);
                 dispalyName.setText(mStrings.get(position - 1).getValue());
                 if (showIcon) {
                     letters.setVisibility(View.VISIBLE);
@@ -128,8 +137,8 @@ public class StarkSpinnerAdapter extends ArrayAdapter<FormSpinnerObject> impleme
             }
         } else {
             view = View.inflate(mContext, R.layout.view_list_item_edit, null);
-            ImageView letters = (ImageView) view.findViewById(R.id.ImgVw_Letters);
-            TextView dispalyName = (TextView) view.findViewById(R.id.TxtVw_DisplayName);
+            ImageView letters = view.findViewById(R.id.ImgVw_Letters);
+            TextView dispalyName = view.findViewById(R.id.TxtVw_DisplayName);
             dispalyName.setText(mStrings.get(position).getValue());
             if (showIcon) {
                 letters.setVisibility(View.VISIBLE);
@@ -142,14 +151,14 @@ public class StarkSpinnerAdapter extends ArrayAdapter<FormSpinnerObject> impleme
 
     @Override
     public View getSelectedView(int position) {
-        View view = null;
+        View view;
         if (allowNoSelection) {
             if (position == 0) {
                 view = getNoSelectionView();
             } else {
                 view = View.inflate(mContext, R.layout.view_list_item, null);
-                ImageView letters = (ImageView) view.findViewById(R.id.ImgVw_Letters);
-                TextView dispalyName = (TextView) view.findViewById(R.id.TxtVw_DisplayName);
+                ImageView letters = view.findViewById(R.id.ImgVw_Letters);
+                TextView dispalyName = view.findViewById(R.id.TxtVw_DisplayName);
                 dispalyName.setText(mStrings.get(position - 1).getValue());
                 if (showIcon) {
                     letters.setImageDrawable(getTextDrawable(mStrings.get(position - 1).getValue()));
@@ -159,8 +168,8 @@ public class StarkSpinnerAdapter extends ArrayAdapter<FormSpinnerObject> impleme
             }
         } else {
             view = View.inflate(mContext, R.layout.view_list_item, null);
-            ImageView letters = (ImageView) view.findViewById(R.id.ImgVw_Letters);
-            TextView dispalyName = (TextView) view.findViewById(R.id.TxtVw_DisplayName);
+            ImageView letters = view.findViewById(R.id.ImgVw_Letters);
+            TextView dispalyName = view.findViewById(R.id.TxtVw_DisplayName);
             dispalyName.setText(mStrings.get(position).getValue());
             if (showIcon) {
                 letters.setImageDrawable(getTextDrawable(mStrings.get(position).getValue()));
@@ -173,12 +182,11 @@ public class StarkSpinnerAdapter extends ArrayAdapter<FormSpinnerObject> impleme
 
     @Override
     public View getNoSelectionView() {
-        View view = View.inflate(mContext, R.layout.view_list_no_selection_item, null);
-        return view;
+        return View.inflate(mContext, R.layout.view_list_no_selection_item, null);
     }
 
     private TextDrawable getTextDrawable(String displayName) {
-        TextDrawable drawable = null;
+        TextDrawable drawable;
         if (!TextUtils.isEmpty(displayName)) {
             int color2 = ColorGenerator.MATERIAL.getColor(displayName);
             drawable = TextDrawable.builder()
@@ -202,6 +210,7 @@ public class StarkSpinnerAdapter extends ArrayAdapter<FormSpinnerObject> impleme
         return drawable;
     }
 
+    @NotNull
     @Override
     public Filter getFilter() {
         return mStringFilter;
@@ -219,7 +228,7 @@ public class StarkSpinnerAdapter extends ArrayAdapter<FormSpinnerObject> impleme
             }
             final ArrayList<FormSpinnerObject> filterStrings = new ArrayList<>();
             for (FormSpinnerObject text : mBackupStrings) {
-                if (text.getValue().toLowerCase().contains(constraint.toString().toLowerCase())) {
+                if (text.getValue().toLowerCase(Locale.getDefault()).contains(constraint.toString().toLowerCase(Locale.getDefault()))) {
                     filterStrings.add(text);
                 }
             }
@@ -235,7 +244,7 @@ public class StarkSpinnerAdapter extends ArrayAdapter<FormSpinnerObject> impleme
         }
     }
 
-    private class ItemView {
+    private static class ItemView {
         public ImageView mImageView;
         public TextView mTextView;
     }

@@ -14,11 +14,7 @@ public class Tools {
     public static boolean checkPermissionForExternalStorage(Activity activity) {
         int result =
                 ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE);
-        if (result == PackageManager.PERMISSION_GRANTED) {
-            return true;
-        } else {
-            return false;
-        }
+        return result == PackageManager.PERMISSION_GRANTED;
     }
 
     public static int generateViewId() {

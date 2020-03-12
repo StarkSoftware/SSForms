@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/colorFormMasterElementBackground"
     android:layout_width="match_parent"
@@ -8,17 +9,18 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50sp"
+        android:layout_height="0dp"
         android:id="@+id/layoutRow"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
 
         <Button
             android:layout_width="match_parent"
             android:background="@color/colorPrimary"
             android:textColor="@color/white"
             android:id="@+id/btnAction"
-            android:text="BOTTONE"
+            android:text="@string/bottone"
             android:layout_height="match_parent" />
 
     </LinearLayout>

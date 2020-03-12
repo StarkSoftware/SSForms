@@ -29,11 +29,7 @@ public class TokensChipAdapter extends TokensAdapter{
 
     @Override
     public boolean isSelected(int pos) {
-        if(tokens.contains(search_data.get(pos))) {
-            return true;
-        }else {
-            return false;
-        }
+        return tokens.contains(search_data.get(pos));
     }
 
     @Override

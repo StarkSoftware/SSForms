@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#ffffff"
@@ -11,13 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="15dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <TextView
             android:id="@+id/spinerTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Select or Search Items"
+            android:text="@string/select_or_search_items"
             android:textSize="17sp"
             android:textStyle="bold" />
 
@@ -25,13 +27,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center|left"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="RtlHardcoded">
 
             <ImageView
                 android:id="@+id/searchIcon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/ic_search_black_36dp" />
+                android:src="@drawable/ic_search_black_36dp"
+                android:contentDescription="@string/image_view" />
 
             <EditText
                 android:id="@+id/searchBox"
@@ -39,7 +43,9 @@
                 android:layout_height="40dp"
                 android:layout_marginLeft="5dp"
                 android:background="#ffffff"
-                android:inputType="text" />
+                android:inputType="text"
+                android:autofillHints=""
+                tools:ignore="LabelFor" />
 
         </LinearLayout>
 
@@ -53,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:divider="#d1d1d1"
-            android:dividerHeight="0.1dp"></ListView>
+            android:dividerHeight="0.1dp" />
 
         <TextView
             android:clickable="true"
@@ -62,7 +68,9 @@
             android:id="@+id/close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Close" />
+            android:text="@string/close"
+            android:focusable="true"
+            tools:ignore="RtlHardcoded" />
 
     </LinearLayout>
 

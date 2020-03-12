@@ -16,12 +16,12 @@ import it.starksoftware.ssform.features.common.ImageLoaderListener;
 import it.starksoftware.ssform.model.Folder;
 import it.starksoftware.ssform.model.Image;
 
-public class ImageLoader {
+class ImageLoader {
 
     private Context context;
     private ExecutorService executorService;
 
-    public ImageLoader(Context context) {
+    ImageLoader(Context context) {
         this.context = context;
     }
 
@@ -32,11 +32,11 @@ public class ImageLoader {
             MediaStore.Images.Media.BUCKET_DISPLAY_NAME
     };
 
-    public void loadDeviceImages(final boolean isFolderMode, final ImageLoaderListener listener) {
+    void loadDeviceImages(final boolean isFolderMode, final ImageLoaderListener listener) {
         getExecutorService().execute(new ImageLoadRunnable(isFolderMode, listener));
     }
 
-    public void abortLoadImages() {
+    void abortLoadImages() {
         if (executorService != null) {
             executorService.shutdown();
             executorService = null;
@@ -55,7 +55,7 @@ public class ImageLoader {
         private boolean isFolderMode;
         private ImageLoaderListener listener;
 
-        public ImageLoadRunnable(boolean isFolderMode, ImageLoaderListener listener) {
+        ImageLoadRunnable(boolean isFolderMode, ImageLoaderListener listener) {
             this.isFolderMode = isFolderMode;
             this.listener = listener;
         }

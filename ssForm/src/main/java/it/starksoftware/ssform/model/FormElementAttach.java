@@ -2,6 +2,8 @@ package it.starksoftware.ssform.model;
 
 import android.content.Context;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +20,6 @@ public class FormElementAttach implements FormObject {
     private String mValue; // value to be shown on right
     private ArrayList<String> mOptions; // list of options for single and multi picker
     private List<String> mOptionsSelected; // list of selected options for single and multi picker
-    private Context mCtx;
     private boolean visibility = true;
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
@@ -34,7 +35,7 @@ public class FormElementAttach implements FormObject {
         return this;
     }
 
-    public FormElementAttach() {
+    private FormElementAttach() {
     }
 
     @Override
@@ -73,7 +74,6 @@ public class FormElementAttach implements FormObject {
     }
 
     public FormElementAttach setContext(Context ctx) {
-        this.mCtx = ctx;
         return this;
     }
 
@@ -138,14 +138,13 @@ public class FormElementAttach implements FormObject {
         return (mOptions == null) ? new ArrayList<String>() : mOptions;
     }
 
-    public FormAttachAdapter getAttachAdapter() {
-        return new FormAttachAdapter(mOptions, this.mCtx);
+    private FormAttachAdapter getAttachAdapter() {
+        return new FormAttachAdapter(mOptions);
     }
 
-    public FormElementAttach notifyAdapterChange() {
+    private void notifyAdapterChange() {
         FormAttachAdapter adapter = getAttachAdapter();
         adapter.notifyDataSetChanged();
-        return this;
     }
 
 
@@ -164,8 +163,9 @@ public class FormElementAttach implements FormObject {
         return "Attach";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
     }
 }

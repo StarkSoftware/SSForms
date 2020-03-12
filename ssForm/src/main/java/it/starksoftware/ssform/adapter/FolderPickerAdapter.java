@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import it.starksoftware.ssform.R;
@@ -30,8 +32,9 @@ public class FolderPickerAdapter extends RecyclerView.Adapter<FolderPickerAdapte
         inflater = LayoutInflater.from(this.context);
     }
 
+    @NotNull
     @Override
-    public FolderViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public FolderViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
         View itemView = inflater.inflate(R.layout.ef_imagepicker_item_folder, parent, false);
         return new FolderViewHolder(itemView);
     }
@@ -70,18 +73,18 @@ public class FolderPickerAdapter extends RecyclerView.Adapter<FolderPickerAdapte
         return folders.size();
     }
 
-    public static class FolderViewHolder extends RecyclerView.ViewHolder {
+    static class FolderViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView image;
         private TextView name;
         private TextView number;
 
-        public FolderViewHolder(View itemView) {
+        FolderViewHolder(View itemView) {
             super(itemView);
 
-            image = (ImageView) itemView.findViewById(R.id.image);
-            name = (TextView) itemView.findViewById(R.id.tv_name);
-            number = (TextView) itemView.findViewById(R.id.tv_number);
+            image = itemView.findViewById(R.id.image);
+            name = itemView.findViewById(R.id.tv_name);
+            number = itemView.findViewById(R.id.tv_number);
         }
     }
 

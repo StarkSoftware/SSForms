@@ -3,6 +3,8 @@ package it.starksoftware.ssform.model;
 import android.content.Context;
 import android.inputmethodservice.KeyboardView;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +36,7 @@ public class FormElementCustomKeyboard implements FormObject {
         return required;
     }
 
-    public FormElementCustomKeyboard() {
+    private FormElementCustomKeyboard() {
     }
 
     public Context getCtx() {
@@ -148,8 +150,9 @@ public class FormElementCustomKeyboard implements FormObject {
         return "CustomKeyboard";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
     }
 }

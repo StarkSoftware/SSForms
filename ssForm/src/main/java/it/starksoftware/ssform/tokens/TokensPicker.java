@@ -24,7 +24,7 @@ public abstract class TokensPicker {
 
         private Activity activity;
 
-        public TokensPickerWithActivity(Activity activity) {
+        TokensPickerWithActivity(Activity activity) {
             this.activity = activity;
             init(activity);
         }
@@ -40,7 +40,7 @@ public abstract class TokensPicker {
 
         private Fragment fragment;
 
-        public TokensPickerWithFragment(Fragment fragment) {
+        TokensPickerWithFragment(Fragment fragment) {
             this.fragment = fragment;
             init(fragment.getActivity());
         }

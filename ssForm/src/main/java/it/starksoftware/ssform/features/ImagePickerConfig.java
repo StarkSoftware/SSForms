@@ -40,7 +40,7 @@ public class ImagePickerConfig implements Parcelable {
         this.returnAfterFirst = true;
     }
 
-    public boolean isReturnAfterFirst() {
+    boolean isReturnAfterFirst() {
         return returnAfterFirst;
     }
 
@@ -48,7 +48,7 @@ public class ImagePickerConfig implements Parcelable {
         this.returnAfterFirst = returnAfterFirst;
     }
 
-    public int getMode() {
+    int getMode() {
         return mode;
     }
 
@@ -56,7 +56,7 @@ public class ImagePickerConfig implements Parcelable {
         this.mode = mode;
     }
 
-    public int getLimit() {
+    int getLimit() {
         return limit;
     }
 
@@ -64,7 +64,7 @@ public class ImagePickerConfig implements Parcelable {
         this.limit = limit;
     }
 
-    public boolean isShowCamera() {
+    boolean isShowCamera() {
         return showCamera;
     }
 
@@ -72,7 +72,7 @@ public class ImagePickerConfig implements Parcelable {
         this.showCamera = showCamera;
     }
 
-    public String getFolderTitle() {
+    String getFolderTitle() {
         return folderTitle;
     }
 
@@ -80,7 +80,7 @@ public class ImagePickerConfig implements Parcelable {
         this.folderTitle = folderTitle;
     }
 
-    public String getImageTitle() {
+    String getImageTitle() {
         return imageTitle;
     }
 
@@ -143,7 +143,7 @@ public class ImagePickerConfig implements Parcelable {
         dest.writeByte(this.returnAfterFirst ? (byte) 1 : (byte) 0);
     }
 
-    protected ImagePickerConfig(Parcel in) {
+    private ImagePickerConfig(Parcel in) {
         this.selectedImages = in.createTypedArrayList(Image.CREATOR);
         this.folderTitle = in.readString();
         this.imageTitle = in.readString();

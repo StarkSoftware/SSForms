@@ -52,7 +52,7 @@ public abstract class ImagePicker {
 
         private Fragment fragment;
 
-        public ImagePickerWithFragment(Fragment fragment) {
+        ImagePickerWithFragment(Fragment fragment) {
             this.fragment = fragment;
             init(fragment.getActivity());
         }

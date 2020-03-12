@@ -1,5 +1,7 @@
 package it.starksoftware.ssform.model;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Object for header of the form lists
  * Created by Adib on 18-Apr-17.
@@ -12,7 +14,7 @@ public class FormHeader implements FormObject {
     private int mTag;
     private boolean required = false;
 
-    public FormHeader() {
+    private FormHeader() {
     }
 
     public FormHeader setTag(int mTag) {
@@ -76,9 +78,9 @@ public class FormHeader implements FormObject {
         return "Header";
     }
 
+    @NotNull
     @Override
     public String toString() {
-
         return this.mTitle;
     }
 }

@@ -18,8 +18,8 @@
             android:layout_height="wrap_content"
             android:background="#EFEFF3"
             android:paddingBottom="8dp"
-            android:paddingLeft="5sp"
-            android:paddingRight="16dp"
+            android:paddingStart="5sp"
+            android:paddingEnd="16dp"
             android:paddingTop="10dp">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -37,7 +37,7 @@
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/formMemoElementValue"
             android:layout_width="match_parent"
-            android:layout_height="120sp"
+            android:layout_height="0dp"
             android:layout_margin="2sp"
             android:layout_weight="3"
             android:background="@null"
@@ -47,7 +47,8 @@
             android:maxLines="10"
             android:textColor="@color/colorFormMasterElementTextValue"
             android:textSize="@dimen/elementTextValueSize"
-            tools:text="" />
+            tools:text=""
+            tools:ignore="RtlHardcoded" />
 
     </LinearLayout>
 
@@ -55,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_marginBottom="2dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="2dp"
         android:background="@color/colorFormMasterDivider" />
 

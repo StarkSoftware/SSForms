@@ -16,6 +16,8 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
 
+import org.jetbrains.annotations.NotNull;
+
 import it.starksoftware.ssform.R;
 
 public class ProgressWheel extends View {
@@ -331,7 +333,7 @@ public class ProgressWheel extends View {
         }
     }
 
-    @Override protected void onVisibilityChanged(View changedView, int visibility) {
+    @Override protected void onVisibilityChanged(@NotNull View changedView, int visibility) {
         super.onVisibilityChanged(changedView, visibility);
 
         if (visibility == VISIBLE) {

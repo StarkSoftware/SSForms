@@ -24,15 +24,10 @@ public class EditCursorColor {
             drawable.setColorFilter(color, PorterDuff.Mode.SRC_IN);
             final Object drawableFieldOwner;
             final Class<?> drawableFieldClass;
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
-                drawableFieldOwner = editText;
-                drawableFieldClass = TextView.class;
-            } else {
-                final Field editorField = TextView.class.getDeclaredField("mEditor");
-                editorField.setAccessible(true);
-                drawableFieldOwner = editorField.get(editText);
-                drawableFieldClass = drawableFieldOwner.getClass();
-            }
+            final Field editorField = TextView.class.getDeclaredField("mEditor");
+            editorField.setAccessible(true);
+            drawableFieldOwner = editorField.get(editText);
+            drawableFieldClass = drawableFieldOwner.getClass();
             final Field drawableField = drawableFieldClass.getDeclaredField("mCursorDrawable");
             drawableField.setAccessible(true);
             drawableField.set(drawableFieldOwner, new Drawable[] {drawable, drawable});
@@ -41,10 +36,6 @@ public class EditCursorColor {
     }
 
     private static Drawable getDrawable(Context context, int id) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            return context.getResources().getDrawable(id);
-        } else {
-            return context.getDrawable(id);
-        }
+        return context.getDrawable(id);
     }
 }

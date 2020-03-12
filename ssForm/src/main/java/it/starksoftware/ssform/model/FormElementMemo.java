@@ -3,6 +3,8 @@ package it.starksoftware.ssform.model;
 
 import android.content.Context;
 
+import org.jetbrains.annotations.NotNull;
+
 public class FormElementMemo implements FormObject {
 
     private int mTag; // unique tag to identify the object
@@ -24,7 +26,7 @@ public class FormElementMemo implements FormObject {
         return this;
     }
 
-    public FormElementMemo() {
+    private FormElementMemo() {
     }
 
     public static FormElementMemo createInstance() {
@@ -117,8 +119,9 @@ public class FormElementMemo implements FormObject {
         return "Memo";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", VALUE: " + this.mValue ;
+        return "TAG: " + this.mTag + ", VALUE: " + this.mValue ;
     }
 }

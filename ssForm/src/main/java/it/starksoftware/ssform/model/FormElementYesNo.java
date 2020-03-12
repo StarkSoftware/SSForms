@@ -3,6 +3,8 @@ package it.starksoftware.ssform.model;
 import android.app.Activity;
 import android.content.Context;
 
+import org.jetbrains.annotations.NotNull;
+
 import it.starksoftware.ssform.interfaces.CheckBoxCallBack;
 import it.starksoftware.ssform.interfaces.YesNoCallBack;
 
@@ -24,7 +26,7 @@ public class FormElementYesNo implements FormObject {
     private String extraValue;
     private String requiredResponseMessage = mTitle;
 
-    public FormElementYesNo() {
+    private FormElementYesNo() {
     }
 
     @Override
@@ -166,8 +168,9 @@ public class FormElementYesNo implements FormObject {
         return "YesNo";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: 1";
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: 1";
     }
 }

@@ -10,15 +10,16 @@
         android:layout_width="30dp"
         android:layout_height="match_parent"
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_external_storage" />
+        android:src="@drawable/ic_external_storage"
+        android:contentDescription="@string/image_view" />
 
     <TextView
         android:id="@+id/cell_filename"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="5dip"
+        android:layout_marginStart="5dip"
         android:gravity="center_vertical"
-        android:text="ffdsfwe"
+        android:text=""
         android:textColor="#000000" />
 
 

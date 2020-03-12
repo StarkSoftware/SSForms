@@ -1,5 +1,7 @@
 package it.starksoftware.ssform.model;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,7 +82,7 @@ public class FormElement implements FormObject {
         return this;
     }
 
-    public FormElement() {
+    private FormElement() {
     }
 
     public FormElement setRefresh(Boolean refresh) {
@@ -217,8 +219,9 @@ public class FormElement implements FormObject {
         return "Basic";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
     }
 }

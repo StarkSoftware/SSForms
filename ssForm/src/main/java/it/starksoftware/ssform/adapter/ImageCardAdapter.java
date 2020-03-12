@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import it.starksoftware.ssform.R;
@@ -20,21 +22,22 @@ public class ImageCardAdapter extends RecyclerView.Adapter<ImageCardAdapter.MyVi
     private Context mContext;
     private List<Bitmap> imagesList;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public ImageView thumbnail;
+    static class MyViewHolder extends RecyclerView.ViewHolder {
+        ImageView thumbnail;
 
-        public MyViewHolder(View view) {
+        MyViewHolder(View view) {
             super(view);
-            thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+            thumbnail = view.findViewById(R.id.thumbnail);
         }
     }
 
 
-    public ImageCardAdapter(Context mContext, List<Bitmap> albumList) {
+    ImageCardAdapter(Context mContext, List<Bitmap> albumList) {
         this.mContext = mContext;
         this.imagesList = albumList;
     }
 
+    @NotNull
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())

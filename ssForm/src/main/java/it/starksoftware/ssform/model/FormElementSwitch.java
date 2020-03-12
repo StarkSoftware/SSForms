@@ -1,5 +1,7 @@
 package it.starksoftware.ssform.model;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +32,7 @@ public class FormElementSwitch implements FormObject {
         return this;
     }
 
-    public FormElementSwitch() {
+    private FormElementSwitch() {
     }
 
     public static FormElementSwitch createInstance() {
@@ -146,8 +148,9 @@ public class FormElementSwitch implements FormObject {
         return "Switch";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
     }
 }

@@ -1,5 +1,6 @@
 package it.starksoftware.ssform.adapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -18,7 +21,7 @@ public class FormSpinAdapter extends ArrayAdapter<FormSpinnerObject> {
 
     private Context context;
     private List<FormSpinnerObject> values;
-    LayoutInflater flater;
+    private LayoutInflater flater;
 
     public FormSpinAdapter(Activity context, int textViewResourceId,
                            List<FormSpinnerObject> values) {
@@ -39,7 +42,7 @@ public class FormSpinAdapter extends ArrayAdapter<FormSpinnerObject> {
     }
 
 
-    public int indexOfSpinner(FormSpinnerObject value)
+    int indexOfSpinner(FormSpinnerObject value)
     {
         for (int index = 0, count = this.values.size(); index < count; ++index)
         {
@@ -56,8 +59,9 @@ public class FormSpinAdapter extends ArrayAdapter<FormSpinnerObject> {
         return position;
     }
 
+    @NotNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NotNull ViewGroup parent) {
         TextView label = new TextView(context);
         label.setTextColor(Color.BLACK);
         label.setText(values.get(position).getValue());
@@ -66,22 +70,11 @@ public class FormSpinAdapter extends ArrayAdapter<FormSpinnerObject> {
     }
 
     @Override
-    public View getDropDownView(int position, View convertView, ViewGroup parent) {
-
-        View rowview = flater.inflate(R.layout.spinner_item,null,true);
-        TextView v = (TextView) rowview.findViewById(R.id.text1);
+    public View getDropDownView(int position, View convertView, @NotNull ViewGroup parent) {
+        @SuppressLint("InflateParams") View rowview = flater.inflate(R.layout.spinner_item,null,true);
+        TextView v = rowview.findViewById(R.id.text1);
         v.setText(values.get(position).getValue());
         return rowview;
     }
 
-    /*
-    public View getDropDownView(int position, View convertView,
-                                ViewGroup parent) {
-        TextView label = new TextView(context);
-        label.setTextColor(Color.BLACK);
-        label.setText(values.get(position).getValue());
-
-        return label;
-    }
-    */
 }

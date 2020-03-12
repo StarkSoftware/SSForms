@@ -1,5 +1,7 @@
 package it.starksoftware.ssform.model;
 
+import org.jetbrains.annotations.NotNull;
+
 import it.starksoftware.ssform.interfaces.ButtonCallBack;
 
 
@@ -11,15 +13,13 @@ public class FormElementButton implements FormObject {
     private String mTitle; // title to be shown on left
     private boolean mValue; // value to be shown on right
     private String dbField;
-    private boolean mValueCheckA;
-    private boolean mValueCheckB;
     private boolean visibility = true;
     private boolean required = false;
 
     private ButtonCallBack buttonCallBack;
     private String mAttribute;
 
-    public FormElementButton() {
+    private FormElementButton() {
     }
 
     @Override
@@ -77,12 +77,10 @@ public class FormElementButton implements FormObject {
     }
 
     public FormElementButton setValueCheckA(boolean mValue) {
-        this.mValueCheckA = mValue;
         return this;
     }
 
     public FormElementButton setValueCheckB(boolean mValue) {
-        this.mValueCheckB = mValue;
         return this;
     }
 
@@ -122,8 +120,9 @@ public class FormElementButton implements FormObject {
         return "Button";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
     }
 }

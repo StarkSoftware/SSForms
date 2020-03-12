@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +39,7 @@ public class FormElementProfileView implements FormObject {
         return this;
     }
 
-    public FormElementProfileView() {
+    private FormElementProfileView() {
     }
 
     @Override
@@ -174,8 +176,9 @@ public class FormElementProfileView implements FormObject {
         return "ProfileView";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: " + this.mProfileImage ;
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: " + this.mProfileImage ;
     }
 }

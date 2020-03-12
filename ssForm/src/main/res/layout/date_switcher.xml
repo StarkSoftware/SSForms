@@ -12,7 +12,8 @@
         android:background="@color/float_transparent"
         android:layout_weight="1"
         android:src="@drawable/ic_chevron_left_green_700_24dp"
-        android:text="Previous" />
+        android:text="@string/previous"
+        android:contentDescription="@string/image_view" />
 
 
     <TextView
@@ -21,7 +22,7 @@
         android:layout_weight="5"
         android:gravity="center"
         android:id="@+id/txtDate"
-        android:text="January"
+        android:text="@string/january"
         android:textSize="20sp" />
 
     <ImageButton
@@ -31,7 +32,8 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:src="@drawable/ic_chevron_right_green_700_24dp"
-        android:text="Next" />
+        android:text="@string/next"
+        android:contentDescription="@string/image_view" />
 
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 package it.starksoftware.ssform.SearchableSpinner;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -70,7 +71,7 @@ public class SpinnerDialog {
 
     public void showSpinerDialog() {
         AlertDialog.Builder adb = new AlertDialog.Builder(context);
-        View v = context.getLayoutInflater().inflate(R.layout.dialog_layout, null);
+        @SuppressLint("InflateParams") View v = context.getLayoutInflater().inflate(R.layout.dialog_layout, null);
         TextView rippleViewClose = (TextView) v.findViewById(R.id.close);
         TextView title = (TextView) v.findViewById(R.id.spinerTitle);
         rippleViewClose.setText(closeTitle);

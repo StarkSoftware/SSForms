@@ -19,8 +19,8 @@
             android:layout_height="wrap_content"
             android:background="#EFEFF3"
             android:paddingBottom="8dp"
-            android:paddingLeft="5sp"
-            android:paddingRight="16dp"
+            android:paddingStart="5sp"
+            android:paddingEnd="16dp"
             android:paddingTop="10dp">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -41,7 +41,6 @@
             android:layout_marginTop="10sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             app:angryColor="#f29a68"
             app:drawingColor="#353431"
             app:normalColor="#f2dd68"
@@ -57,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_marginBottom="2dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="2dp"
         android:background="@color/colorFormMasterDivider" />
 

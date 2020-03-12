@@ -3,6 +3,8 @@ package it.starksoftware.ssform.model;
 import android.app.Activity;
 import android.content.Context;
 
+import org.jetbrains.annotations.NotNull;
+
 import it.starksoftware.ssform.interfaces.YesNoCallBack;
 import it.starksoftware.ssform.interfaces.YesNoNACallBack;
 
@@ -24,7 +26,7 @@ public class FormElementYesNoNA implements FormObject {
     private String requiredResponseMessage = mTitle;
     private String extraValue;
 
-    public FormElementYesNoNA() {
+    private FormElementYesNoNA() {
     }
 
     @Override
@@ -167,8 +169,9 @@ public class FormElementYesNoNA implements FormObject {
         return "YesNoNA";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: 1";
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: 1";
     }
 }

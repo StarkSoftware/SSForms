@@ -45,8 +45,8 @@ public class SnackBarView extends RelativeLayout {
         int padding = getContext().getResources().getDimensionPixelSize(R.dimen.ef_spacing_double);
         setPadding(padding, 0, padding, 0);
 
-        txtCaption = (TextView) findViewById(R.id.ef_snackbar_txt_bottom_caption);
-        btnAction = (Button) findViewById(R.id.ef_snackbar_btn_action);
+        txtCaption = findViewById(R.id.ef_snackbar_txt_bottom_caption);
+        btnAction = findViewById(R.id.ef_snackbar_btn_action);
     }
 
     public void setText(@StringRes int textResId) {

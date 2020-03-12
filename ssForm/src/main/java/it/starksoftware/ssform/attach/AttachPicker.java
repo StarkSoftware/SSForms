@@ -31,7 +31,7 @@ public abstract class AttachPicker {
 
     private ArrayList<String> currentAttachs;
 
-    public ArrayList<String> getCurrentAttachs() {
+    private ArrayList<String> getCurrentAttachs() {
         return currentAttachs;
     }
 
@@ -45,7 +45,7 @@ public abstract class AttachPicker {
 
         private Activity activity;
 
-        public AttachPickerWithActivity(Activity activity) {
+        AttachPickerWithActivity(Activity activity) {
             this.activity = activity;
             init(activity);
         }
@@ -61,7 +61,7 @@ public abstract class AttachPicker {
 
         private Fragment fragment;
 
-        public AttachPickerWithFragment(Fragment fragment) {
+        AttachPickerWithFragment(Fragment fragment) {
             this.fragment = fragment;
             init(fragment.getActivity());
         }

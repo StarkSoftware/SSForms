@@ -14,7 +14,7 @@ public class FormDivider implements FormObject {
     }
 
 
-    public FormDivider() {
+    private FormDivider() {
     }
 
     public static FormDivider createInstance() {

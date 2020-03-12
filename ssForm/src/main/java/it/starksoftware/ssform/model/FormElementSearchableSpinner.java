@@ -3,6 +3,8 @@ package it.starksoftware.ssform.model;
 import android.app.Activity;
 import android.content.Context;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +44,7 @@ public class FormElementSearchableSpinner implements FormObject {
         return this;
     }
 
-    public FormElementSearchableSpinner() {
+    private FormElementSearchableSpinner() {
     }
 
     public String getDbField() { return dbField; }
@@ -193,8 +195,9 @@ public class FormElementSearchableSpinner implements FormObject {
         return "SearchableSpinner";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
     }
 }

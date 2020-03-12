@@ -2,6 +2,8 @@ package it.starksoftware.ssform.model;
 
 import android.widget.RadioButton;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,7 +63,7 @@ public class FormElementSegment implements FormObject {
         return this;
     }
 
-    public FormElementSegment() {
+    private FormElementSegment() {
     }
 
     @Override
@@ -179,8 +181,9 @@ public class FormElementSegment implements FormObject {
         return "Segment";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
     }
 }

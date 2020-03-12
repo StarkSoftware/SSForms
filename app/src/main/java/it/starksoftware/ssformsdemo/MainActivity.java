@@ -392,6 +392,7 @@ public class MainActivity extends AppCompatActivity implements
         //formHeader = FormHeader.createInstance().setTitle("BUTTON").setTag(130);
 
         List<FormObject> formItems = new ArrayList<>();
+        /*
         formItems.add(formDivider);
         formItems.add(formElementProfileView);
         formItems.add(formElementYesNoNa);
@@ -424,7 +425,8 @@ public class MainActivity extends AppCompatActivity implements
         formItems.add(formElementSwitch);
         formItems.add(formElementCheckBox);
         formItems.add(formElementPlaceDialog);
-
+         */
+        formItems.add(formElementYesNo);
         mFormBuilder.addFormElements(formItems);
         mFormBuilder.refreshView();
 

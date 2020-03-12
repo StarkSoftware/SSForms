@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,16 +40,15 @@ public class FormElementImageMultipleView implements FormObject {
         return this;
     }
 
-    public FormElementImageMultipleView() {
+    private FormElementImageMultipleView() {
     }
 
     public ImageCardAdapter getImgAdapter() {
         return imgAdapter;
     }
 
-    public FormElementImageMultipleView setImgAdapter(ImageCardAdapter imgAdapter) {
+    public void setImgAdapter(ImageCardAdapter imgAdapter) {
         this.imgAdapter = imgAdapter;
-        return this;
     }
 
     public String getDbField() { return dbField; }
@@ -135,7 +136,7 @@ public class FormElementImageMultipleView implements FormObject {
     }
 
 
-    public ImageMultiplePickerAdapter getSpinnerAdapter() {
+    private ImageMultiplePickerAdapter getSpinnerAdapter() {
         return new ImageMultiplePickerAdapter(mCtx,null,null);
     }
 
@@ -184,8 +185,9 @@ public class FormElementImageMultipleView implements FormObject {
         return "ImageViewMultiple";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
     }
 }

@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 public class TokesTags {
 
-    public View TokenItem;
+    private View TokenItem;
 
     public View getTokenItem() {
         return TokenItem;

@@ -11,7 +11,7 @@ import it.starksoftware.ssform.segmented.font.BootstrapTextView;
 import it.starksoftware.ssform.segmented.utils.BootstrapText;
 import it.starksoftware.ssform.segmented.utils.IconResolver;
 
-public class AwesomeRadioButton extends RadioButton implements BootstrapTextView {
+public class AwesomeRadioButton extends androidx.appcompat.widget.AppCompatRadioButton implements BootstrapTextView {
 
     private BootstrapText bootstrapText;
 

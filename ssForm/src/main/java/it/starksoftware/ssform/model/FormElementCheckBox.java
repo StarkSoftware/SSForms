@@ -3,6 +3,8 @@ package it.starksoftware.ssform.model;
 import android.app.Activity;
 import android.content.Context;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import it.starksoftware.ssform.R;
@@ -12,22 +14,18 @@ import it.starksoftware.ssform.interfaces.SpinnerCallBack;
 
 public class FormElementCheckBox implements FormObject {
 
-
     // private variables
     private int mTag; // unique tag to identify the object
     private int mType; // type for the form element
     private String mTitle; // title to be shown on left
-    private Context mCtx;
-    private Activity mAct;
     private boolean value;
     private CheckBoxCallBack checkBoxCallBack;
     private boolean refresh;
     private boolean visibility = true;
-    private int pos;
     private boolean required = false;
     private String mAttribute;
     private String dbField;
-    public FormElementCheckBox() {
+    private FormElementCheckBox() {
     }
 
     @Override
@@ -80,18 +78,15 @@ public class FormElementCheckBox implements FormObject {
     }
 
     public FormElementCheckBox setIndex(int index) {
-        this.pos = index;
         return this;
     }
 
 
     public FormElementCheckBox setContext(Context ctx) {
-        this.mCtx = ctx;
         return this;
     }
 
     public FormElementCheckBox setActivity(Activity act) {
-        this.mAct = act;
         return this;
     }
 
@@ -147,8 +142,9 @@ public class FormElementCheckBox implements FormObject {
         return "CheckBox";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: 1";
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: 1";
     }
 }

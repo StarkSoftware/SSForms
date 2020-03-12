@@ -55,4 +55,15 @@
     <string name="form_radio_botton_yes">SI</string>
     <string name="form_radio_botton_no">NO</string>
     <string name="form_radio_botton_na">N/A</string>
+    <string name="previous">Previous</string>
+    <string name="january">January</string>
+    <string name="next">Next</string>
+    <string name="select_or_search_items">Select or Search Items</string>
+    <string name="close">Close</string>
+    <string name="_0">0</string>
+    <string name="bottone">BOTTONE</string>
+    <string name="one">One</string>
+    <string name="allegati">Allegati</string>
+    <string name="search_menu">Search</string>
+    <string name="conferma">Conferma</string>
 </resources>

@@ -1,5 +1,6 @@
 package it.starksoftware.ssform.DateSwitcher;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import androidx.annotation.Nullable;
@@ -84,6 +85,7 @@ public class DateSwitcher extends LinearLayout implements View.OnClickListener {
         btnNext.setOnClickListener(this);
     }
 
+    @SuppressLint("SetTextI18n")
     private void populateTextView(Map<DateRange, Date> dateRange) {
         if (this.type.equals(Type.MONTH))
             this.txtDate.setText(DateUtil.getMonthNameDateFormat().format(dateRange.get(DateRange.BOTTOM_DATE)));

@@ -3,6 +3,8 @@ package it.starksoftware.ssform.model;
 import android.content.Context;
 import android.view.View;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +36,7 @@ public class FormElementToken implements FormObject {
         return this;
     }
 
-    public FormElementToken() {
+    private FormElementToken() {
     }
 
 
@@ -152,8 +154,9 @@ public class FormElementToken implements FormObject {
         return "Token";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
     }
 }

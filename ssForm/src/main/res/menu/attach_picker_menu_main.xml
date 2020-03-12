@@ -5,7 +5,7 @@
     <item
         android:id="@+id/menu_attach"
         android:icon="@drawable/ic_attachment_white_24dp"
-        android:title="Allegati"
+        android:title="@string/allegati"
         app:showAsAction="always"
         tools:ignore="AlwaysShowAction"/>
 

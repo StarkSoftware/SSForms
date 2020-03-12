@@ -1,5 +1,7 @@
 package it.starksoftware.ssform.model;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,7 +61,7 @@ public class FormElementInputLayout implements FormObject {
         return this;
     }
 
-    public FormElementInputLayout() {
+    private FormElementInputLayout() {
     }
 
     public FormElementInputLayout setCallback(TextCallBack callback) {
@@ -169,8 +171,9 @@ public class FormElementInputLayout implements FormObject {
         return "InputLayout";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mHint + ", VALUE: " + this.mValue ;
+        return "TAG: " + this.mTag + ", TITLE: " + this.mHint + ", VALUE: " + this.mValue ;
     }
 }

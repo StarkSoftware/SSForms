@@ -3,6 +3,8 @@ package it.starksoftware.ssform.model;
 import android.app.Activity;
 import android.content.Context;
 
+import org.jetbrains.annotations.NotNull;
+
 import it.starksoftware.ssform.interfaces.CheckBoxCallBack;
 import it.starksoftware.ssform.interfaces.PlaceDialogCallBack;
 
@@ -34,7 +36,7 @@ public class FormElementPlaceDialog implements FormObject {
         return this;
     }
 
-    public FormElementPlaceDialog() {
+    private FormElementPlaceDialog() {
     }
 
     public Context getmCtx() {
@@ -187,8 +189,9 @@ public class FormElementPlaceDialog implements FormObject {
         return "PlaceDialog";
     }
 
+    @NotNull
     @Override
     public String toString() {
-        return "TAG: " + String.valueOf(this.mTag) + ", TITLE: " + this.mTitle + ", VALUE: " + this.value;
+        return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: " + this.value;
     }
 }

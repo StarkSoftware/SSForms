@@ -27,7 +27,7 @@ public class AttachPickerConfig implements Parcelable {
     private boolean showCamera;
     private boolean returnAfterFirst;
 
-    public AttachPickerConfig(Context context) {
+    AttachPickerConfig(Context context) {
         this.mode = ImagePicker.MODE_MULTIPLE;
         this.limit = ImagePicker.MAX_LIMIT;
         this.showCamera = true;
@@ -43,7 +43,7 @@ public class AttachPickerConfig implements Parcelable {
         return returnAfterFirst;
     }
 
-    public void setReturnAfterFirst(boolean returnAfterFirst) {
+    void setReturnAfterFirst(boolean returnAfterFirst) {
         this.returnAfterFirst = returnAfterFirst;
     }
 
@@ -51,7 +51,7 @@ public class AttachPickerConfig implements Parcelable {
         return mode;
     }
 
-    public void setMode(int mode) {
+    void setMode(int mode) {
         this.mode = mode;
     }
 
@@ -59,7 +59,7 @@ public class AttachPickerConfig implements Parcelable {
         return limit;
     }
 
-    public void setLimit(int limit) {
+    void setLimit(int limit) {
         this.limit = limit;
     }
 
@@ -67,7 +67,7 @@ public class AttachPickerConfig implements Parcelable {
         return showCamera;
     }
 
-    public void setShowCamera(boolean showCamera) {
+    void setShowCamera(boolean showCamera) {
         this.showCamera = showCamera;
     }
 
@@ -75,7 +75,7 @@ public class AttachPickerConfig implements Parcelable {
         return folderTitle;
     }
 
-    public void setFolderTitle(String folderTitle) {
+    void setFolderTitle(String folderTitle) {
         this.folderTitle = folderTitle;
     }
 
@@ -83,7 +83,7 @@ public class AttachPickerConfig implements Parcelable {
         return imageTitle;
     }
 
-    public void setImageTitle(String imageTitle) {
+    void setImageTitle(String imageTitle) {
         this.imageTitle = imageTitle;
     }
 
@@ -107,7 +107,7 @@ public class AttachPickerConfig implements Parcelable {
         return imageDirectory;
     }
 
-    public void setImageDirectory(String imageDirectory) {
+    void setImageDirectory(String imageDirectory) {
         this.imageDirectory = imageDirectory;
     }
 
@@ -142,7 +142,7 @@ public class AttachPickerConfig implements Parcelable {
         dest.writeByte(this.returnAfterFirst ? (byte) 1 : (byte) 0);
     }
 
-    protected AttachPickerConfig(Parcel in) {
+    private AttachPickerConfig(Parcel in) {
         this.selectedImages = in.createTypedArrayList(Image.CREATOR);
         this.folderTitle = in.readString();
         this.imageTitle = in.readString();
