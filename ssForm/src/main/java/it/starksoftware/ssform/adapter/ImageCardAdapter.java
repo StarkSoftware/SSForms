@@ -32,7 +32,7 @@ public class ImageCardAdapter extends RecyclerView.Adapter<ImageCardAdapter.MyVi
     }
 
 
-    ImageCardAdapter(Context mContext, List<Bitmap> albumList) {
+    public ImageCardAdapter(Context mContext, List<Bitmap> albumList) {
         this.mContext = mContext;
         this.imagesList = albumList;
     }

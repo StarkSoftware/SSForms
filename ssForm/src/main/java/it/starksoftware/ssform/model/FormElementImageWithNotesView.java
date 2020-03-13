@@ -9,52 +9,34 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.starksoftware.ssform.adapter.ImageCardAdapter;
-import it.starksoftware.ssform.adapter.ImageMultiplePickerAdapter;
+import it.starksoftware.ssform.adapter.ImagePickerAdapter;
 
-public class FormElementImageMultipleView implements FormObject {
-
+public class FormElementImageWithNotesView implements FormObject {
 
     // private variables
     private int mTag; // unique tag to identify the object
     private int mType; // type for the form element
     private String mTitle; // title to be shown on left
-    private List<Bitmap> mValue = new ArrayList<>();
+    private Bitmap mValue; // value to be shown on right
     private List<String> mOptions; // list of options for single and multi picker
     private List<String> mOptionsSelected; // list of selected options for single and multi picker
     private Context mCtx;
-    private Activity mAct;
-    private int maxImages;
     private boolean visibility = true;
-    private ImageCardAdapter imgAdapter;
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
     private String mAttribute;
     private String dbField;
+    private boolean autoshow = false;
     public String getRequiredResponseMessage() {
         return requiredResponseMessage;
     }
 
-    public FormElementImageMultipleView setRequiredResponseMessage(String requiredResponseMessage) {
+    public FormElementImageWithNotesView setRequiredResponseMessage(String requiredResponseMessage) {
         this.requiredResponseMessage = requiredResponseMessage;
         return this;
     }
 
-    private FormElementImageMultipleView() {
-    }
-
-    public ImageCardAdapter getImgAdapter() {
-        return imgAdapter;
-    }
-
-    public void setImgAdapter(ImageCardAdapter imgAdapter) {
-        this.imgAdapter = imgAdapter;
-    }
-
-    public String getDbField() { return dbField; }
-    public FormElementImageMultipleView setDbField(String dbField) {
-        this.dbField = dbField;
-        return this;
+    private FormElementImageWithNotesView() {
     }
 
     @Override
@@ -62,17 +44,22 @@ public class FormElementImageMultipleView implements FormObject {
         return required;
     }
 
-    public FormElementImageMultipleView setRequired(boolean required) {
+    public FormElementImageWithNotesView setRequired(boolean required) {
         this.required = required;
         return this;
     }
 
-    public static FormElementImageMultipleView createInstance() {
-
-        return new FormElementImageMultipleView();
+    public String getDbField() { return dbField; }
+    public FormElementImageWithNotesView setDbField(String dbField) {
+        this.dbField = dbField;
+        return this;
     }
 
-    public FormElementImageMultipleView setVisibility(boolean visibility) {
+    public static FormElementImageWithNotesView createInstance() {
+        return new FormElementImageWithNotesView();
+    }
+
+    public FormElementImageWithNotesView setVisibility(boolean visibility) {
         this.visibility = visibility;
         return this;
     }
@@ -82,52 +69,46 @@ public class FormElementImageMultipleView implements FormObject {
 
 
     // getters and setters
-    public FormElementImageMultipleView setTag(int mTag) {
+    public FormElementImageWithNotesView setTag(int mTag) {
         this.mTag = mTag;
         return this;
     }
 
-    public FormElementImageMultipleView setType(int mType) {
+    public FormElementImageWithNotesView setType(int mType) {
         this.mType = mType;
         return this;
     }
 
-    public FormElementImageMultipleView setTitle(String mTitle) {
+    public FormElementImageWithNotesView setTitle(String mTitle) {
         this.mTitle = mTitle;
         return this;
     }
 
-    public FormElementImageMultipleView setValue(List<Bitmap> mValue) {
+    public FormElementImageWithNotesView setValue(Bitmap mValue) {
         this.mValue = mValue;
         return this;
     }
 
-    public FormElementImageMultipleView setOptions(List<String> mOptions) {
+    public FormElementImageWithNotesView setOptions(List<String> mOptions) {
         this.mOptions = mOptions;
         return this;
     }
 
-    public FormElementImageMultipleView setOptionsSelected(List<String> mOptionsSelected) {
+    public FormElementImageWithNotesView setOptionsSelected(List<String> mOptionsSelected) {
         this.mOptionsSelected = mOptionsSelected;
         return this;
     }
 
-    public FormElementImageMultipleView setContext(Context ctx) {
+    public FormElementImageWithNotesView setContext(Context ctx) {
         this.mCtx = ctx;
         return this;
     }
 
-    public FormElementImageMultipleView setActivity(Activity act) {
-        this.mAct = act;
+    public FormElementImageWithNotesView setActivity(Activity act) {
         return this;
     }
 
-    public FormElementImageMultipleView setMaxImages(int maxImages) {
-        this.maxImages = maxImages;
-        return this;
-    }
-
-    public FormElementImageMultipleView setAttribute(String attribute) {
+    public FormElementImageWithNotesView setAttribute(String attribute) {
         this.mAttribute = attribute;
         return this;
     }
@@ -136,20 +117,16 @@ public class FormElementImageMultipleView implements FormObject {
         return mAttribute;
     }
 
-
-    private ImageMultiplePickerAdapter getSpinnerAdapter() {
-        return new ImageMultiplePickerAdapter(mCtx,null,null);
+    private ImagePickerAdapter getSpinnerAdapter() {
+        return new ImagePickerAdapter(mCtx,null,null);
     }
 
-    public FormElementImageMultipleView notifyAdapterChange() {
-        ImageMultiplePickerAdapter adapter = getSpinnerAdapter();
+    public FormElementImageWithNotesView notifyAdapterChange() {
+        ImagePickerAdapter adapter = getSpinnerAdapter();
         adapter.notifyDataSetChanged();
         return this;
     }
 
-    public int getMaxImages() {
-        return maxImages;
-    }
 
     public int getTag() {
         return mTag;
@@ -163,7 +140,16 @@ public class FormElementImageMultipleView implements FormObject {
         return mTitle;
     }
 
-    public List<Bitmap> getValue() {
+    public boolean getAutoShow() {
+        return autoshow;
+    }
+
+    public FormElementImageWithNotesView setAutoShow(boolean autoshow) {
+        this.autoshow = autoshow;
+        return this;
+    }
+
+    public Bitmap getValue() {
         return mValue;
     }
 
@@ -183,7 +169,7 @@ public class FormElementImageMultipleView implements FormObject {
     @Override
     public String getElementType() {
 
-        return "ImageViewMultiple";
+        return "ImageWithNoteView";
     }
 
     @NotNull
@@ -191,4 +177,5 @@ public class FormElementImageMultipleView implements FormObject {
     public String toString() {
         return "TAG: " + this.mTag + ", TITLE: " + this.mTitle + ", VALUE: " + this.mValue ;
     }
+
 }

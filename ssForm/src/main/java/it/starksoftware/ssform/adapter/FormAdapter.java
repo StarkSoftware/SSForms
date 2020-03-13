@@ -57,6 +57,7 @@ import com.kunzisoft.switchdatetime.SwitchDateTimeDialogFragment;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -105,6 +106,7 @@ import it.starksoftware.ssform.model.FormElementDateSwitcher;
 import it.starksoftware.ssform.model.FormElementDateTime;
 import it.starksoftware.ssform.model.FormElementImageMultipleView;
 import it.starksoftware.ssform.model.FormElementImageView;
+import it.starksoftware.ssform.model.FormElementImageWithNotesView;
 import it.starksoftware.ssform.model.FormElementInputLayout;
 import it.starksoftware.ssform.model.FormElementLabel;
 import it.starksoftware.ssform.model.FormElementMemo;
@@ -167,6 +169,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
     private int IS_LABEL = 25;
     private int IS_STARK_SPINNER = 26;
     private int IS_MULTISELECT = 27;
+    private int IS_IMAGE_WITH_NOTE = 28;
 
     private ArrayList<Image> images = new ArrayList<>();
     private ArrayList<String> attachs = new ArrayList<>();
@@ -251,6 +254,18 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         for (FormObject f : this.mDataset) {
             if (f instanceof FormElementImageMultipleView) {
                 FormElementImageMultipleView formElement = (FormElementImageMultipleView) f;
+                if (formElement.getTag() == tag) {
+                    formElement.setValue(value);
+                    return;
+                }
+            }
+        }
+    }
+
+    public void setImageWithNoteValueAtTag(int tag, Bitmap value) {
+        for (FormObject f : this.mDataset) {
+            if (f instanceof FormElementImageWithNotesView) {
+                FormElementImageWithNotesView formElement = (FormElementImageWithNotesView) f;
                 if (formElement.getTag() == tag) {
                     formElement.setValue(value);
                     return;
@@ -604,8 +619,12 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 FormElementMultiSelect element = (FormElementMultiSelect) mDataset.get(index);
                 if (element.getTag() == tag)
                     itemPosition = index;
+            } else if (mDataset.get(index).getElementType().contentEquals("ImageWithNoteView")) {
+                FormElementImageWithNotesView element = (FormElementImageWithNotesView) mDataset.get(index);
+                if (element.getTag() == tag)
+                    itemPosition = index;
             }
-        }//
+        }
         Log.d("FM", "Position --> " + itemPosition);
         Log.d("FM", "Tag --> " + tag);
         return itemPosition;
@@ -711,6 +730,8 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             return IS_STARK_SPINNER;
         } else if (mDataset.get(position).getElementType().contentEquals("MultiSelect")) {
             return IS_MULTISELECT;
+        } else if (mDataset.get(position).getElementType().contentEquals("ImageWithNoteView")) {
+            return IS_IMAGE_WITH_NOTE;
         } else {
             return IS_DEFAULT_VIEW;
         }
@@ -718,10 +739,11 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
 
 //
 
+    private ViewGroup myViewGroup;
     @NotNull
     @Override
     public FormAdapter.ViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
-
+        myViewGroup = parent;
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View v;
         ViewHolder vh;
@@ -837,6 +859,10 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             case 27:
                 v = inflater.inflate(R.layout.form_element_multiselect, parent, false);
                 vh = new ViewHolder(v, null, null, IS_MULTISELECT, null);
+                break;
+            case 28:
+                v = inflater.inflate(R.layout.form_element_image_notesview, parent, false);
+                vh = new ViewHolder(v, null, null, IS_IMAGE_WITH_NOTE, null);
                 break;
             default:
                 v = inflater.inflate(R.layout.form_element_header, parent, false);
@@ -1553,6 +1579,27 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
+        } else if (getItemViewType(position) == IS_IMAGE_WITH_NOTE) {
+            FormElementImageWithNotesView formElement = (FormElementImageWithNotesView) currentObject;
+            holder.mEditImageViewValue.setImageBitmap(formElement.getValue());
+            holder.mTextViewTitle.setText(formElement.getTitle());
+            setImageNotesPicker(holder.mEditImageViewValue, position, holder.layoutRow);
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
+            if (formElement.getAutoShow()) {
+                mAlertDialog = null;
+                clickedPosition = position;
+                getImagePickerObservable().forEach(actionImageViewNotes);
+            }
         } else if (getItemViewType(position) == IS_CHECKBOX_VIEW) {
             final FormElementCheckBox formElement = (FormElementCheckBox) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
@@ -1833,7 +1880,6 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
 
     }
 
-
     private void setImagePickerMultiple(ImageButton imgView, final int position, final int maxImages) {
         imgView.setFocusableInTouchMode(false);
         imgView.setOnClickListener(new View.OnClickListener() {
@@ -1852,6 +1898,50 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             public void onClick(View view) {
                 clickedPosition = position;
                 getImagePickerObservable().forEach(action);
+            }
+        });
+    }
+
+    private void setImageNotesPicker(ImageView imgView, final int position, final LinearLayout layoutRow) {
+        imgView.setFocusableInTouchMode(false);
+        layoutRow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickedPosition = position;
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                builder.setTitle(R.string.notes);
+                View viewInflated = LayoutInflater.from(mContext).inflate(R.layout.dialog_notes, myViewGroup, false);
+                final EditText input = (EditText) viewInflated.findViewById(R.id.editTextNotes);
+                input.setText(((FormElementImageWithNotesView) mDataset.get(clickedPosition)).getTitle());
+                builder.setView(viewInflated);
+                builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        ((FormElementImageWithNotesView) mDataset.get(clickedPosition)).setTitle(input.getText().toString());
+                        notifyItemChanged(clickedPosition);
+                    }
+                });
+
+                builder.setNeutralButton(R.string.delete, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        getFormItems().remove(clickedPosition);
+                        notifyDataSetChanged();
+                    }
+                });
+
+                builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                mAlertDialog = builder.create();
+                mAlertDialog.show();
             }
         });
     }
@@ -1974,6 +2064,52 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         }
     };
 
+    private AlertDialog mAlertDialog = null;
+    private Action1<List<Image>> actionImageViewNotes = new Action1<List<Image>>() {
+        @Override
+        public void call(List<Image> images) {
+            if (images != null) {
+                final AppTools appTools = new AppTools();
+                Uri imageUri = Uri.fromFile(new File(images.get(0).getPath()));
+
+                try {
+                    int rotateImage = appTools.getCameraPhotoOrientation(imageUri);
+                    final Bitmap bmp = appTools.getThumbnail(imageUri, rotateImage, mContext);
+                    ((FormElementImageWithNotesView) mDataset.get(clickedPosition)).setAutoShow(false);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                    builder.setTitle(R.string.notes);
+                    View viewInflated = LayoutInflater.from(mContext).inflate(R.layout.dialog_notes, myViewGroup, false);
+                    final EditText input = (EditText) viewInflated.findViewById(R.id.editTextNotes);
+                    builder.setView(viewInflated);
+                    builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                            ((FormElementImageWithNotesView) mDataset.get(clickedPosition)).setTitle(input.getText().toString());
+                            Glide.with((Activity) mContext)
+                                    .load(appTools.bitmapToByte(bmp))
+                                    .asBitmap()
+                                    .into(new SimpleTarget<Bitmap>() {
+                                        @Override
+                                        public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                                            ((FormElementImageWithNotesView) mDataset.get(clickedPosition)).setValue(resource);
+                                            notifyItemChanged(clickedPosition);
+                                        }
+                                    });
+                        }
+                    });
+
+                    if (mAlertDialog == null) {
+                        mAlertDialog = builder.create();
+                        mAlertDialog.show();
+                    }
+                } catch (Exception ignored) {
+
+                }
+            }
+        }
+    };
+
     private Action1<List<Image>> action = new Action1<List<Image>>() {
         @Override
         public void call(List<Image> images) {
@@ -2045,6 +2181,10 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
 
     private Observable<List<Image>> getImageMultiplePickerObservable(int maxImages) {
         return RxImagePicker.getInstance().start(mContext, ImagePicker.create((Activity) mContext), maxImages);
+    }
+
+    private Observable<List<Image>> getImageWithNotePickerObservable() {
+        return RxImagePicker.getInstance().start(mContext, ImagePicker.create((Activity) mContext), 0);
     }
 
     private Observable<Bitmap> getSignaturePickerObservable() {
@@ -2775,8 +2915,10 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 mEditRadioNaValue = v.findViewById(R.id.formElementRadioNa);
             } else if (viewType == 25) {
                 mTextViewDetail = v.findViewById(R.id.formElementValue);
-            }else if (viewType == 26) {
+            } else if (viewType == 26) {
                 mEditStarkSpinnerValue = v.findViewById(R.id.formElementValue);
+            } else if (viewType == 28) {
+                mEditImageViewValue = v.findViewById(R.id.formElementValue);
             }
 
         }

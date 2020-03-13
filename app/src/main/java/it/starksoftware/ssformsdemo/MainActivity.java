@@ -53,6 +53,7 @@ import it.starksoftware.ssform.model.FormElementDateSwitcher;
 import it.starksoftware.ssform.model.FormElementDateTime;
 import it.starksoftware.ssform.model.FormElementImageMultipleView;
 import it.starksoftware.ssform.model.FormElementImageView;
+import it.starksoftware.ssform.model.FormElementImageWithNotesView;
 import it.starksoftware.ssform.model.FormElementInputLayout;
 import it.starksoftware.ssform.model.FormElementLabel;
 import it.starksoftware.ssform.model.FormElementMemo;
@@ -102,6 +103,7 @@ public class MainActivity extends AppCompatActivity implements
     public FormElementDateTime formElementDate;
     public FormElementDateTime formElementTime;
     public FormElementImageMultipleView formElementImageMultipleView;
+    public FormElementImageWithNotesView formElementImageWithNotesView;
     public FormElementImageView formElementImageView;
     public FormElementMemo formElementMemo;
     public FormElementRating formElementRating;
@@ -166,7 +168,13 @@ public class MainActivity extends AppCompatActivity implements
 
     public void removeItem()
     {
-        mFormBuilder.hideFormElement(mFormBuilder.getFormElement(10));
+
+        FormObject dynamic = FormElementImageWithNotesView.createInstance()
+                .setTitle("")
+                .setAutoShow(true)
+                .setTag(70);
+        mFormBuilder.addFormElement(dynamic);
+        //mFormBuilder.hideFormElement(mFormBuilder.getFormElement(10));
         mFormBuilder.refreshView();
     }
 
@@ -268,6 +276,12 @@ public class MainActivity extends AppCompatActivity implements
                 .setActivity(this)
                 .setContext(this)
                 .setMaxImages(10)
+                .setTag(60);
+
+        formElementImageWithNotesView = FormElementImageWithNotesView.createInstance()
+                .setTitle("MULTI IMAGES WITH NOTES")
+                .setActivity(this)
+                .setContext(this)
                 .setTag(60);
 
         formElementImageView = FormElementImageView.createInstance()
@@ -410,7 +424,7 @@ public class MainActivity extends AppCompatActivity implements
         formItems.add(formElementDateTime);
         formItems.add(formElementDate);
         formItems.add(formElementTime);
-        formItems.add(formElementImageMultipleView);
+
         formItems.add(formElementImageView);
         formItems.add(formElementMemo);
         formItems.add(formElementRating);
@@ -425,8 +439,9 @@ public class MainActivity extends AppCompatActivity implements
         formItems.add(formElementSwitch);
         formItems.add(formElementCheckBox);
         formItems.add(formElementPlaceDialog);
-         */
+ */
         formItems.add(formElementYesNo);
+
         mFormBuilder.addFormElements(formItems);
         mFormBuilder.refreshView();
 

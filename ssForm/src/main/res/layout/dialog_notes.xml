@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextNotes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5sp"
+            android:layout_marginEnd="5sp"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:textColor="@color/colorFormMasterElementTextTitle"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="" />
+
+</FrameLayout>

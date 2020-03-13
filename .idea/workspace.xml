@@ -8,177 +8,25 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9a960b8-3c2e-45e5-ba31-e8406b77c456" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/exifinterface/group-index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileContent/fileContent.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementImageWithNotesView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/dialog_notes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_image_notesview.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amulyakhare_com_amulyakhare_textdrawable_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amulyakhare_com_amulyakhare_textdrawable_1_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_codemybrainsout_placesearchdialog_placesearch_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_codemybrainsout_placesearchdialog_placesearch_1_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_Kunzisoft_Android_SwitchDateTimePicker_1_8_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_Kunzisoft_Android_SwitchDateTimePicker_1_8_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_abdularis_CircularImageView_v1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_abdularis_CircularImageView_v1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_sujithkanna_smileyrating_1_6_8_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_sujithkanna_smileyrating_1_6_8_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_flexbox_0_3_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_flexbox_0_3_2_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_17_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_17_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_17_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_17_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_maps_17_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_maps_17_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_places_17_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_places_17_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_places_placereport_17_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_places_placereport_17_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_17_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_17_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jcmore2_collage_collage_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jcmore2_collage_collage_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_joanzapata_iconify_android_iconify_2_2_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_joanzapata_iconify_android_iconify_2_2_2_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_joanzapata_iconify_android_iconify_material_2_2_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_joanzapata_iconify_android_iconify_material_2_2_2_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_prolificinteractive_material_calendarview_1_4_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_prolificinteractive_material_calendarview_1_4_3_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_tapadoo_android_alerter_3_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_tapadoo_android_alerter_3_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__uk_co_chrisjenx_calligraphy_2_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__uk_co_chrisjenx_calligraphy_2_3_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/it/starksoftware/ssformsdemo/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/starksoftware/ssformsdemo/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/appcompat/group-index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/appcompat/group-index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/google/android/gms/group-index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/google/android/gms/group-index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/DateSwitcher/DateSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/DateSwitcher/DateSwitcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/SearchableSpinner/SpinnerDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/SearchableSpinner/SpinnerDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Tools/EditCursorColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/Tools/EditCursorColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FolderPickerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FolderPickerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAttachAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAttachAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormSpinAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormSpinAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/ImageCardAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/ImageCardAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/ImageMultiplePickerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/ImageMultiplePickerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/ImagePickerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/ImagePickerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/StarkSpinnerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/StarkSpinnerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/TokensChipAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/TokensChipAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/TokensSearchAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/TokensSearchAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/attach/AttachPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/attach/AttachPicker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/attach/AttachPickerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/attach/AttachPickerActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/attach/AttachPickerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/attach/AttachPickerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/customKeyboard/CustomKeyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/customKeyboard/CustomKeyboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImageLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImagePicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImagePicker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImagePickerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImagePickerActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImagePickerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImagePickerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImagePickerPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/ImagePickerPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/camera/DefaultCameraModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/features/camera/DefaultCameraModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/file_explorer/AndroidUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/file_explorer/AndroidUtilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/file_explorer/DirectoryFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/file_explorer/DirectoryFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/file_explorer/FileExplorerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/file_explorer/FileExplorerActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/file_explorer/TextDetailDocumentsCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/file_explorer/TextDetailDocumentsCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/AppTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/AppTools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/ImagePickerPreferences.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/ImagePickerPreferences.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/RecyclerItemClickListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/RecyclerItemClickListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/SimpleDividerItemDecoration.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/SimpleDividerItemDecoration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/Tools.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/Tools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/interfaces/CheckBoxCallBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/interfaces/CheckBoxCallBack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/listeners/OnCustomKeyboardActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/listeners/OnCustomKeyboardActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormDivider.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormDivider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementAttach.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementAttach.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementCheckBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementCheckBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementCustomKeyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementCustomKeyboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementDateSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementDateSwitcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementDateTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementDateTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/FormBuildHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/helper/FormBuildHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementImageMultipleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementImageMultipleView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementImageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementImageView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementInputLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementInputLayout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementMemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementMemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementMultiSelect.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementMultiSelect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementPlaceDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementPlaceDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementProfileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementProfileView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementRating.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementRating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSearchableSpinner.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSearchableSpinner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSegment.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSegment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSignature.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSignature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSmileRating.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSmileRating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSpinner.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSpinner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementStarkSpinner.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementStarkSpinner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementSwitch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementYesNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementYesNo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementYesNoNA.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormElementYesNoNA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/FormHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/TokesTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/model/TokesTags.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/ratings/PartialView.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/ratings/PartialView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/segmented/AwesomeRadioButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/segmented/AwesomeRadioButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/signaturepad/view/ViewCompat.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/signaturepad/view/ViewCompat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/tokens/AddTokensActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/tokens/AddTokensActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/tokens/TokensPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/tokens/TokensPicker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/view/ProgressWheel.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/view/ProgressWheel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/view/SnackBarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/view/SnackBarView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/activity_add_tokens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/activity_add_tokens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/activity_attach.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/activity_attach.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/activity_file_explorer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/activity_file_explorer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/activity_signature_picker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/activity_signature_picker.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/attach_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/attach_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/date_switcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/date_switcher.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/dialog_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/dialog_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/document_select_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/document_select_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/ef_imagepicker_item_folder.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/ef_imagepicker_item_folder.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/ef_imagepicker_item_image.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/ef_imagepicker_item_image.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/ef_imagepikcer_snackbar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/ef_imagepikcer_snackbar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_attach.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_attach.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_button.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_button.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_checkbox.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_checkbox.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_custom_keyboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_custom_keyboard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_date_switcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_date_switcher.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_datetime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_datetime.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_divider.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_divider.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_empty.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_empty.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_header.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_header.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_imageview.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_imageview.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_imageview_multiple.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_imageview_multiple.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_input_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_input_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_label.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_label.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_memo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_memo.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_multiselect.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_multiselect.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_place_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_place_dialog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_profileview.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_profileview.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_rating.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_rating.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_searchable_spinner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_searchable_spinner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_segment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_segment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_signature.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_signature.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_smile_rating.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_smile_rating.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_spinner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_spinner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_stark_spinner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_stark_spinner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_switch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_switch.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_token.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_token.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_yes_no.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_yes_no.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_yes_no_na.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/form_element_yes_no_na.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/items_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/items_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/recycleview_image_card.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/recycleview_image_card.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/segment_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/segment_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/spinner_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/spinner_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/token_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/token_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/tokens_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/tokens_search.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_item_edit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_item_edit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_no_selection_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/view_list_no_selection_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/layout/view_stark_spinner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/layout/view_stark_spinner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/menu/attach_picker_menu_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/menu/attach_picker_menu_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/menu/signature_picker_menu_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/menu/signature_picker_menu_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/menu/tokens_picker_menu_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/menu/tokens_picker_menu_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ssForm/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssForm/ssForm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ssForm/ssForm.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -236,6 +84,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="layoutResourceFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -249,7 +104,7 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-03-12T16:36:00.519Z" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="device.picker.selection" value="SP10MXHA1711001034" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ssForm/src/main/res/layout" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.0.1" />
@@ -257,8 +112,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="it.starksoftware.ssform.interfaces" />
       <recent name="it.starksoftware.ssform.model" />
+      <recent name="it.starksoftware.ssform.interfaces" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ssForm/src/main/res/layout" />
@@ -482,70 +337,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAdapter.java</url>
-          <line>1597</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/it/starksoftware/ssformsdemo/MainActivity.java</url>
-          <line>543</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/SearchableSpinner/ArrayAdapterWithContainsFilter.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/SearchableSpinner/SpinnerDialog.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/SearchableSpinner/SpinnerDialog.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/StarkSpinner/StarkSpinner.java</url>
-          <line>315</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ssForm/src/main/java/it/starksoftware/ssform/adapter/FormAdapter.java</url>
-          <line>1384</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>formElement.getValue()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>formElement.getValue().getKey()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>element</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>element.getValue()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
   </component>
 </project>

@@ -66,4 +66,6 @@
     <string name="allegati">Allegati</string>
     <string name="search_menu">Search</string>
     <string name="conferma">Conferma</string>
+    <string name="notes">Notes</string>
+    <string name="delete">Delete</string>
 </resources>

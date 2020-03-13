@@ -237,6 +237,10 @@ public class FormBuildHelper {
         this.mFormAdapter.addElements(formElements);
     }
 
+    public void addFormElement(FormObject formElement) {
+        this.mFormAdapter.addElement(formElement);
+    }
+
     public void removeFormElement(FormObject formElement) {
         this.mFormAdapter.removeElement(formElement);
         //this.mFormAdapter.notifyDataSetChanged();
